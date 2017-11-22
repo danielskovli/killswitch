@@ -1,3 +1,11 @@
+### FuseTools ###
+# Built and preview application files
+build
+
+# Scripts conversion file
+.uno
+
+
 # Xcode
 #
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
