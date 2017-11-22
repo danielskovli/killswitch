@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Label</key>
+	<string>com.danielskovli.killswitch</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/usr/local/bin/python</string>
+		<string>--UPDATE THIS PATH--/killswitch_osx.py</string>
+	</array>
+	<key>StandardErrorPath</key>
+	<string>/var/log/com.danielskovli.killswitch.error --MAKE SURE THIS DIRECTORY IS WRITEABLE--</string>
+	<key>KeepAlive</key>
+	<true/>
+	<key>RunAtLoad</key>
+	<true/>
+</dict>
+</plist>
