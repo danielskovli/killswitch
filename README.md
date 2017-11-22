@@ -16,14 +16,14 @@ The current version of the api resides at http://apps.danielskovli.com/killswitc
 - **login.php**
 ```
 In: {
-  'username': "your@email.com",
-  'password': "MD5 hash of your password"
+  'username': (string) your@email.com,
+  'password': (string) MD5 hash of your password
 }
 
 Out: {
   'error':      (bool|string) false|error description,
   'token':      (string) security token used for all other api calls,
-  'name':       (string) the user's realname, for your pretty gui needs,
+  'name':       (string) the user's real name, for your pretty gui needs,
   'username':   (string) the user's username,
   'killswitch': (bool) the current killswitch state
 }
@@ -32,12 +32,24 @@ Out: {
 - **getStatus.php**
 ```
 In: {
-  'token': "your security token"
+  'token': (string) your security token
 }
 
 Out: {
   'error':      (bool|string) false|error description,
-  'validToken': (bool) lets you know if the user's token has expired or not,
+  'killswitch': (bool) the current killswitch state
+}
+```
+
+- **setStatus.php**
+```
+In: {
+  'token':      (string) your security token,
+  'killswitch': (bool) killswitch on/off
+}
+
+Out: {
+  'error':      (bool|string) false|error description,
   'killswitch': (bool) the current killswitch state
 }
 ```
@@ -45,9 +57,9 @@ Out: {
 - **addUser.php**
 ```
 In: {
-  'username': "your@email.com",
-  'password': "MD5 hash of your password",
-  'name':     "User's realname"
+  'username': (string) your@email.com,
+  'password': (string) MD5 hash of your password,
+  'name':     (string User's real name
 }
 
 Out: {
