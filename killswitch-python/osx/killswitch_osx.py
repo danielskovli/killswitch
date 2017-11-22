@@ -23,8 +23,8 @@ import md5
 import Quartz #Quarts requires pip install pyobjc-framework-Quartz
 
 
-URL = "http://danielskovli.com/killswitch/api/1.0/"
-CONNECTION_TIMEOUT = 20
+URL = "http://apps.danielskovli.com/killswitch/api/1.0/"
+CONNECTION_TIMEOUT = 30
 LOOP_INTERVAL = 10
 
 # You can store your security token here instead, if you want
@@ -126,4 +126,5 @@ class KillswitchListener(object):
 
 
 listener = KillswitchListener()
+#listener = KillswitchListener(token = <your token>)
 listener.run()
