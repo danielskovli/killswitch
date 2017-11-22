@@ -8,7 +8,7 @@ are operating system specific.
 Written for Python 2.7.12 (Ancient, I know)
 
 __shutdown() will most likely work on any Unix based system.
-isLocked() is most likely OSX specific, as it relies on the Quarts module.
+isLocked() is most likely OSX specific, as it relies on the Quartz module.
 
 
 Daniel Skovli 2017 - daniel.skovli@gmail.com
