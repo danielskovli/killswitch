@@ -28,8 +28,8 @@ CONNECTION_TIMEOUT = 30
 LOOP_INTERVAL = 10
 
 # You can store your security token here instead, if you want
-USERNAME = "user@email.com"
-PASSWORD = md5.new("Your password").hexdigest() #Must send your password as an MD5 hash. I can explain, but it's a boring story.
+USERNAME = "your@email.com"
+PASSWORD = md5.new("your password").hexdigest() #Must send your password as an MD5 hash. I can explain, but it's a boring story.
 
 
 class KillswitchListener(object):
@@ -49,7 +49,7 @@ class KillswitchListener(object):
             return
 
         try:
-            request = urllib2.Request(self.url + "login.php")
+            request = urllib2.Request(self.url + "login/")
             request.add_header('Content-Type', 'application/json')
             data = {
                 'username': self.username, 
@@ -65,8 +65,9 @@ class KillswitchListener(object):
                 self.token = state['token']
                 self.ready = True
         
-        except:
+        except Exception as e:
             print("Couldn't connect to login server. Either server is down, or you've got some Python issues")
+            print(e)
 
 
     def run(self):
@@ -78,10 +79,8 @@ class KillswitchListener(object):
         while True:
             if not self.isLocked():
                 try:
-                    request = urllib2.Request(self.url + "getStatus.php")
-                    request.add_header('Content-Type', 'application/json')
-                    data = {'token': self.token}
-                    response = urllib2.urlopen(request, json.dumps(data))
+                    request = urllib2.Request(self.url + "status/" + self.token)
+                    response = urllib2.urlopen(request)
                     state = json.loads(response.read())
 
                     if state['error'] != False:
@@ -97,8 +96,10 @@ class KillswitchListener(object):
                     
                     #print("Server returned JSON object: {}".format(state))
                 
-                except:
-                    print("Couldn't connect to killswitch server. Will try again shortly")
+                except Exception as e:
+                    print("Server connection failed. Probably unauthorised usage -- check below")
+                    print(e)
+                    return
             
             time.sleep(LOOP_INTERVAL)
 
