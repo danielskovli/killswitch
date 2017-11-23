@@ -13,7 +13,7 @@ The web API both receives and returns JSON objects, and should plug and play wit
 
 The current version of the API resides at http://apps.danielskovli.com/killswitch/api/1.0/.
 
-Some user functionality (like resetting passwords & deleting accounts) can only be accessed from http://apps.danielskovli.com/killswitch/
+Some user functionality (resetting passwords, deleting accounts) can only be accessed from the web UI at http://apps.danielskovli.com/killswitch/
 
 
 - **Add user**
