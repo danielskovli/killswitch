@@ -15,19 +15,21 @@ The current version of the API resides at http://apps.danielskovli.com/killswitc
 
 Some user functionality (resetting passwords, deleting accounts) can only be accessed from the web UI at http://apps.danielskovli.com/killswitch/
 
+The system keeps a log of recent activity, and will only allow a certain number of unauthorized attempts. The threshold is quite generous, but if you were to receive a 401 reply, please take care to exit the listen-loop and prompt the user to re-authenticate. Security tokens have a long lifespan, so a valid user shouldn't have to worry about this very often, but some care had to be taken to discourage brute force attempts. The same policy applies to all web UI access.
+
 
 - **Add user**
 ```
 URL: http://apps.danielskovli.com/killswitch/api/1.0/user/
 Request type: POST
 
-In: {
+Payload: {
   'username': (string) your@email.com,
   'password': (string) MD5 hash of your password,
   'name':     (string User's real name
 }
 
-Out: {
+Output: {
   'error': (bool|string) false|error description,
   'token': (string) security token used for all other api calls
 }
@@ -45,7 +47,7 @@ HTTP codes:
 URL: http://apps.danielskovli.com/killswitch/api/1.0/login/
 Request type: POST
 
-Input: {
+Payload: {
   'username': (string) your@email.com,
   'password': (string) MD5 hash of your password
 }
@@ -70,6 +72,8 @@ HTTP codes:
 URL: http://apps.danielskovli.com/killswitch/api/1.0/status/<security token>
 Request type: GET
 
+Payload: None
+
 Out: {
   'error':      (bool|string) false|error description,
   'killswitch': (bool) the current killswitch state
@@ -86,6 +90,8 @@ HTTP codes:
 ```
 URL: http://apps.danielskovli.com/killswitch/api/1.0/status/<security token>/<bool>
 Request type: PUT
+
+Payload: None
 
 Out: {
   'error':      (bool|string) false|error description,
