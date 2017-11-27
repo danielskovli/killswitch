@@ -1,6 +1,8 @@
 # Killswitch
 
-A multi-platform app used to remotely shut down or suspend one or many computers (from your phone). The killswitch flag is persistent, which means the daemon will keep activating until the switch has been reset. This is the intended functionality, and means you have some degree of security even if your device password is known to a 3rd party. Depending, of course, on how well you are able to mask the daemon process (and the expertise of your hypothetical intruder). 
+A multi-platform app used to remotely shut down or suspend one or many computers (from your phone). The killswitch flag is persistent, which means the daemon will keep activating until the switch has been reset. This is the intended functionality, and means you have some degree of security even if your device password is known to a 3rd party. Depending, of course, on how well you are able to mask the daemon process (and the expertise of your hypothetical intruder).
+
+Project website: http://apps.danielskovli.com/killswitch/
 
 
 ## Getting Started
@@ -13,7 +15,10 @@ The web API both receives and returns JSON objects, and should plug and play wit
 
 The current version of the API resides at http://apps.danielskovli.com/killswitch/api/1.0/.
 
-Some user functionality (resetting passwords, deleting accounts) can only be accessed from the web UI at http://apps.danielskovli.com/killswitch/
+Some user functionality (resetting passwords, deleting accounts) can only be accessed from the web UI at the following pages:
+- Change password: http://apps.danielskovli.com/killswitch/changePassword.php
+- Reset password: http://apps.danielskovli.com/killswitch/resetPassword.php
+- Delete account: http://apps.danielskovli.com/killswitch/deleteUser.php
 
 The system keeps a log of recent activity, and will only allow a certain number of unauthorized attempts. The threshold is quite generous, but if you were to receive a 401 reply, please take care to exit the listen-loop and prompt the user to re-authenticate. Security tokens have a long lifespan, so a valid user shouldn't have to worry about this very often, but some care had to be taken to discourage brute force attempts. The same policy applies to all web UI access.
 
