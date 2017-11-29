@@ -11,7 +11,7 @@ var Session  = {
     // Read from file, create placeholder if file doesn't exist
     read: function() {
         // File exists
-        if (Session._fileSystem.existsSync(this._sessionPath)) {
+        if (Session._fileSystem.existsSync(Session._sessionPath)) {
             var content = Session._fileSystem.readTextFromFileSync(Session._sessionPath);
             content = JSON.parse(content);
             Session._name = content.name;
