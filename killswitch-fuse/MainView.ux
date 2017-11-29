@@ -1,0 +1,59 @@
+<App>
+    <JavaScript>
+        // The frameworks
+        var Observable = require("FuseJS/Observable");
+        var Api = require("js/api.js");
+        var md5 = require("js/md5.js");
+
+        // UX bindings
+        var sessionName = Observable();
+        var sessionUsername = Observable();
+        var sessionToken = Observable();
+        var apiBusy = Observable();
+        var apiError = Observable();
+        var apiKillswitch = Observable();
+        var apiAuthenticated = Observable();
+
+        // Subscriber for the API (updating UX binds - couldn't find another way to do this)
+        Api.subscribers.push(function() {
+            sessionName.value = Api.session.name;
+            sessionUsername.value = Api.session.username;
+            sessionToken.value = Api.session.token;
+            apiBusy.value = Api.busy;
+            apiError.value = Api.lastError;
+            apiKillswitch.value = Api.killswitch;
+            apiAuthenticated.value = Api.authenticated;
+        });
+
+        // Check if we have a valid session
+        if (Api.session.token != '') {
+            console.log('refreshing data');
+            Api.update();
+        } else {
+            console.log('need to log in');
+            Api.login('daniel.skovli@gmail.com', md5('Daniel123'));
+        }
+
+
+        // Export UX bindings
+        module.exports = {
+            sessionName: sessionName,
+            sessionUsername: sessionUsername,
+            sessionToken: sessionToken,
+            apiBusy: apiBusy,
+            apiError: apiError,
+            apiKillswitch: apiKillswitch,
+            apiAuthenticated: apiAuthenticated
+        };
+
+    </JavaScript>
+    <StackPanel>
+        <Text Value="Session realname: {sessionName}" />
+        <Text Value="Session username: {sessionUsername}" />
+        <Text Value="Session token: {sessionToken}" />
+        <Text Value="Api busy: {apiBusy}" />
+        <Text Value="Api error: {apiError}" />
+        <Text Value="Api authenticated: {apiAuthenticated}" />
+        <Text Value="Api killswitch: {apiKillswitch}" />
+    </StackPanel>
+</App>
