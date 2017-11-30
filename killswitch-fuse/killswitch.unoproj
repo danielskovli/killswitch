@@ -6,6 +6,7 @@
   ],
   "Includes": [
     "*",
+    "ux/*.ux:UXFile",
     "js/*.js:Bundle"
   ]
 }

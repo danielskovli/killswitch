@@ -1,6 +1,6 @@
 <App>
-    <JavaScript>
-        // The frameworks
+	<JavaScript>
+		// The frameworks
         var Observable = require("FuseJS/Observable");
         var Api = require("js/api.js");
         var md5 = require("js/md5.js");
@@ -13,6 +13,8 @@
         var apiError = Observable();
         var apiKillswitch = Observable();
         var apiAuthenticated = Observable();
+		//var activeState = Observable("signupFormState");
+		var activeState = Observable("");
 
         // Subscriber for the API (updating UX binds - couldn't find another way to do this)
         Api.subscribers.push(function() {
@@ -34,6 +36,26 @@
             Api.login('daniel.skovli@gmail.com', md5('Daniel123'));
         }
 
+		// Navigation
+		function changeState(args) {
+			console.log(args.sender);
+			if (args.sender == 'signupButton') {
+				activeState.value = 'signupFormState';
+			} else if (args.sender == 'loginButton') {
+				activeState.value = 'loginFormState';
+			} else if (args.sender == 'submitButton') {
+				activeState.value = 'mainState';
+			} else if (args.sender == 'submitButton2') {
+				activeState.value = 'mainState';
+			} else if (args.sender == 'preNav') {
+				activeState.value = 'loginButtonState';
+
+			// temp
+			} else if (args.sender == 'loadingPanel') {
+				activeState.value = 'loginButtonState';
+			}
+		}
+
 
         // Export UX bindings
         module.exports = {
@@ -43,17 +65,345 @@
             apiBusy: apiBusy,
             apiError: apiError,
             apiKillswitch: apiKillswitch,
-            apiAuthenticated: apiAuthenticated
+            apiAuthenticated: apiAuthenticated,
+			activeState: activeState,
+			changeState: changeState
         };
 
-    </JavaScript>
-    <StackPanel>
-        <Text Value="Session realname: {sessionName}" />
-        <Text Value="Session username: {sessionUsername}" />
-        <Text Value="Session token: {sessionToken}" />
-        <Text Value="Api busy: {apiBusy}" />
-        <Text Value="Api error: {apiError}" />
-        <Text Value="Api authenticated: {apiAuthenticated}" />
-        <Text Value="Api killswitch: {apiKillswitch}" />
-    </StackPanel>
+	</JavaScript>
+	<Fuse.iOS.StatusBarConfig Style="Light" />
+
+	<ClientPanel Color="ThemeBlue">
+
+		<EdgeNavigator>
+
+			<!-- Sidebar -->
+			<Panel ux:Name="sidebar" Edge="Left" Width="100%" Margin="0,0,56,0" Background="#37474F">
+				<Shadow ux:Name="shadow" Angle="180" Distance="8" Size="16" Color="#0000" />
+				<StackPanel Padding="10">
+					<Text Value="Logged in as:" Color="White" FontSize="14" Alignment="VerticalCenter" />
+					<Text Value="{sessionName}" Color="White" FontSize="14" Alignment="VerticalCenter" />				
+					<Text Value="{sessionUsername}" Color="White" FontSize="14" Alignment="VerticalCenter" />
+					<TextSeparator Margin="0, 20, 0, 20" Color="#ffffff" />
+					<Text Value="Change password" Color="White" FontSize="14" Alignment="VerticalCenter" />
+					<Text Value="Log out" Color="White" FontSize="14" Alignment="VerticalCenter" />
+					<Text Value="Delete account" Color="White" FontSize="14" Alignment="VerticalCenter" />
+					<Text Value="Killswitch website" Color="White" FontSize="14" Alignment="VerticalCenter" />
+				</StackPanel>
+				<ActivatingAnimation>
+					<Change shadow.Color="#0004" />
+					<Change sidebarFade.Opacity="1" />
+				</ActivatingAnimation>
+			</Panel>
+
+			<!-- Main view -->
+			<HidingPanel ux:Name="topPanel">
+				<GridLayout Rows="60,1*" />
+				<WhileEnabled>
+					<Change navBarTrans.Y="0" Duration="0.4" />
+				</WhileEnabled>
+
+				<!-- Top row grid -->
+				<Grid Columns="70,1*,70">
+					<Translation ux:Name="navBarTrans" RelativeTo="Size" Y="-0.2" />
+
+					<!-- Hamburger menu. Currently brings us back to login screen -->
+					<Panel HitTestMode="LocalBoundsAndChildren">
+						<!-- <Image File="icons/menu.png" Width="30" Height="30" />
+						<Clicked>
+							<Scale Factor="0.8" Duration=".15" Easing="CubicInOut" />
+							<Set state.Active="loginButtonState" />
+						</Clicked> -->
+						<Hamburger Alignment="Left">
+							<Clicked>
+								<NavigateToggle Target="sidebar" />
+							</Clicked>
+						</Hamburger>
+					</Panel>
+
+					<!-- Text - centre aligned -->
+					<Text Value="Killswitch" Color="White" FontSize="20" Alignment="VerticalCenter" />
+
+					<!-- Search icon -->
+					<!-- <Image File="icons/search.png" Width="30" Height="30" /> -->
+				</Grid>
+
+				<!-- Main feed -->
+				<DockPanel>
+					<Rectangle ux:Name="sidebarFade" Layer="Overlay" Color="#0005" Opacity="0" HitTestMode="None" />
+					<HidingPanel ux:Name="mainPanel">
+						<Text Value="Stuff goes here" Color="Black" FontSize="20" Alignment="VerticalCenter" />
+					</HidingPanel>
+				</DockPanel>
+			</HidingPanel>
+		</EdgeNavigator>
+
+		<!-- Loading indicator (blank screen, spinnding gizmo) -->
+		<LoadingPanel ux:Name="loadingPanel" Opacity="0" ThemeColor="#fff">
+			<Clicked>
+				<!-- temp -->
+				<Callback Handler="{changeState}" />
+			</Clicked>
+		</LoadingPanel>
+
+		<!-- Navbar for pre-main screens -->
+		<Panel ux:Name="preNav" Visibility="Hidden" Height="25" Padding="10, 0, 0, 0" Alignment="Top">
+			<Text Value="< Back" Color="#ffffff" FontSize="14" Alignment="Top" />
+			<Clicked>
+				<Callback Handler="{changeState}" />
+			</Clicked>
+		</Panel>
+
+		<!-- Sign up form -->
+		<HidingPanel ux:Name="signupForm" Width="90%" Height="45%" Offset="0%,10%">
+			<Grid RowCount="3" Margin="30,40,30,70">
+				<TextInput ux:Name="signupName" PlaceholderText="Name" Opacity="1" Alignment="VerticalCenter" PlaceholderColor="#888" />
+				<TextSeparator />
+				<TextInput ux:Name="signupEmail" PlaceholderText="Email" InputHint="Email" Opacity="1" Alignment="VerticalCenter" PlaceholderColor="#888" />
+				<TextSeparator />
+				<TextInput ux:Name="signupPassword" IsPassword="true" PlaceholderText="Password" Opacity="1" Alignment="VerticalCenter" PlaceholderColor="#888" />
+				<TextSeparator />
+			</Grid>
+			<WhileEnabled>
+				<Change signupName.Opacity="1" Duration="0.4" />
+				<Change signupEmail.Opacity="1"    Duration="0.4" Delay="0.15" />
+				<Change signupPassword.Opacity="1" Duration="0.4" Delay="0.3" />
+			</WhileEnabled>
+
+			<Panel>
+				<Panel ux:Name="submitButton" Width="100" Offset="0%,50%" Height="50" HitTestMode="LocalBoundsAndChildren">
+					<Text Value="DONE" Alignment="Center" Color="White" />
+					<Clicked>
+						<!-- <Set state.Active="mainState" /> -->
+						<Callback Handler="{changeState}" />
+					</Clicked>
+				</Panel>
+				<Panel ux:Name="submitButtonCollapsed" Width="10" Offset="0%,50%" Height="10" />
+			</Panel>
+		</HidingPanel>
+
+		<!-- Login form -->
+		<HidingPanel ux:Name="loginForm" Width="90%" Height="35%" Offset="0%,10%">
+			<Grid RowCount="2" Margin="30,40,30,70">
+				<TextInput ux:Name="loginEmail" PlaceholderText="Email" InputHint="Email" Opacity="1" Alignment="VerticalCenter" PlaceholderColor="#888" />
+				<TextSeparator />
+				<TextInput ux:Name="loginPassword" IsPassword="true" PlaceholderText="Password" Opacity="1" Alignment="VerticalCenter" PlaceholderColor="#888" />
+				<TextSeparator />
+			</Grid>
+			<WhileEnabled>
+				<Change loginEmail.Opacity="1" Duration="0.4" />
+				<Change loginPassword.Opacity="1" Duration="0.4" Delay="0.3" />
+			</WhileEnabled>
+
+			<Panel>
+				<Panel ux:Name="submitButton2" Width="100" Offset="0%,50%" Height="50" HitTestMode="LocalBoundsAndChildren">
+					<Text Value="DONE" Alignment="Center" Color="White" />
+					<Clicked>
+						<!-- <Set state.Active="mainState" /> -->
+						<Callback Handler="{changeState}" />
+					</Clicked>
+				</Panel>
+				<Panel ux:Name="submitButtonCollapsed2" Width="10" Offset="0%,50%" Height="10" />
+			</Panel>
+		</HidingPanel>
+
+		<!-- Log in / sign up buttons -->
+		<HidingPanel ux:Name="startPanel" Alignment="Bottom" Height="50%" Padding="15,0,15,15">
+			<StackPanel ItemSpacing="20">
+				<Panel ux:Name="loginButton" Width="120" Height="35" Alignment="Top" HitTestMode="LocalBounds">
+					<Text Value="LOG IN" Alignment="Center" Color="#000000" HitTestMode="LocalBounds" />
+					<Clicked>
+						<Callback Handler="{changeState}" />
+					</Clicked>
+				</Panel>
+				<Panel ux:Name="signupButton" Width="120" Height="35" Alignment="Top" HitTestMode="LocalBounds">
+					<Text Value="SIGN UP" Alignment="Center" Color="#000000" HitTestMode="LocalBounds" />
+					<Clicked>
+						<Callback Handler="{changeState}" />
+					</Clicked>
+				</Panel>
+			</StackPanel>
+		</HidingPanel>
+
+			<!-- <HidingPanel ux:Name="startPanel2" Alignment="Top" Height="40%" Padding="15,0,15,15"> -->
+				<!-- <GridLayout Rows="1*,15,15" /> -->
+				<!-- <Panel ux:Name="signupButton" Width="120" Height="50" Alignment="Top" HitTestMode="LocalBounds">
+					<Text Value="SIGN UP" Alignment="Center" Color="#5E2E91" HitTestMode="LocalBounds" />
+					<Clicked>
+						<Callback Handler="{changeState}" />
+					</Clicked>
+				</Panel>
+			</HidingPanel> -->
+
+		<!-- Plus button - this should be removed eventually -->
+		<Panel ux:Name="addButtonPanel">
+			<HidingPanel ux:Name="addButton" Width="50" Height="50" Alignment="BottomRight" Margin="40" HitTestMode="LocalBoundsAndChildren">
+				<Text Value="+" FontSize="30" Color="White" Alignment="Center" />
+			</HidingPanel>
+			<Rectangle ux:Name="greenRect" Color="Green" LayoutMaster="submitButtonCollapsed" CornerRadius="25" Opacity="0">
+				<Shadow />
+				<WhileTrue ux:Name="showGreenRect">
+					<Change greenRect.Opacity="1" Duration="0.2" />
+				</WhileTrue>
+			</Rectangle>
+		</Panel>
+
+		<!-- White rectangle. Button background, and morphs into form background - DUPLICATE THIS FOR LOGIN -->
+		<Rectangle ux:Name="whiteRect" Color="White" LayoutMaster="signupButton" Layer="Background" CornerRadius="25" Opacity="0">
+			<WhileTrue ux:Name="showWhiteRect">
+				<Change whiteRect.Opacity="1" Duration="0.2" />
+			</WhileTrue>
+		</Rectangle>
+		<Attractor ux:Name="whiteRectCornerRadiusAttractor" Target="whiteRect.CornerRadius" Value="25" Type="SmoothSnap" Unit="Points" />
+
+		<Rectangle ux:Name="whiteRect2" Color="White" LayoutMaster="loginButton" Layer="Background" CornerRadius="25" Opacity="0">
+			<WhileTrue ux:Name="showWhiteRect2">
+				<Change whiteRect2.Opacity="1" Duration="0.2" />
+			</WhileTrue>
+		</Rectangle>
+		<Attractor ux:Name="whiteRectCornerRadiusAttractor2" Target="whiteRect2.CornerRadius" Value="25" Type="SmoothSnap" Unit="Points" />
+
+
+		<!-- Logo -->
+		<HidingPanel ux:Name="logoPanel" Alignment="Top" Height="70%" IsEnabled="false" HitTestMode="None" Layer="Background">
+			<StackPanel Alignment="Center">
+				<Image ux:Name="logo" File="icons/mountains.png" Width="50%" />
+				<StackPanel ux:Name="logoMockText">
+					<Rectangle Color="TopGray"  Width="60%" Height="10" CornerRadius="5" Margin="0,40,0,0" />
+					<Rectangle Color="BottomGray" Width="50%" Height="10" CornerRadius="5" Margin="0,16,0,0" />
+				</StackPanel>
+			</StackPanel>
+			<WhileTrue ux:Name="moveLogo">
+				<Change logoMockText.Opacity="0" Duration="0.4" />
+				<Move Target="logo" Y="-0.6" RelativeTo="Size" Duration="0.5" Delay="0.3" Easing="CubicInOut" />
+			</WhileTrue>
+
+			<WhileKeyboardVisible>
+				<Change logoPanel.IsEnabled="false" />
+			</WhileKeyboardVisible>
+		</HidingPanel>
+
+		<!-- Switch between all our states -->
+		<!-- Loading, buttons, forms, main -->
+		<StateGroup ux:Name="state" Transition="Exclusive" Rest="loadingState" Active="{activeState}">
+			<State Name="loadingState">
+				<Set showWhiteRect.Value="false" />
+				<Set showGreenRect.Value="false" />
+				<Change startPanel.IsEnabled="false" DelayBack="0" />
+				<Set moveLogo.Value="false" />
+				<Change loadingPanel.Opacity="1" Duration=".4" />
+				<SendToBack Target="addButtonPanel" />
+			</State>
+			<State Name="loginButtonState">
+				<Move Target="whiteRect" RelativeTo="PositionOffset" RelativeNode="signupButton"
+						Vector="1" Duration="0.2" DurationBack="0" />
+				<Resize Target="whiteRect" RelativeTo="Size" RelativeNode="signupButton"
+						Vector="1" Duration="0.2" DurationBack="0" />
+				<Move Target="whiteRect2" RelativeTo="PositionOffset" RelativeNode="loginButton"
+						Vector="1" Duration="0.2" DurationBack="0" />
+				<Resize Target="whiteRect2" RelativeTo="Size" RelativeNode="loginButton"
+						Vector="1" Duration="0.2" DurationBack="0" />
+				<Move Target="greenRect" RelativeTo="PositionOffset" RelativeNode="submitButtonCollapsed"
+						Vector="1" Duration="0.2" DurationBack="0" />
+				<Resize Target="greenRect" RelativeTo="Size" RelativeNode="submitButtonCollapsed"
+						Vector="1" Duration="0.2" DurationBack="0" />
+
+				<Change loadingPanel.Opacity="0" Duration=".2" />
+				<Set whiteRect.LayoutMaster="signupButton" Delay="0.2" />
+				<Set whiteRect2.LayoutMaster="loginButton" Delay="0.2" />
+				<Set greenRect.LayoutMaster="submitButtonCollapsed" Delay="0.2" />
+
+				<Set whiteRectCornerRadiusAttractor.Value="25" />
+				<Set whiteRectCornerRadiusAttractor2.Value="25" />
+				<Set showGreenRect.Value="false" />
+				<Set showWhiteRect.Value="true" />
+				<Set showWhiteRect2.Value="true" />
+
+				<Change startPanel.IsEnabled="true" DelayBack="0" />
+				<Set moveLogo.Value="false" />
+				<SendToBack Target="addButtonPanel" />
+			</State>
+			<State Name="signupFormState">
+				<Set whiteRectCornerRadiusAttractor.Value="5" />
+				<Move Target="whiteRect" RelativeTo="PositionOffset" RelativeNode="signupForm"
+						Vector="1" Duration="0.4" Delay="0.2" DurationBack="0" Easing="CubicInOut" />
+				<Resize Target="whiteRect" RelativeTo="Size" RelativeNode="signupForm"
+						Vector="1" Duration="0.4" Delay="0.2" DurationBack="0" Easing="CubicInOut" />
+				<Move Target="greenRect" RelativeTo="PositionOffset" RelativeNode="submitButton"
+						Vector="1" Duration="0.4" Delay="0.5" DurationBack="0" Easing="CubicInOut" />
+				<Resize Target="greenRect" RelativeTo="Size" RelativeNode="submitButton"
+						Vector="1" Duration="0.4" Delay="0.5" DurationBack="0" Easing="CubicInOut" />
+
+				<Set whiteRect.LayoutMaster="signupForm" Delay="0.6" />
+				<Set greenRect.LayoutMaster="submitButton" Delay="0.9" />
+
+				<Change signupForm.IsEnabled="true" Delay="0.6" DelayBack="0" />
+				<Change preNav.Visibility="Visible" />
+				<Set showGreenRect.Value="true" Delay="0.5" />
+				<Set showWhiteRect.Value="true" />
+				<Set showWhiteRect2.Value="false" />
+				<Set moveLogo.Value="true" />
+				<Change whiteRect2.Opacity="0" Duration=".2" />
+			</State>
+			<State Name="loginFormState">
+				<Set whiteRectCornerRadiusAttractor2.Value="5" />
+				<Move Target="whiteRect2" RelativeTo="PositionOffset" RelativeNode="loginForm"
+						Vector="1" Duration="0.4" Delay="0.2" DurationBack="0" Easing="CubicInOut" />
+				<Resize Target="whiteRect2" RelativeTo="Size" RelativeNode="loginForm"
+						Vector="1" Duration="0.4" Delay="0.2" DurationBack="0" Easing="CubicInOut" />
+				<Move Target="greenRect" RelativeTo="PositionOffset" RelativeNode="submitButton2"
+						Vector="1" Duration="0.4" Delay="0.5" DurationBack="0" Easing="CubicInOut" />
+				<Resize Target="greenRect" RelativeTo="Size" RelativeNode="submitButton2"
+						Vector="1" Duration="0.4" Delay="0.5" DurationBack="0" Easing="CubicInOut" />
+
+				<Set whiteRect2.LayoutMaster="loginForm" Delay="0.6" />
+				<Set greenRect.LayoutMaster="submitButton" Delay="0.9" />
+
+				<Change loginForm.IsEnabled="true" Delay="0.6" DelayBack="0" />
+				<Change preNav.Visibility="Visible" />
+				<Set showGreenRect.Value="true" Delay="0.5" />
+				<Set showWhiteRect.Value="false" />
+				<Set showWhiteRect2.Value="true" />
+				<Set moveLogo.Value="true" />
+				<Change whiteRect.Opacity="0" Duration=".2" />
+			</State>
+			<State Name="mainState">
+				<Move Target="whiteRect" RelativeTo="PositionOffset" RelativeNode="mainPanel"
+						Vector="1" Duration="0.4" Delay="0.05" Easing="CubicInOut" DurationBack="0" />
+				<Resize Target="whiteRect" RelativeTo="Size" RelativeNode="mainPanel"
+						Vector="1" Duration="0.4" Delay="0.05" Easing="CubicInOut" DurationBack="0" />
+				<Move Target="whiteRect2" RelativeTo="PositionOffset" RelativeNode="mainPanel"
+						Vector="1" Duration="0.4" Delay="0.05" Easing="CubicInOut" DurationBack="0" />
+				<Resize Target="whiteRect2" RelativeTo="Size" RelativeNode="mainPanel"
+						Vector="1" Duration="0.4" Delay="0.05" Easing="CubicInOut" DurationBack="0" />
+				<Move Target="greenRect" RelativeTo="PositionOffset" RelativeNode="addButton"
+						Vector="1" Duration="0.4" Delay="0.4" DurationBack="0" Easing="CubicInOut" />
+				<Resize Target="greenRect" RelativeTo="Size" RelativeNode="addButton"
+						Vector="1" Duration="0.4" Delay="0.4" DurationBack="0" Easing="CubicInOut" />
+
+				<Change whiteRect.Color="ThemeBlue" Duration="0.6" />
+				<Change whiteRect2.Color="ThemeBlue" Duration="0.6" />
+
+				<Set whiteRect.LayoutMaster="mainPanel" Delay="0.45" />
+				<Set whiteRect2.LayoutMaster="mainPanel" Delay="0.45" />
+				<Set greenRect.LayoutMaster="addButton" Delay="0.85" />
+
+				<Change whiteRect.CornerRadius="0" Duration="0.2" DurationBack="0" />
+				<Change whiteRect2.CornerRadius="0" Duration="0.2" DurationBack="0" />
+				<Change logoPanel.IsEnabled="false" />
+				<Scale Target="greenRect" Delay="0.9" Factor="1.2" Duration="0.2" Easing="CubicInOut" />
+				<Set whiteRectCornerRadiusAttractor.Value="0" />
+				<Set whiteRectCornerRadiusAttractor2.Value="0" />
+
+				<Change mainPanel.IsEnabled="true" Delay="0.9" />
+				<Change topPanel.IsEnabled="true" />
+
+				<Change greenRect.Opacity="1" Duration="0" />
+				<Change addButton.IsEnabled="true" Delay="0.5" />
+				<Set showWhiteRect.Value="true" />
+
+				<BringToFront Target="addButtonPanel" />
+			</State>
+		</StateGroup>
+	</ClientPanel>
 </App>
