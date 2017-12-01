@@ -1,0 +1,13 @@
+<Panel ux:Class="MenuAction" Text="" Callback="{logOut}" NavToggle="">
+    <string ux:Property="Text" />
+    <object ux:Property="Callback" />
+    <string ux:Property="NavToggle" />
+
+    <Rectangle Color="White" Opacity=".9" Width="80%" Alignment="Left" Margin="0, 8, 0, 8" Padding="10, 5, 10, 5" Height="40" CornerRadius="5">
+        <Text Value="{ReadProperty Text}" Color="Black" FontSize="16" Alignment="VerticalCenter" />
+        <Clicked>
+            <NavigateToggle Target="{ReadProperty NavToggle}" />
+            <Callback Handler="{ReadProperty Callback}" />
+        </Clicked>
+    </Rectangle>
+</Panel>

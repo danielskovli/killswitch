@@ -19,7 +19,8 @@ var Api = {
         status: 'http://apps.danielskovli.com/killswitch/api/1.0/status/',
         changePassword: 'http://apps.danielskovli.com/killswitch/changePassword.php',
         resetPassword: 'http://apps.danielskovli.com/killswitch/resetPassword.php',
-        deleteAccount: 'http://apps.danielskovli.com/killswitch/deleteUser.php'
+        deleteAccount: 'http://apps.danielskovli.com/killswitch/deleteUser.php',
+        website: 'http://apps.danielskovli.com/killswitch/'
     },
 
 

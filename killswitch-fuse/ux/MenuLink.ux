@@ -1,0 +1,12 @@
+<Panel ux:Class="MenuLink" Text="" URL="">
+    <string ux:Property="Text" />
+    <string ux:Property="URL" />
+    <string ux:Property="Callback" />
+
+    <Rectangle Color="White" Opacity=".9" Width="80%" Alignment="Left" Margin="0, 8, 0, 8" Padding="10, 5, 10, 5" Height="40" CornerRadius="5">
+        <Text Value="{ReadProperty Text}" Color="Black" FontSize="16" Alignment="VerticalCenter" />
+        <Clicked>
+            <LaunchUri Uri="{ReadProperty URL}" />
+        </Clicked>
+    </Rectangle>
+</Panel>
