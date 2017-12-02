@@ -46,7 +46,7 @@ var Api = {
                 });
             }
             Api.busy = false;
-            Api._callSubscribers();
+            Api._callSubscribers('addUser');
         }).catch(Api._handleThrows);
     },
 
@@ -73,7 +73,7 @@ var Api = {
                 });
             }
             Api.busy = false;
-            Api._callSubscribers();
+            Api._callSubscribers('login');
         }).catch(Api._handleThrows);
     },
 
@@ -87,9 +87,10 @@ var Api = {
             Api.lastError = response.error;
             if (!response.error) {
                 Api._killswitch = response.killswitch;
+                Api.authenticated = true;
             }
             Api.busy = false;
-            Api._callSubscribers();
+            Api._callSubscribers('update');
         }).catch(Api._handleThrows);
     },
 
@@ -105,9 +106,10 @@ var Api = {
             Api.lastError = response.error;
             if (!response.error) {
                 Api._killswitch = response.killswitch;
+                Api.authenticated = true;
             }
             Api.busy = false;
-            Api._callSubscribers();
+            Api._callSubscribers('killswitch');
         }).catch(Api._handleThrows);
     },
     get killswitch() {
@@ -124,12 +126,18 @@ var Api = {
         // 409: Conflict (User already exists)
         // 500: Server error
 
+        // Check if user has been logged out
+        if (response.status == 401) {
+            Api.authenticated = false;
+        }
+
         // Only check for 404 and 500 now, as they are the ones that don't return a JSON object
         if (response.status == 404 || response.status == 500) {
             Api.lastError = 'Server error';
-            Api._callSubscribers();
+            Api._callSubscribers('_handleErrors');
         }
 
+        // Deal with the rest once the promise resolves into a JSON object
         return response.json();
     },
 
@@ -139,16 +147,15 @@ var Api = {
         // Ignore the actual error for now, it should in general boil down to the same thing
         Api.lastError = 'Network unreachable';
         Api.busy = false;
-        Api._callSubscribers();
+        Api._callSubscribers('_handleThrows');
     },
 
 
     // Call subscribers
-    _callSubscribers: function() {
+    _callSubscribers: function(sender) {
         Api.subscribers.forEach(function(entry) {
             if (typeof entry == 'function') { 
-                //console.log('-- Calling subscriber function');
-                entry(); 
+                entry(sender); 
             }
         });
     }
