@@ -35,8 +35,11 @@ Payload: {
 }
 
 Output: {
-  'error': (bool|string) false|error description,
-  'token': (string) security token used for all other api calls
+  'error':      (bool|string) false|error description,
+  'token':      (string) security token used for all other api calls,
+  'name':       (string) the user's real name, for your pretty gui needs,
+  'username':   (string) the user's username,
+  'killswitch': (bool) the current killswitch state (inits as false for new users)
 }
 
 HTTP codes:
