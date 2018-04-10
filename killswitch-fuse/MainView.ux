@@ -1,295 +1,5 @@
 <App>
-	<JavaScript>
-		// The frameworks
-        var Observable = require("FuseJS/Observable");
-        var Api = require("js/api.js");
-        var md5 = require("js/md5.js");
-
-        // UX bindings
-        var sessionName = Observable();
-        var sessionUsername = Observable();
-        var sessionToken = Observable();
-        var apiBusy = Observable();
-        var apiError = Observable();
-        var apiKillswitch = Observable();
-        var apiAuthenticated = Observable();
-		var apiUrls = Observable(Api.urls);
-		var activeState = Observable("");
-		var statusOutputText = Observable("");
-		var statusTextAnimateJS = Observable(false);
-		var signupName = Observable();
-		var signupEmail = Observable();
-		var signupPassword = Observable();
-		var loginEmail = Observable();
-		var loginPassword = Observable();
-		var statusTextDelayedText = "";
-		var hideStatus = false;
-
-
-		// Init the status text field
-		setStatusText('');
-
-        // Subscriber for the API (updating UX binds - couldn't find another way to do this)
-        Api.subscribers.push(updateBindings);
-		Api.subscribers.push(navigate);
-
-		// Primarily deals with updating UX bindings (though a tad of navigation occurs)
-		function updateBindings() {
-			sessionName.value = Api.session.name;
-            sessionUsername.value = Api.session.username;
-            sessionToken.value = Api.session.token;
-            apiBusy.value = Api.busy;
-            apiError.value = Api.lastError;
-            apiKillswitch.value = Api.killswitch;
-            apiAuthenticated.value = Api.authenticated;
-
-			// Status text
-			// .busy means we called updateBindings() manually - probably to push out something to the UX
-			if (Api.lastError && !Api.busy) { 
-				setStatusText('Error: ' + Api.lastError);
-				console.log(Api.lastError);
-			} else if (!Api.lastError && !Api.busy) {
-				setStatusText('');
-			}
-		}
-
-		// Primarily deals with (delayed) navigation
-		function navigate(sender) {
-			
-			// Callback after Api.addUser() completes
-			if (sender == 'addUser') {
-
-				// Reset status text tracking
-				statusTextAnimateJS.value = false;
-				hideStatus = false;
-
-				if (Api.lastError) {
-					return; // Error display dealt with elsewhere
-				}
-
-				// Navigate if required
-				if (activeState.value != 'mainState') {
-					activeState.value = 'mainState';
-				}
-				return;
-			}
-
-			// Callback after Api.login() completes
-			if (sender == 'login') {
-
-				// Reset status text tracking
-				statusTextAnimateJS.value = false;
-				hideStatus = false;
-
-				if (Api.lastError) {
-					return; // Error display dealt with elsewhere
-				}
-
-				// Navigate if required
-				if (activeState.value != 'mainState') {
-					activeState.value = 'mainState';
-				}
-				return;
-			}
-
-			// Callback after Api.update() completes
-			if (sender == 'update') {
-
-				// Reset status text tracking
-				statusTextAnimateJS.value = false;
-				hideStatus = false;
-
-				if (Api.lastError) {
-					return; // Error display dealt with elsewhere
-				}
-
-				// Navigate if required
-				if (activeState.value != 'mainState') {
-					activeState.value = 'mainState';
-				}
-				return;
-			}
-
-			// Session has expired
-			if (!Api.authenticated && !Api.busy) {
-				activeState.value = 'loginButtonState';
-				setStatusText('Session expired. Please log in again');
-			}
-		}
-
-		// Button based navigation
-		function changeState(args) {
-			//console.log(args.sender);
-			if (args.sender == 'signupButton') {
-				activeState.value = 'signupFormState';
-			} else if (args.sender == 'loginButton') {
-				activeState.value = 'loginFormState';
-			} else if (args.sender == 'signupButtonOK') {
-				// do an actual signup here
-				//activeState.value = 'mainState';
-				signup();
-				//setStatusText('');
-			} else if (args.sender == 'loginButtonOK') {
-				// do an actual login here
-				//activeState.value = 'mainState';
-				login();
-				//setStatusText('');
-			} else if (args.sender == 'signupButtonCancel' || args.sender == 'loginButtonCancel') {
-				activeState.value = 'loginButtonState';
-				setStatusText('');
-			}
-		}
-
-		// ChangeState callback (because it won't always take place from a button click)
-		function changeStateCallback() {
-			if (activeState.value == 'signupFormState') {
-				setStatusText('Create a Killswitch account');
-			} else if (activeState.value == 'loginFormState') {
-				setStatusText('Sign in to your Killswitch account');
-			} else if (activeState.value == 'loginButtonState' || activeState.value == 'loadingPanel' || activeState.value == 'mainState') {
-				//setStatusText('');
-			} else if (activeState.value == 'mainState') {
-				//refresh();
-			}
-		}
-
-		// Sets the status text
-		function setStatusText(text) {
-			console.log('setting status to: ' + text);
-			statusTextAnimateJS.value = true;
-			statusTextDelayedText = text;
-		}
-
-		// Resets the status text animation back to a resting state
-		function resetStatusAnim() {
-			if (!hideStatus) {
-				statusTextAnimateJS.value = false;
-				statusOutputText.value = statusTextDelayedText;
-			}
-		}
-
-		// Sign up
-		function signup() {
-			var email = signupEmail.value.trim();
-			var name = signupName.value.trim();
-			var password = signupPassword.value.trim();
-
-			if (email.length == 0) {
-				setStatusText('An email address is required');
-				return;
-			}
-			if (name.length == 0) {
-				setStatusText('You forgot to fill in your name');
-				return;
-			}
-			if (password.length == 0) {
-				setStatusText('A password is required');
-				return;
-			}
-
-			apiBusy.value = true;
-			statusTextAnimateJS.value = true;
-			hideStatus = true;
-			password = md5(password);
-			Api.addUser(name, email, password);
-		}
-
-		// Login
-		function login() {
-			var email = loginEmail.value.trim();
-			var password = loginPassword.value.trim();
-
-			if (email.length == 0) {
-				setStatusText('An email address is required');
-				return;
-			}
-			if (password.length == 0) {
-				setStatusText('A password is required');
-				return;
-			}
-
-			apiBusy.value = true;
-			statusTextAnimateJS.value = true;
-			hideStatus = true;
-			password = md5(password);
-			Api.login(email, password);
-		}
-
-		// Log out
-		function logOut() {
-			console.log('trying to log out...');
-			Api.session.clear();
-			Api.authenticated = false;
-			activeState.value = 'loginButtonState';
-			updateBindings();
-		}
-
-		// User clicked the killswitch lock icon
-		function killswitchClick() {
-			Api.killswitch = !Api.killswitch;
-			updateBindings();
-		}
-
-		// Refresh API and UX
-		function refresh() {
-			Api.update();
-			updateBindings();
-		}
-
-		//temp
-		function dummy() {
-			apiBusy.value = true;
-			statusTextAnimateJS.value = true;
-			hideStatus = true;
-			setTimeout(function(){ 
-				apiBusy.value = false;
-				statusTextAnimateJS.value = false;
-				hideStatus = false;
-				activeState.value = 'mainState';
-			}, 4000);
-		}
-
-		// Check if we have a valid session
-        if (Api.session.token != '') {
-            console.log('Found token, refreshing data');
-            Api.update();
-			updateBindings();
-        } else {
-            console.log('Need to log in');
-			activeState.value = 'loginButtonState';
-        }
-
-		// Lastly, update the bindings
-		updateBindings();
-
-
-        // Export UX bindings
-        module.exports = {
-            sessionName: sessionName,
-            sessionUsername: sessionUsername,
-            sessionToken: sessionToken,
-            apiBusy: apiBusy,
-            apiError: apiError,
-            apiKillswitch: apiKillswitch,
-            apiAuthenticated: apiAuthenticated,
-			activeState: activeState,
-			changeState: changeState,
-			statusOutputText: statusOutputText,
-			changeStateCallback: changeStateCallback,
-			statusTextAnimateJS: statusTextAnimateJS,
-			resetStatusAnim: resetStatusAnim,
-			apiUrls: apiUrls,
-			logOut: logOut,
-			killswitchClick: killswitchClick,
-			refresh: refresh,
-			signupName: signupName,
-			signupEmail: signupEmail,
-			signupPassword: signupPassword,
-			loginEmail: loginEmail,
-			loginPassword: loginPassword
-        };
-
-	</JavaScript>
+	<JavaScript File="js/mainview.js" />
 	<Fuse.iOS.StatusBarConfig Style="Light" />
 
 	<ClientPanel Color="ThemeBlue">
@@ -299,16 +9,18 @@
 			<Panel ux:Name="sidebar" Edge="Left" Width="100%" Margin="0,0,56,0" Background="#37474F" Opacity=".95">
 				<Shadow ux:Name="shadow" Angle="180" Distance="8" Size="16" Color="#0000" />
 				<StackPanel Padding="10">
+					<Text Value="Logged in as:" Color="White" FontSize="12" Margin="0,0,0,10" Alignment="VerticalCenter" />
 					<Text Value="{sessionName}" Color="White" FontSize="14" Alignment="VerticalCenter" />				
 					<Text Value="{sessionUsername}" Color="White" FontSize="14" Alignment="VerticalCenter" />
-					<TextSeparator Margin="0, 15, 0, 20" Color="#ffffff" />
-					<MenuLink Text="Change password" URL="{apiUrls.changePassword}" />
+					<TextSeparator Margin="0, 30, 0, 20" Color="#ffffff" />
 					<MenuAction Text="Log out" Callback="{logOut}" NavToggle="sidebar" />
+					<MenuLink Text="Change password" URL="{apiUrls.changePassword}" />
 					<MenuLink Text="Delete account" URL="{apiUrls.deleteAccount}" />
+					<MenuLink Text="Download PC app" URL="{apiUrls.download}" />
 					<MenuLink Text="Killswitch website" URL="{apiUrls.website}" />
 				</StackPanel>
 				<Panel Alignment="Bottom">
-					<Text Value="Version: 1.0" Color="White" FontSize="11" Margin="10, 20, 0, 20" Alignment="Bottom" />
+					<Text Value="Killswitch v{appVersion},   Daniel Skovli © {currentYear}" Color="White" FontSize="12" TextAlignment="Left" Margin="10, 20, 0, 10" Alignment="Bottom" />
 				</Panel>
 				<ActivatingAnimation>
 					<Change shadow.Color="#0004" />
@@ -354,33 +66,25 @@
 					<!-- Main feed -->
 					<DockPanel>
 						<Rectangle ux:Name="sidebarFade" Layer="Overlay" Color="#0005" Opacity="0" HitTestMode="None" />
-						<HidingPanel ux:Name="mainPanel" Opacity="0">
+						<HidingPanel ux:Name="mainPanel">
 							<Clicked>
 								<Callback Handler="{killswitchClick}" />
 							</Clicked>
 							<WhileTrue Value="{apiBusy}">
-								<Change mainPanel.Opacity="0.2" Duration="0.2" />
-								<!-- <Scale Factor="0" Duration=".1" /> -->
-								<!-- <Change loadingPanel.Opacity="1" Duration=".1" /> -->
+								<Change mainPanel.HitTestMode="None"/>
+								<Change mainPanelLock.Opacity="0.2" Duration="0.2" />
+								<Blur Radius="2" /> 
 							</WhileTrue>
-							<WhileTrue Value="{apiKillswitch}">
-								<StackPanel Alignment="Top">
-									<Image ux:Name="lockIcon" File="icons/locked_290px.png" Width="290" Margin="0, 100, 0, 0" />
+							<StackPanel ux:Name="mainPanelLock" Alignment="Top">
+								<WhileTrue Value="{apiKillswitch}">
+									<Image ux:Name="lockIcon" File="icons/locked_600px.png" Width="290" Margin="0, 100, 0, 0" />
 									<Text Value="Tap to unlock" TextAlignment="Center" Color="White" FontSize="20" Margin="0,20,0,0" />
-								</StackPanel>
-								<WhileTrue Value="{apiBusy}">
-									<Change loadingPanel.LayoutMaster="lockIcon" />
 								</WhileTrue>
-							</WhileTrue>
-							<WhileFalse Value="{apiKillswitch}">
-								<StackPanel Alignment="Top">
-									<Image ux:Name="unlockIcon" File="icons/unlocked_290px.png" Width="290" Margin="0, 100, 0, 0" />
+								<WhileFalse Value="{apiKillswitch}">
+									<Image ux:Name="unlockIcon" File="icons/unlocked_600px.png" Width="290" Margin="0, 100, 0, 0" />
 									<Text Value="Tap to lock" TextAlignment="Center" Color="White" FontSize="20" Margin="0,20,0,0" />
-								</StackPanel>
-								<WhileTrue Value="{apiBusy}">
-									<Change loadingPanel.LayoutMaster="unlockIcon" />
-								</WhileTrue>
-							</WhileFalse>
+								</WhileFalse>
+							</StackPanel>
 						</HidingPanel>
 					</DockPanel>
 			</HidingPanel>
@@ -395,28 +99,37 @@
 
 		<!-- Status text (bottom screen) -->
 		<Panel ux:Name="statusOutput" Visibility="Hidden" Height="25" Padding="0, 0, 0, 20" Alignment="Bottom" Opacity="1">
-			<Text ux:Name="statusOutputText" Value="{statusOutputText}" Color="#ffffff" FontSize="15" Alignment="TopCenter" />
-			<WhileTrue Value="{statusTextAnimateJS}">
-				<Move Y="30" Duration=".2" />
-				<!-- <Change statusOutput.Opacity="0" Duration="0.2" /> -->
-				<!-- <WhileFalse Value="{statusTextHideJS}"> -->
-					<Callback Handler="{resetStatusAnim}" Delay=".2" />
-				<!-- </WhileFalse> -->
-			</WhileTrue>
-			<WhileFalse Value="{statusTextAnimateJS}">
-				<Move Y="0" Duration=".2" />
-				<!-- <Change statusOutput.Opacity="1" Duration="0.2" /> -->
-			</WhileFalse>
+			<Each Items="{statusOutputText}">
+				<Text ux:Name="text" Value="{data()}" Alignment="Center" Color="#ffffff" FontSize="15">
+					<AddingAnimation>
+						<Move Y="30" Duration="0.3" Easing="CubicIn" />
+						<Change text.Opacity="0" Duration="0.2" />
+					</AddingAnimation>
+					<RemovingAnimation>
+						<Move Y="-30" Duration="0.3" Easing="CubicOut" />
+						<Change text.Opacity="0" Duration="0.2" />
+					</RemovingAnimation>
+				</Text>
+			</Each>
+			<WhileKeyboardVisible>
+				<Change statusOutput.Opacity="0" />
+			</WhileKeyboardVisible>
 		</Panel>
 
 		<!-- Sign up form -->
-		<HidingPanel ux:Name="signupForm" Width="90%" Height="45%" Offset="0%,10%">
+		<HidingPanel ux:Name="signupForm" Width="90%" Height="45%" Offset="0%,2%">
 			<Grid RowCount="3" Margin="30,40,30,70">
-				<TextInput ux:Name="signupName" PlaceholderText="Name" Value="{signupName}" Opacity="1" Alignment="VerticalCenter" PlaceholderColor="#888" />
+				<TextInput ux:Name="signupName" ActionStyle="Next" PlaceholderText="Name" Value="{signupName}" Opacity="1" Alignment="VerticalCenter" PlaceholderColor="#888" />
 				<TextSeparator />
-				<TextInput ux:Name="signupEmail" PlaceholderText="Email" Value="{signupEmail}" InputHint="Email" Opacity="1" Alignment="VerticalCenter" PlaceholderColor="#888" />
+				<TextInput ux:Name="signupEmail" ActionStyle="Next" PlaceholderText="Email" Value="{signupEmail}" InputHint="Email" Opacity="1" Alignment="VerticalCenter" PlaceholderColor="#888" />
 				<TextSeparator />
-				<TextInput ux:Name="signupPassword" IsPassword="true" Value="{signupPassword}" PlaceholderText="Password" Opacity="1" Alignment="VerticalCenter" PlaceholderColor="#888" />
+				<TextInput ux:Name="signupPassword" ActionStyle="Default" IsPassword="true" Value="{signupPassword}" PlaceholderText="Password" Opacity="1" Alignment="VerticalCenter" PlaceholderColor="#888">
+					<WhileContainsText>
+						<OnKeyPress Key="Enter">
+							<Callback Handler="{signup}" />
+						</OnKeyPress>
+					</WhileContainsText>
+				</TextInput>
 				<TextSeparator />
 			</Grid>
 			<WhileEnabled>
@@ -424,6 +137,7 @@
 				<Change signupEmail.Opacity="1" Duration="0.4" Delay="0.15" />
 				<Change signupPassword.Opacity="1" Duration="0.4" Delay="0.3" />
 				<Change loadingPanel.LayoutMaster="signupForm" />
+				<GiveFocus Target="signupName" />
 				
 				<WhileTrue Value="{apiBusy}">
 					<Change signupForm.Opacity="0.2" Duration="0.2" />
@@ -433,6 +147,7 @@
 					<Change signupButtonCancel.IsEnabled="false" />
 					<Change signupButtonOK.Opacity="0.2" Duration="0.2" />
 					<Change signupButtonCancel.Opacity="0.2" Duration="0.2" />
+					<Blur Radius="2" />
 					<!-- <Scale Factor="0" Duration=".1" /> -->
 					<!-- <Change loadingPanel.Opacity="1" Duration=".1" /> -->
 				</WhileTrue>
@@ -440,15 +155,15 @@
 			<Panel>
 				<StackPanel Orientation="Horizontal" Alignment="BottomCenter" ItemSpacing="20">
 					<Panel ux:Name="signupButtonOK" Width="100" Offset="0%,50%" Height="40" HitTestMode="LocalBoundsAndChildren">
-						<Rectangle Color="Green" CornerRadius="10">
+						<Rectangle Color="LoginButtons" CornerRadius="8">
 							<Text Value="DONE" Alignment="Center" Color="White" />
 						</Rectangle>
 						<Clicked>
-							<Callback Handler="{changeState}" />
+							<Callback Handler="{signup}" />
 						</Clicked>
 					</Panel>
 					<Panel ux:Name="signupButtonCancel" Width="100" Offset="0%,50%" Height="40" HitTestMode="LocalBoundsAndChildren">
-						<Rectangle Color="Green" CornerRadius="10">
+						<Rectangle Color="LoginButtons" CornerRadius="8">
 							<Text Value="CANCEL" Alignment="Center" Color="White" />
 						</Rectangle>
 						<Clicked>
@@ -460,26 +175,34 @@
 		</HidingPanel>
 
 		<!-- Login form -->
-		<HidingPanel ux:Name="loginForm" Width="90%" Height="35%" Offset="0%,10%">
+		<HidingPanel ux:Name="loginForm" Width="90%" Height="35%" Offset="0%,6%">
 			<Grid RowCount="2" Margin="30,40,30,70">
-				<TextInput ux:Name="loginEmail" PlaceholderText="Email" Value="{loginEmail}" InputHint="Email" Opacity="1" Alignment="VerticalCenter" PlaceholderColor="#888" />
+				<TextInput ux:Name="loginEmail" ActionStyle="Default" PlaceholderText="Email" Value="{loginEmail}" InputHint="Email" Opacity="1" Alignment="VerticalCenter" PlaceholderColor="#888" />
 				<TextSeparator />
-				<TextInput ux:Name="loginPassword" IsPassword="true" Value="{loginPassword}" PlaceholderText="Password" Opacity="1" Alignment="VerticalCenter" PlaceholderColor="#888" />
+				<TextInput ux:Name="loginPassword" ActionStyle="Default" IsPassword="true" Value="{loginPassword}" PlaceholderText="Password" Opacity="1" Alignment="VerticalCenter" PlaceholderColor="#888">
+					<WhileContainsText>
+						<OnKeyPress Key="Enter">
+							<Callback Handler="{login}" />
+						</OnKeyPress>
+					</WhileContainsText>
+				</TextInput>
 				<TextSeparator />
 			</Grid>
 			<WhileEnabled>
 				<Change loginEmail.Opacity="1" Duration="0.4" />
 				<Change loginPassword.Opacity="1" Duration="0.4" Delay="0.3" />
 				<Change loadingPanel.LayoutMaster="loginForm" />
+				<!-- <GiveFocus Target="loginEmail" /> -->
 				
 				<WhileTrue Value="{apiBusy}">
-					<Change loginForm.Opacity="0.2" Duration="0.2" />
+					<Change loginForm.Opacity="0.3" Duration="0.2" />
 					<Change showWhiteRectLogin.Value="false" />
-					<Change whiteRectLogin.Opacity="0.2" Duration="0.2" />
+					<Change whiteRectLogin.Opacity="0.3" Duration="0.2" />
 					<Change loginButtonOK.IsEnabled="false" />
 					<Change loginButtonCancel.IsEnabled="false" />
-					<Change loginButtonOK.Opacity="0.2" Duration="0.2" />
-					<Change loginButtonCancel.Opacity="0.2" Duration="0.2" />
+					<Change loginButtonOK.Opacity="0.3" Duration="0.2" />
+					<Change loginButtonCancel.Opacity="0.3" Duration="0.2" />
+					<Blur Radius="2" />
 					<!-- <Scale Factor="0" Duration=".1" /> -->
 					<!-- <Change loadingPanel.Opacity="1" Duration=".1" /> -->
 				</WhileTrue>
@@ -487,15 +210,15 @@
 			<Panel>
 				<StackPanel Orientation="Horizontal" Alignment="BottomCenter" ItemSpacing="20">
 					<Panel ux:Name="loginButtonOK" Width="100" Offset="0%,50%" Height="40" HitTestMode="LocalBoundsAndChildren">
-						<Rectangle Color="Green" CornerRadius="10">
+						<Rectangle Color="LoginButtons" CornerRadius="8">
 							<Text Value="DONE" Alignment="Center" Color="White" />
 						</Rectangle>
 						<Clicked>
-							<Callback Handler="{changeState}" />
+							<Callback Handler="{login}" />
 						</Clicked>
 					</Panel>
 					<Panel ux:Name="loginButtonCancel" Width="100" Offset="0%,50%" Height="40" HitTestMode="LocalBoundsAndChildren">
-						<Rectangle Color="Green" CornerRadius="10">
+						<Rectangle Color="LoginButtons" CornerRadius="8">
 							<Text Value="CANCEL" Alignment="Center" Color="White" />
 						</Rectangle>
 						<Clicked>
@@ -504,10 +227,17 @@
 					</Panel>
 				</StackPanel>
 			</Panel>
+			<Panel>
+				<Text ux:Name="forgotPasswordText" HitTestMode="LocalBoundsAndChildren" Value="Forgotten your password? Click here" Alignment="BottomCenter" Offset="0, 90" Color="#ffffff" FontSize="15">
+					<Clicked>
+						<LaunchUri Uri="{apiUrls.resetPassword}" />
+					</Clicked>
+				</Text>
+			</Panel>
 		</HidingPanel>
 
 		<!-- Log in / sign up buttons -->
-		<HidingPanel ux:Name="startPanel" Alignment="Bottom" Height="50%" Padding="15,0,15,15">
+		<HidingPanel ux:Name="startPanel" Alignment="Bottom" Height="35%" Padding="15,0,15,15">
 			<StackPanel ItemSpacing="20">
 				<Panel ux:Name="loginButton" Width="120" Height="35" Alignment="Top" HitTestMode="LocalBounds">
 					<Text Value="LOG IN" Alignment="Center" Color="#000000" HitTestMode="LocalBounds" />
@@ -529,6 +259,9 @@
 			<WhileTrue ux:Name="showWhiteRectSignup">
 				<Change whiteRectSignup.Opacity="1" Duration="0.2" />
 			</WhileTrue>
+			<WhileTrue Value="{apiBusy}">
+				<Blur Radius="3" />
+			</WhileTrue>
 		</Rectangle>
 		<Attractor ux:Name="whiteRectSignupCornerRadiusAttractor" Target="whiteRectSignup.CornerRadius" Value="25" Type="SmoothSnap" Unit="Points" />
 
@@ -536,17 +269,16 @@
 			<WhileTrue ux:Name="showWhiteRectLogin">
 				<Change whiteRectLogin.Opacity="1" Duration="0.2" />
 			</WhileTrue>
+			<WhileTrue Value="{apiBusy}">
+				<Blur Radius="3" />
+			</WhileTrue>
 		</Rectangle>
 		<Attractor ux:Name="whiteRectLoginCornerRadiusAttractor" Target="whiteRectLogin.CornerRadius" Value="25" Type="SmoothSnap" Unit="Points" />
 
 		<!-- Logo -->
-		<HidingPanel ux:Name="logoPanel" Alignment="Top" Height="50%" IsEnabled="false" HitTestMode="None" Layer="Background">
+		<HidingPanel ux:Name="logoPanel" Alignment="Top" Height="65%" IsEnabled="false" HitTestMode="None" Layer="Background">
 			<StackPanel Alignment="Center">
-				<Image ux:Name="logo" File="icons/locked_180px.png" Width="180" />
-				<!-- <StackPanel ux:Name="logoMockText">
-					<Rectangle Color="TopGray"  Width="60%" Height="10" CornerRadius="5" Margin="0,40,0,0" />
-					<Rectangle Color="BottomGray" Width="50%" Height="10" CornerRadius="5" Margin="0,16,0,0" />
-				</StackPanel> -->
+				<Image ux:Name="logo" File="icons/locked_450px.png" Width="180" />
 			</StackPanel>
 			<WhileTrue ux:Name="moveLogo">
 				<!-- <Move Target="logo" Y="-0.4" RelativeTo="Size" Duration="0.5" Delay="0.3" Easing="CubicInOut" /> -->
@@ -569,7 +301,7 @@
 				<Change statusOutput.Visibility="Visible" />
 			</State>
 			<State Name="loginButtonState">
-				<Change mainPanel.Opacity="0" Duration=".5" />
+				<Change mainPanel.Opacity="0" Duration=".3" />
 				<Callback Handler="{changeStateCallback}" />
 				<Move Target="whiteRectSignup" RelativeTo="PositionOffset" RelativeNode="signupButton"
 						Vector="1" Duration="0.2" DurationBack="0" />
@@ -602,6 +334,11 @@
 						Vector="1" Duration="0.4" Delay="0.2" DurationBack="0" Easing="CubicInOut" />
 				<Resize Target="whiteRectSignup" RelativeTo="Size" RelativeNode="signupForm"
 						Vector="1" Duration="0.4" Delay="0.2" DurationBack="0" Easing="CubicInOut" />
+
+				<Set statusOutput.Opacity="0" />
+				<Change statusOutput.Opacity="1" Duration="0.2" Delay="0.6" DelayBack="0" DurationBack="0" />
+				<Move Target="statusOutput" RelativeTo="PositionOffset" RelativeNode="signupForm"
+						Y="1.05" Duration="0" DurationBack="0" DelayBack="0.6" />
 				
 				<!-- <Move Target="statusOutput" RelativeTo="PositionOffset" RelativeNode="signupForm"
 						Vector="1" Duration="1" Delay="0" Easing="CubicInOut" DurationBack="0" Y="500" /> -->
@@ -614,7 +351,6 @@
 				<Set showWhiteRectSignup.Value="true" />
 				<Set showWhiteRectLogin.Value="false" />
 				<Set moveLogo.Value="true" />
-				
 			</State>
 			<State Name="loginFormState">
 				<Callback Handler="{changeStateCallback}" />
@@ -623,6 +359,11 @@
 						Vector="1" Duration="0.4" Delay="0.2" DurationBack="0" Easing="CubicInOut" />
 				<Resize Target="whiteRectLogin" RelativeTo="Size" RelativeNode="loginForm"
 						Vector="1" Duration="0.4" Delay="0.2" DurationBack="0" Easing="CubicInOut" />
+
+				<Set statusOutput.Opacity="0" />
+				<Change statusOutput.Opacity="1" Duration="0.2" Delay="0.6" DelayBack="0" DurationBack="0" />
+				<Move Target="statusOutput" RelativeTo="PositionOffset" RelativeNode="loginForm"
+						Y="1.06" Duration="0" DurationBack="0" DelayBack="0.6" />
 				
 				<Set whiteRectLogin.LayoutMaster="loginForm" Delay="0.6" />
 
@@ -657,14 +398,15 @@
 				<Set whiteRectSignupCornerRadiusAttractor.Value="0" />
 				<Set whiteRectLoginCornerRadiusAttractor.Value="0" />
 
-				<Change mainPanel.IsEnabled="true" Delay="0.9" />
+				<Change mainPanel.IsEnabled="true" Delay="0.5" />
+				<!-- <Change mainPanel.Opacity="1" Duration=".3" Delay=".3" /> -->
 				<Change topPanel.IsEnabled="true" />
 				<Change edgeNav.IsEnabled="true" />
 
 				<Set showWhiteRectSignup.Value="true" Delay="2" />
 				<Set showWhiteRectLogin.Value="true" Delay="2" />
 				<Change statusOutput.Visibility="Visible" />
-				<Set mainPanel.Opacity="1" />
+				<!-- <Set mainPanel.Opacity="1" /> -->
 			</State>
 		</StateGroup>
 	</ClientPanel>

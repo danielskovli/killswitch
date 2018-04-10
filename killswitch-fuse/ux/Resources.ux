@@ -7,4 +7,5 @@
 	<float4 ux:Global="TopGray"    ux:Value="#9F83BD"/>
 	<float4 ux:Global="BottomGray" ux:Value="#7E58A7"/>
 	<float4 ux:Global="ThemeBlue"  ux:Value="#609ccc"/>
+	<float4 ux:Global="LoginButtons" ux:Value="#1b6199"/>
 </ux:Resources>

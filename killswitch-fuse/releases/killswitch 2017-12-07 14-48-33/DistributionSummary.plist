@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>killswitch.ipa</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>armv7</string>
+				<string>arm64</string>
+			</array>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>105618217D0175C1A8DC3B5793F28597DBCDB09E</string>
+				<key>dateExpires</key>
+				<string>7/12/18</string>
+				<key>type</key>
+				<string>iOS Distribution</string>
+			</dict>
+			<key>entitlements</key>
+			<dict>
+				<key>application-identifier</key>
+				<string>E467X6539H.com.danielskovli.killswitch</string>
+				<key>com.apple.developer.team-identifier</key>
+				<string>E467X6539H</string>
+				<key>get-task-allow</key>
+				<false/>
+			</dict>
+			<key>name</key>
+			<string>killswitch.app</string>
+			<key>profile</key>
+			<dict>
+				<key>UUID</key>
+				<string>5e6d5df1-2c59-4c3a-bd94-4a040323cc83</string>
+				<key>name</key>
+				<string>iOS Team Ad Hoc Provisioning Profile: com.danielskovli.killswitch</string>
+			</dict>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>E467X6539H</string>
+				<key>name</key>
+				<string>Daniel Skovli</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>

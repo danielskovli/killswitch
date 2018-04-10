@@ -22,7 +22,7 @@ enum KillAction : String {
     case sleep = "Sleep"
     case shutdown = "Shutdown"
     
-    static let allValues = [lock, logout, sleep, shutdown] // this is BS, but swift won't let you iterate over enum
+    static let allValues = [lock, logout, sleep, shutdown] // this is BS, but swift won't let you iterate over enums
 }
 
 
@@ -88,32 +88,39 @@ class Listener {
         Alamofire.request(self.url).responseJSON { response in
             if let json = response.result.value {
                 let parsed = json as! NSDictionary
-                let killswitch = parsed["killswitch"] as! Bool
-                
-                // Do the actual work, as decided by the user (`self.action`)
-                if (killswitch) {
-                    switch (self.action) {
-                        case .lock:
-                            print("Locking system")
-                            self.Shell("pmset displaysleepnow")
-                            break
-                        
-                        case .shutdown:
-                            print("Shutting down")
-                            self.shutdown(command: kAEShutDown)
-                            break
-                        
-                        case .logout:
-                            print("Logging out")
-                            //self.Shell("/System/Library/CoreServices/Menu\\ Extras/User.menu/Contents/Resources/CGSession -suspend")
-                            self.shutdown(command: kAEReallyLogOut)
-                            break
-                        
-                        case .sleep:
-                            print("Sleeping")
-                            self.shutdown(command: kAESleep)
-                            break
+                let error = parsed["error"] as! String
+                if (error == "false") {
+                    let killswitch = parsed["killswitch"] as! Bool
+                    self.ad.authenticated = true
+                    
+                    // Do the actual work, as decided by the user (`self.action`)
+                    if (killswitch) {
+                        switch (self.action) {
+                            case .lock:
+                                print("Locking system")
+                                self.Shell("pmset displaysleepnow")
+                                break
+                            
+                            case .shutdown:
+                                print("Shutting down")
+                                self.shutdown(command: kAEShutDown)
+                                break
+                            
+                            case .logout:
+                                print("Logging out")
+                                //self.Shell("/System/Library/CoreServices/Menu\\ Extras/User.menu/Contents/Resources/CGSession -suspend")
+                                self.shutdown(command: kAEReallyLogOut)
+                                break
+                            
+                            case .sleep:
+                                print("Sleeping")
+                                self.shutdown(command: kAESleep)
+                                break
+                        }
                     }
+                } else {
+                    self.ad.status = error as NSString
+                    self.ad.authenticated = false
                 }
             } else {
                 self.ad.status = "Server unreachable..."

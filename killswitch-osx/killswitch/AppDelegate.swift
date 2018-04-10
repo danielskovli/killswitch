@@ -22,10 +22,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var startStopButton: NSMenuItem!
     var isRunning : Bool = false
     let defaults = UserDefaults.standard
+    var authenticated = false;
     
     // Listener object
     var listener : Listener!
-    let listenURL = "http://danielskovli.com/killswitch/"
+    let listenURL = "http://apps.danielskovli.com/killswitch/api/1.0/status/"
     var token = "nothing"
     
     
@@ -35,7 +36,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             Register and style the status bar entry
         */
         self.statusItem = NSStatusBar.system.statusItem(withLength: -1)
-        self.statusItem?.image = NSImage(named: NSImage.Name(rawValue: "StatusIcon"))
+        self.statusItem?.image = NSImage(named: NSImage.Name(rawValue: "StatusIconDisabled"))
 
         // image should be set as tempate so that it changes when the user sets the menu bar to a dark theme
         self.statusItem?.image?.isTemplate = true
@@ -49,7 +50,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         /*
             Defaults
          */
-        if UserDefaultsManager.shared.killAction == nil {
+        if (UserDefaultsManager.shared.killAction == nil) {
             UserDefaultsManager.shared.killAction = KillAction.lock
         }
         

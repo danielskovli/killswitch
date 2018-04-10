@@ -20,7 +20,8 @@ var Api = {
         changePassword: 'http://apps.danielskovli.com/killswitch/changePassword.php',
         resetPassword: 'http://apps.danielskovli.com/killswitch/resetPassword.php',
         deleteAccount: 'http://apps.danielskovli.com/killswitch/deleteUser.php',
-        website: 'http://apps.danielskovli.com/killswitch/'
+        website: 'http://apps.danielskovli.com/killswitch/',
+        download: 'http://apps.danielskovli.com/killswitch/#download'
     },
 
 
@@ -31,7 +32,7 @@ var Api = {
         fetch(Api.urls.user, {
             method: 'POST', 
             headers: { "Content-type": "application/json"}, 
-            body: JSON.stringify({username: username, password: password})
+            body: JSON.stringify({username: username, name: name, password: password})
         })
         .then(Api._handleErrors)
         .then(function(response) {
