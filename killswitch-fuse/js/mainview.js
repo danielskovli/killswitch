@@ -37,7 +37,7 @@ Bundle.read("killswitch.unoproj")
 
 // Subscribe to Lifecycle changes to the app
 Lifecycle.on("enteringInteractive", function() {
-    if (Api.session.token != '' && activeState == 'mainState') {
+    if (Api.session.token != '' && activeState.value == 'mainState') {
         refresh();
     }
 });
@@ -247,7 +247,7 @@ function killswitchClick() {
 // Refresh API and UX
 function refresh() {
     Api.update();
-    //updateBindings();
+    updateBindings();
 }
 
 // Check if we have a valid session
