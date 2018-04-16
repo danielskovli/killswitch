@@ -32,7 +32,7 @@ enum KillAction : String {
 class Listener {
     var ready : Bool = false
     var run : Bool = false
-    let interval : UInt32 = 10
+    let interval : UInt32 = 5
     var url : String
     var token : String
     var action : KillAction
@@ -88,6 +88,7 @@ class Listener {
         Alamofire.request(self.url).responseJSON { response in
             if let json = response.result.value {
                 let parsed = json as! NSDictionary
+                print("Got JSON: " + String(parsed.count))
                 let error = parsed["error"] as! String
                 if (error == "false") {
                     let killswitch = parsed["killswitch"] as! Bool

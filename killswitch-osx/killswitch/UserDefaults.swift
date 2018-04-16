@@ -27,7 +27,8 @@ class UserDefaultsManager {
     var username: String? {
         get {
             guard let username = UserDefaults.standard.value(forKey: "username") as? String else {
-                return nil
+                //return nil
+                return ""
             }
             return username
         }
@@ -39,7 +40,8 @@ class UserDefaultsManager {
     var name: String? {
         get {
             guard let name = UserDefaults.standard.value(forKey: "name") as? String else {
-                return nil
+                //return nil
+                return ""
             }
             return name
         }
@@ -51,7 +53,8 @@ class UserDefaultsManager {
     var token: String? {
         get {
             guard let token = UserDefaults.standard.value(forKey: "token") as? String else {
-                return nil
+                //return nil
+                return ""
             }
             return token
         }

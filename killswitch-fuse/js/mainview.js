@@ -37,7 +37,7 @@ Bundle.read("killswitch.unoproj")
 
 // Subscribe to Lifecycle changes to the app
 Lifecycle.on("enteringInteractive", function() {
-    if (Api.session.token != '') {
+    if (Api.session.token != '' && activeState == 'mainState') {
         refresh();
     }
 });
@@ -59,6 +59,12 @@ function updateBindings() {
     // Status text
     // .busy means we called updateBindings() manually - probably to push out something to the UX
     if (Api.lastError && !Api.busy) { 
+
+        // Special tweak for 'duplicate username'
+        if (Api.lastError.toLowerCase().includes('duplicate entry')) {
+            Api.lastError = 'This username is already registered';
+        }
+
         setStatusText('Error: ' + Api.lastError);
         //console.log(Api.lastError);
     } else if (!Api.lastError && !Api.busy) {
@@ -123,11 +129,16 @@ function navigate(sender) {
 
     // Network error
     if (!Api.busy && Api.lastError == 'Network unreachable') {
-        setStatusText(Api.lastError);
+        setStatusText(Api.lastError + '. Please try again');
+
+    // Invalid token
+    } else if (!Api.busy && Api.lastError == 'Invalid token') {
+        activeState.value = 'loginFormState';
+        setStatusText('Session expired. Please log in again');
 
     // Session has expired
     } else if (!Api.authenticated && !Api.busy) {
-        activeState.value = 'loginButtonState';
+        activeState.value = 'loginFormState';
         setStatusText('Session expired. Please log in again');
     }
 }
@@ -173,6 +184,10 @@ function signup() {
         setStatusText('An email address is required');
         return;
     }
+    if (!validateEmail(email)) {
+        setStatusText('That\'s not a proper email address...');
+        return;   
+    }
     if (name.length == 0) {
         setStatusText('You forgot to fill in your name');
         return;
@@ -208,6 +223,12 @@ function login() {
     Api.login(email, password);
 }
 
+// The sloppiest email validation ever
+function validateEmail(email) {
+    var re = /\S+@\S+\.\S+/;
+    return re.test(email);
+}
+
 // Log out
 function logOut() {
     //console.log('trying to log out...');
@@ -226,21 +247,21 @@ function killswitchClick() {
 // Refresh API and UX
 function refresh() {
     Api.update();
-    updateBindings();
+    //updateBindings();
 }
 
 // Check if we have a valid session
 if (Api.session.token != '') {
     //console.log('Found token, refreshing data');
     Api.update();
-    updateBindings();
+    //updateBindings();
 } else {
     //console.log('Need to log in');
     activeState.value = 'loginButtonState';
 }
 
 // Lastly, update the bindings
-updateBindings();
+//updateBindings();
 
 
 // Export UX bindings

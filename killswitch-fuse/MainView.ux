@@ -27,6 +27,11 @@
 					<Change sidebarFade.Opacity="1" />
 					<Change mainPanel.HitTestMode="None"/>
 				</ActivatingAnimation>
+				<WhileActive>
+					<OnBackButton>
+					    <NavigateToggle Target="sidebar" />
+					</OnBackButton>
+				</WhileActive>
 			</Panel>
 
 			<!-- Main view -->
@@ -117,21 +122,37 @@
 		</Panel>
 
 		<!-- Sign up form -->
-		<HidingPanel ux:Name="signupForm" Width="90%" Height="45%" Offset="0%,2%">
-			<Grid RowCount="3" Margin="30,40,30,70">
-				<TextInput ux:Name="signupName" ActionStyle="Next" PlaceholderText="Name" Value="{signupName}" Opacity="1" Alignment="VerticalCenter" PlaceholderColor="#888" />
-				<TextSeparator />
-				<TextInput ux:Name="signupEmail" ActionStyle="Next" PlaceholderText="Email" Value="{signupEmail}" InputHint="Email" Opacity="1" Alignment="VerticalCenter" PlaceholderColor="#888" />
-				<TextSeparator />
-				<TextInput ux:Name="signupPassword" ActionStyle="Default" IsPassword="true" Value="{signupPassword}" PlaceholderText="Password" Opacity="1" Alignment="VerticalCenter" PlaceholderColor="#888">
+		<HidingPanel ux:Name="signupForm" Width="90%" MaxWidth="400" Height="260" Offset="0,20">
+			<!-- <Grid RowCount="3" Margin="30,40,30,70"> -->
+			<StackPanel Margin="30,50,30,70" ItemSpacing="10">
+				<TextInput ux:Name="signupName" ActionStyle="Next" PlaceholderText="Name" Value="{signupName}" Opacity="1" Height="40" Padding="8, 0, 8, 0" Alignment="VerticalCenter" PlaceholderColor="#888">
+					<Rectangle Layer="Background" CornerRadius="2" Opacity=".4">
+						<Stroke Width="1" Color="#000000" />
+			    	    <SolidColor Color="White" />
+			    	</Rectangle>
+			    </TextInput>
+				<!-- <TextSeparator /> -->
+				<TextInput ux:Name="signupEmail" ActionStyle="Next" PlaceholderText="Email" Value="{signupEmail}" InputHint="Email" Opacity="1" Height="40" Padding="8, 0, 8, 0" Alignment="VerticalCenter" PlaceholderColor="#888">
+				<!-- <TextSeparator /> -->
+					<Rectangle Layer="Background" CornerRadius="2" Opacity=".4">
+						<Stroke Width="1" Color="#000000" />
+			    	    <SolidColor Color="White" />
+			    	</Rectangle>
+			    </TextInput>
+				<TextInput ux:Name="signupPassword" ActionStyle="Default" IsPassword="true" Value="{signupPassword}" PlaceholderText="Password" Opacity="1" Height="40" Padding="8, 0, 8, 0" Alignment="VerticalCenter" PlaceholderColor="#888">
+					<Rectangle Layer="Background" CornerRadius="2" Opacity=".4">
+						<Stroke Width="1" Color="#000000" />
+			    	    <SolidColor Color="White" />
+			    	</Rectangle>
 					<WhileContainsText>
 						<OnKeyPress Key="Enter">
 							<Callback Handler="{signup}" />
 						</OnKeyPress>
 					</WhileContainsText>
 				</TextInput>
-				<TextSeparator />
-			</Grid>
+				<!-- <TextSeparator /> -->
+			<!-- </Grid> -->
+			</StackPanel>
 			<WhileEnabled>
 				<Change signupName.Opacity="1" Duration="0.4" />
 				<Change signupEmail.Opacity="1" Duration="0.4" Delay="0.15" />
@@ -175,19 +196,30 @@
 		</HidingPanel>
 
 		<!-- Login form -->
-		<HidingPanel ux:Name="loginForm" Width="90%" Height="35%" Offset="0%,6%">
-			<Grid RowCount="2" Margin="30,40,30,70">
-				<TextInput ux:Name="loginEmail" ActionStyle="Default" PlaceholderText="Email" Value="{loginEmail}" InputHint="Email" Opacity="1" Alignment="VerticalCenter" PlaceholderColor="#888" />
-				<TextSeparator />
-				<TextInput ux:Name="loginPassword" ActionStyle="Default" IsPassword="true" Value="{loginPassword}" PlaceholderText="Password" Opacity="1" Alignment="VerticalCenter" PlaceholderColor="#888">
+		<HidingPanel ux:Name="loginForm" Width="90%" MaxWidth="400" Height="200" Offset="0,35">
+			<!-- <Grid RowCount="2" Margin="30,40,30,70"> -->
+			<StackPanel Margin="30,45,30,70" ItemSpacing="10">
+				<TextInput ux:Name="loginEmail" ActionStyle="Default" PlaceholderText="Email" Value="{loginEmail}" InputHint="Email" Opacity="1" Height="40" Padding="8, 0, 8, 0" Alignment="VerticalCenter" PlaceholderColor="#888">
+					<Rectangle Layer="Background" CornerRadius="2" Opacity=".4">
+						<Stroke Width="1" Color="#000000" />
+			    	    <SolidColor Color="White" />
+			    	</Rectangle>
+		    	</TextInput>
+				<!-- <TextSeparator /> -->
+				<TextInput ux:Name="loginPassword" ActionStyle="Default" IsPassword="true" Value="{loginPassword}" PlaceholderText="Password" Opacity="1" Height="40" Padding="8, 0, 8, 0" Alignment="VerticalCenter" PlaceholderColor="#888">
+					<Rectangle Layer="Background" CornerRadius="2" Opacity=".4">
+						<Stroke Width="1" Color="#000000" />
+			    	    <SolidColor Color="White" />
+			    	</Rectangle>
 					<WhileContainsText>
 						<OnKeyPress Key="Enter">
 							<Callback Handler="{login}" />
 						</OnKeyPress>
 					</WhileContainsText>
 				</TextInput>
-				<TextSeparator />
-			</Grid>
+				<!-- <TextSeparator /> -->
+			<!-- </Grid> -->
+			</StackPanel>
 			<WhileEnabled>
 				<Change loginEmail.Opacity="1" Duration="0.4" />
 				<Change loginPassword.Opacity="1" Duration="0.4" Delay="0.3" />

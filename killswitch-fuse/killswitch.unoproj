@@ -1,6 +1,7 @@
 {
   "RootNamespace":"",
   "Version": "1.0",
+  "VersionCode": 109,
   "Title": "Killswitch",
   "Mobile": {
     "RunsInBackground": false,
@@ -9,7 +10,8 @@
   "Packages": [
     "Fuse",
     "FuseJS",
-    "Fuse.Launcher"
+    //"Fuse.Launcher"
+    "Fuse.Launcher.InterApp"
   ],
   "Includes": [
     "*",
@@ -19,6 +21,12 @@
   ],
   "Icon": "../assets/icons/appIcons/Icon@2x.png",
   "Android": {
+      "Key": {
+	  		"Alias": "application",
+			"AliasPassword": "u4rddq82po",
+			"Store": "release.keystore",
+			"StorePassword": "u4rddq82po"
+	   },
 	  "Icons": {
 			"LDPI": "../assets/icons/appIcons/Icon-ldpi.png",
 			"MDPI": "../assets/icons/appIcons/Icon-mdpi.png",

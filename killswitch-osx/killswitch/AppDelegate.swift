@@ -32,6 +32,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         
+        print("Name: " + UserDefaultsManager.shared.name!)
+        print("Token: " + UserDefaultsManager.shared.token!)
+        print("Username: " + UserDefaultsManager.shared.username!)
+        
         /*
             Register and style the status bar entry
         */

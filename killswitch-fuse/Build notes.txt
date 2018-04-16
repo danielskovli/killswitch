@@ -1,6 +1,8 @@
 ## Build notes ##
 
 
+# iOS
+
 Bash command: "/Users/danielskovli/GIT repositories/killswitch/killswitch-fuse"
 Bash command: fuse build --target=iOS --configuration=Release
 
@@ -18,3 +20,16 @@ In killswitch/Images.xcassets>AppIcon:
 
 To submit to app store:
 Product>Archive --> follow prompts
+
+
+# Android
+
+Bash command: "/Users/danielskovli/GIT repositories/killswitch/killswitch-fuse"
+Bash command: fuse build --target=Android --configuration=Release
+
+In .unoproj:
+1) Set 'VersionCode' to whatver it needs to be
+2) If updating version as well as build, set 'Version' too
+
+Build is located here:
+/Users/danielskovli/GIT repositories/killswitch/killswitch-fuse/build/Android/Release/app/build/outputs/apk/app-release.apk
