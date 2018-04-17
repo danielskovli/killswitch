@@ -115,8 +115,12 @@ function navigate(sender) {
     // Callback after Api.update() completes
     if (sender == 'update') {
 
+        if (Api.lastError.toLowerCase().includes('invalid token') || Api.lastError.toLowerCase().includes('authentication error')) {
+            activeState.value = 'loginFormState';
+            setStatusText('Session expired. Please log in again');
+            return;
 
-        if (Api.lastError) {
+        } else if (Api.lastError) {
             return; // Error display dealt with elsewhere
         }
 
@@ -160,7 +164,7 @@ function changeState(args) {
 function changeStateCallback() {
     if (activeState.value == 'signupFormState') {
         setStatusText('Create a Killswitch account');
-    } else if (activeState.value == 'loginFormState') {
+    } else if (activeState.value == 'loginFormState' && !Api.lastError) {
         setStatusText('Sign in to your Killswitch account');
     } else if (activeState.value == 'loginButtonState' || activeState.value == 'loadingPanel' || activeState.value == 'mainState') {
         //setStatusText('');

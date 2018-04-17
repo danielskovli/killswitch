@@ -7,5 +7,6 @@ target 'killswitch' do
 
   # Pods for killswitch
   pod 'Alamofire'
+  pod 'SwiftHash'
 
 end

@@ -20,14 +20,27 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @objc dynamic var status : NSString = NSString(string: "Loading...")
     @objc dynamic var startStop : NSString = NSString(string: "")
     @IBOutlet weak var startStopButton: NSMenuItem!
-    var isRunning : Bool = false
-    let defaults = UserDefaults.standard
-    var authenticated = false;
+    var isRunning : Bool = false {
+        didSet {
+            updateTrayIcon()
+        }
+    }
+    var authenticated : Bool = false {
+        didSet {
+            updateTrayIcon()
+        }
+    }
+    var firstLoad : Bool = true;
     
     // Listener object
     var listener : Listener!
     let listenURL = "http://apps.danielskovli.com/killswitch/api/1.0/status/"
-    var token = "nothing"
+    let loginURL = "http://apps.danielskovli.com/killswitch/api/1.0/login/"
+    let addUserURL = "http://apps.danielskovli.com/killswitch/api/1.0/user/"
+    let changePasswordURL = "http://apps.danielskovli.com/killswitch/changePassword.php"
+    let resetPasswordURL = "http://apps.danielskovli.com/killswitch/resetPassword.php"
+    let deleteAccountURL = "http://apps.danielskovli.com/killswitch/deleteUser.php"
+    //var token = "nothing"
     
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
@@ -43,7 +56,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         self.statusItem?.image = NSImage(named: NSImage.Name(rawValue: "StatusIconDisabled"))
 
         // image should be set as tempate so that it changes when the user sets the menu bar to a dark theme
-        self.statusItem?.image?.isTemplate = true
+        //self.statusItem?.image?.isTemplate = true
         
         // Set the menu that should appear when the item is clicked
         self.statusItem!.menu = self.menu
@@ -70,9 +83,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to tear down your application
     }
     
+    func updateTrayIcon() {
+        if (authenticated && isRunning) {
+            self.statusItem?.image = NSImage(named: NSImage.Name(rawValue: "StatusIconEnabled"))
+            self.statusItem?.image?.isTemplate = true
+        } else {
+            self.statusItem?.image = NSImage(named: NSImage.Name(rawValue: "StatusIconDisabled"))
+            self.statusItem?.image?.isTemplate = false
+        }
+    }
     
     func toggleStartStop(restart : Bool) {
         
+        /*
         // Temp limitations -- ADD LOGIN FEATURES AND STUFF HERE
         let killAction = UserDefaultsManager.shared.killAction
         if (killAction != KillAction.lock) {
@@ -82,6 +105,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             startStop = ""
             return
         }
+        */
         
         // Restart listener - aka Stop() and destroy
         if (restart) {
@@ -94,7 +118,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Initialise if needed
         if (listener == nil) {
             isRunning = false
-            listener = Listener(url: listenURL, token: token, action: killAction!)
+            listener = Listener(url: listenURL, token: UserDefaultsManager.shared.token!, action: UserDefaultsManager.shared.killAction!)
         }
         
         // Toggle run state
@@ -105,7 +129,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         
         // UI
-        if (isRunning) {
+        updateGUI()
+    }
+    
+    func updateGUI() {
+        if (firstLoad || !authenticated) {
+            startStopButton.isHidden = true
+        } else if (isRunning) {
             status = "System running"
             startStop = "Stop"
             startStopButton.isHidden = false

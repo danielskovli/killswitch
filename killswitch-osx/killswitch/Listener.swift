@@ -32,7 +32,7 @@ enum KillAction : String {
 class Listener {
     var ready : Bool = false
     var run : Bool = false
-    let interval : UInt32 = 5
+    let interval : UInt32 = 3
     var url : String
     var token : String
     var action : KillAction
@@ -42,7 +42,7 @@ class Listener {
     
     // Initialise the class
     init(url: String, token: String, action: KillAction) {
-        self.url = url
+        self.url = url + token
         self.token = token
         self.action = action
         
@@ -84,15 +84,25 @@ class Listener {
             return
         }
         
+        // Check if we're either authenticated or trying to be
+        if ((!self.ad.authenticated && !self.ad.firstLoad) || self.token == "") {
+            self.ad.status = "Not signed in. Please complete setup"
+            self.ad.isRunning = false
+            self.ad.updateGUI()
+            self.ad.firstLoad = false
+            return;
+        }
+        
         // If not, we're good to go. Fire up Alamo
         Alamofire.request(self.url).responseJSON { response in
             if let json = response.result.value {
                 let parsed = json as! NSDictionary
-                print("Got JSON: " + String(parsed.count))
-                let error = parsed["error"] as! String
-                if (error == "false") {
+                //print("Got JSON: " + String(parsed.count))
+                let error = parsed["error"] as! Bool
+                if (!error) {
                     let killswitch = parsed["killswitch"] as! Bool
                     self.ad.authenticated = true
+                    self.ad.isRunning = true
                     
                     // Do the actual work, as decided by the user (`self.action`)
                     if (killswitch) {
@@ -101,18 +111,15 @@ class Listener {
                                 print("Locking system")
                                 self.Shell("pmset displaysleepnow")
                                 break
-                            
                             case .shutdown:
                                 print("Shutting down")
                                 self.shutdown(command: kAEShutDown)
                                 break
-                            
                             case .logout:
                                 print("Logging out")
                                 //self.Shell("/System/Library/CoreServices/Menu\\ Extras/User.menu/Contents/Resources/CGSession -suspend")
                                 self.shutdown(command: kAEReallyLogOut)
                                 break
-                            
                             case .sleep:
                                 print("Sleeping")
                                 self.shutdown(command: kAESleep)
@@ -120,12 +127,17 @@ class Listener {
                         }
                     }
                 } else {
-                    self.ad.status = error as NSString
+                    self.ad.status = parsed["error"] as! NSString
                     self.ad.authenticated = false
+                    self.ad.isRunning = false
+                    print(error)
                 }
             } else {
                 self.ad.status = "Server unreachable..."
             }
+            
+            self.ad.firstLoad = false;
+            self.ad.updateGUI()
             
             // Next iteration
             self.queue.async {
