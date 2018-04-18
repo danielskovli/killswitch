@@ -101,6 +101,7 @@ class Listener {
                 let error = parsed["error"] as! Bool
                 if (!error) {
                     let killswitch = parsed["killswitch"] as! Bool
+                    UserDefaultsManager.shared.lastStatus = killswitch
                     self.ad.authenticated = true
                     self.ad.isRunning = true
                     
@@ -134,6 +135,8 @@ class Listener {
                 }
             } else {
                 self.ad.status = "Server unreachable..."
+                // Consider fetching UserDefaultsManager.shared.lastStatus here, for persistance
+                // Expose as option in the settings pane
             }
             
             self.ad.firstLoad = false;

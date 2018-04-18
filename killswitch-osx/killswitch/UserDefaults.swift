@@ -63,5 +63,18 @@ class UserDefaultsManager {
         }
     }
     
+    var lastStatus: Bool? {
+        get {
+            guard let lastStatus = UserDefaults.standard.value(forKey: "lastStatus") as? Bool else {
+                //return nil
+                return false
+            }
+            return lastStatus
+        }
+        set(lastStatus) {
+            UserDefaults.standard.set(lastStatus, forKey: "lastStatus")
+        }
+    }
+    
     
 }

@@ -16,10 +16,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var menu: NSMenu!
     var statusItem: NSStatusItem?
 
-    // Data binds
+    // Binds and trackers
     @objc dynamic var status : NSString = NSString(string: "Loading...")
     @objc dynamic var startStop : NSString = NSString(string: "")
     @IBOutlet weak var startStopButton: NSMenuItem!
+    var firstLoad : Bool = true;
     var isRunning : Bool = false {
         didSet {
             updateTrayIcon()
@@ -30,9 +31,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             updateTrayIcon()
         }
     }
-    var firstLoad : Bool = true;
     
-    // Listener object
+    // Listener object and API stuff
     var listener : Listener!
     let listenURL = "http://apps.danielskovli.com/killswitch/api/1.0/status/"
     let loginURL = "http://apps.danielskovli.com/killswitch/api/1.0/login/"
@@ -40,41 +40,28 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let changePasswordURL = "http://apps.danielskovli.com/killswitch/changePassword.php"
     let resetPasswordURL = "http://apps.danielskovli.com/killswitch/resetPassword.php"
     let deleteAccountURL = "http://apps.danielskovli.com/killswitch/deleteUser.php"
-    //var token = "nothing"
+    let websiteURL = "http://apps.danielskovli.com/killswitch/"
+    let downloadAppsURL = "http://apps.danielskovli.com/killswitch/#download"
     
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         
-        print("Name: " + UserDefaultsManager.shared.name!)
-        print("Token: " + UserDefaultsManager.shared.token!)
-        print("Username: " + UserDefaultsManager.shared.username!)
-        
-        /*
-            Register and style the status bar entry
-        */
+        // Register and style the status bar entry
         self.statusItem = NSStatusBar.system.statusItem(withLength: -1)
         self.statusItem?.image = NSImage(named: NSImage.Name(rawValue: "StatusIconDisabled"))
-
-        // image should be set as tempate so that it changes when the user sets the menu bar to a dark theme
-        //self.statusItem?.image?.isTemplate = true
         
-        // Set the menu that should appear when the item is clicked
+        // Menu associated with tray icon
         self.statusItem!.menu = self.menu
         
-        // Set if the item should change color when clicked
+        // Should the tray icon change color when clicked?
         self.statusItem!.highlightMode = true
         
-        /*
-            Defaults
-         */
+        // Default lock-method
         if (UserDefaultsManager.shared.killAction == nil) {
             UserDefaultsManager.shared.killAction = KillAction.lock
         }
         
-        
-        /*
-            Attempt to start the Listener
-         */
+        // Attempt to start the listener
         toggleStartStop(restart: false)
     }
 
@@ -83,29 +70,24 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to tear down your application
     }
     
+    
     func updateTrayIcon() {
         if (authenticated && isRunning) {
-            self.statusItem?.image = NSImage(named: NSImage.Name(rawValue: "StatusIconEnabled"))
-            self.statusItem?.image?.isTemplate = true
+            DispatchQueue.main.async {
+                self.statusItem?.image = NSImage(named: NSImage.Name(rawValue: "StatusIconEnabled"))
+                self.statusItem?.image?.isTemplate = true
+                
+            }
         } else {
-            self.statusItem?.image = NSImage(named: NSImage.Name(rawValue: "StatusIconDisabled"))
-            self.statusItem?.image?.isTemplate = false
+            DispatchQueue.main.async {
+                self.statusItem?.image = NSImage(named: NSImage.Name(rawValue: "StatusIconDisabled"))
+                self.statusItem?.image?.isTemplate = false
+            }
         }
     }
     
+    
     func toggleStartStop(restart : Bool) {
-        
-        /*
-        // Temp limitations -- ADD LOGIN FEATURES AND STUFF HERE
-        let killAction = UserDefaultsManager.shared.killAction
-        if (killAction != KillAction.lock) {
-            status = "Please complete setup"
-            //startStopButton.isEnabled = false
-            startStopButton.isHidden = true
-            startStop = ""
-            return
-        }
-        */
         
         // Restart listener - aka Stop() and destroy
         if (restart) {
@@ -131,6 +113,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // UI
         updateGUI()
     }
+    
     
     func updateGUI() {
         if (firstLoad || !authenticated) {

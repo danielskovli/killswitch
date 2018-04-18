@@ -60,13 +60,17 @@ function updateBindings() {
     // .busy means we called updateBindings() manually - probably to push out something to the UX
     if (Api.lastError && !Api.busy) { 
 
-        // Special tweak for 'duplicate username'
-        if (Api.lastError.toLowerCase().includes('duplicate entry')) {
-            Api.lastError = 'This username is already registered';
+        // This is an edge case: user is stuck on the loading screen becase the network is unreachable
+        if (Api.lastError.toLowerCase().includes('network unreachable')) {
+            if (Api.session.token != "") {
+                activeState.value = 'mainState'; // let's assume the user is authenticated for now
+            } else {
+                activeState.value = 'loginButtonState';
+            }
         }
 
         setStatusText('Error: ' + Api.lastError);
-        //console.log(Api.lastError);
+
     } else if (!Api.lastError && !Api.busy) {
         setStatusText('');
     }
@@ -176,6 +180,7 @@ function changeStateCallback() {
 // Sets the status text
 function setStatusText(text) {
     statusOutputText.value = text;
+    Api.lastError = false
 }
 
 // Sign up

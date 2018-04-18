@@ -323,7 +323,7 @@
 
 		<!-- Switch between all our states -->
 		<!-- Loading, buttons, forms, main -->
-		<StateGroup ux:Name="state" Transition="Exclusive" Rest="loadingState" Active="{activeState}" >
+		<StateGroup ux:Name="state" Transition="Exclusive" Rest="loadingState" Active="{activeState}">
 			<State Name="loadingState">
 				<Callback Handler="{changeStateCallback}" />
 				<Set showWhiteRectSignup.Value="false" />
