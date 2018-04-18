@@ -1,7 +1,7 @@
 {
   "RootNamespace":"",
   "Version": "1.0",
-  "VersionCode": 114,
+  "VersionCode": 115,
   "Title": "Killswitch",
   "Mobile": {
     "RunsInBackground": false,

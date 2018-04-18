@@ -145,6 +145,7 @@ var Api = {
 
     // Handle network fails here
     _handleThrows: function(error) {
+        //console.log(error)
         // Ignore the actual error for now, it should in general boil down to the same thing
         Api.lastError = 'Network unreachable';
         Api.busy = false;

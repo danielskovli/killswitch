@@ -26,6 +26,7 @@ var currentYear = Observable((new Date()).getFullYear());
 var statusTextDelayedText = "";
 var hideStatus = false;
 
+
 // Load up .unoproj AS JSON
 Bundle.read("killswitch.unoproj")
     .then(function(data) {
@@ -61,7 +62,7 @@ function updateBindings() {
     if (Api.lastError && !Api.busy) { 
 
         // This is an edge case: user is stuck on the loading screen becase the network is unreachable
-        if (Api.lastError.toLowerCase().includes('network unreachable')) {
+        if (Api.lastError.toString().toLowerCase().includes('network unreachable')) {
             if (Api.session.token != "") {
                 activeState.value = 'mainState'; // let's assume the user is authenticated for now
             } else {
@@ -119,7 +120,7 @@ function navigate(sender) {
     // Callback after Api.update() completes
     if (sender == 'update') {
 
-        if (Api.lastError.toLowerCase().includes('invalid token') || Api.lastError.toLowerCase().includes('authentication error')) {
+        if (Api.lastError.toString().toLowerCase().includes('invalid token') || Api.lastError.toString().toLowerCase().includes('authentication error')) {
             activeState.value = 'loginFormState';
             setStatusText('Session expired. Please log in again');
             return;
