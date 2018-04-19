@@ -1,0 +1,698 @@
+2018-04-19 12:52:31 +0000  Initial pipeline context: <IDEDistributionProcessingPipelineContext: 0x7fcd5de6d180; archive(resolved)='<IDEArchive: 0x7fcd5b95ea70>', distributionTask(resolved)='2', distributionMethod(resolved)='<IDEDistributionMethodDirectDistribution: 0x7fcd5ab12980>', team(resolved)='<IDEProvisioningBasicTeam: 0x7fcd5e09b630; teamID='E467X6539H', teamName='Daniel Skovli'>'>
+	Chain (10, self inclusive):
+	<IDEDistributionProcessingPipelineContext: 0x7fcd5de6d180; archive = '<IDEArchive: 0x7fcd5b95ea70>', distributionMethod='<IDEDistributionMethodDirectDistribution: 0x7fcd5ab12980>', team='<IDEProvisioningBasicTeam: 0x7fcd5e09b630; teamID='E467X6539H', teamName='Daniel Skovli'>'>
+	<IDEDistributionProcessingPipelineContext: 0x7fcd5dd3ea00; archive = '<IDEArchive: 0x7fcd5b95ea70>', distributionMethod='<IDEDistributionMethodDirectDistribution: 0x7fcd5ab12980>', team='<IDEProvisioningBasicTeam: 0x7fcd5e09b630; teamID='E467X6539H', teamName='Daniel Skovli'>'>
+	<IDEDistributionContext: 0x7fcd5e13fcf0; archive = '<IDEArchive: 0x7fcd5b95ea70>', distributionMethod='<IDEDistributionMethodDirectDistribution: 0x7fcd5ab12980>', team='<IDEProvisioningBasicTeam: 0x7fcd5e09b630; teamID='E467X6539H', teamName='Daniel Skovli'>'>
+	<IDEDistributionContext: 0x7fcd5dcae040; archive = '<IDEArchive: 0x7fcd5b95ea70>', distributionMethod='<IDEDistributionMethodDirectDistribution: 0x7fcd5ab12980>', team='<IDEProvisioningBasicTeam: 0x7fcd5e09b630; teamID='E467X6539H', teamName='Daniel Skovli'>'>
+	<IDEDistributionContext: 0x7fcd5e063a50; archive = '<IDEArchive: 0x7fcd5b95ea70>', distributionMethod='<IDEDistributionMethodDirectDistribution: 0x7fcd5ab12980>', team='<IDEProvisioningBasicTeam: 0x7fcd5e09b630; teamID='E467X6539H', teamName='Daniel Skovli'>'>
+	<IDEDistributionContext: 0x7fcd5dcc3ca0; archive = '<IDEArchive: 0x7fcd5b95ea70>', distributionMethod='<IDEDistributionMethodDirectDistribution: 0x7fcd5ab12980>', team='<IDEProvisioningBasicTeam: 0x7fcd5e09b630; teamID='E467X6539H', teamName='Daniel Skovli'>'>
+	<IDEDistributionContext: 0x7fcd5e05fd50; archive = '<IDEArchive: 0x7fcd5b95ea70>', distributionMethod='<IDEDistributionMethodDirectDistribution: 0x7fcd5ab12980>', team='<IDEProvisioningBasicTeam: 0x7fcd5e09b630; teamID='E467X6539H', teamName='Daniel Skovli'>'>
+	<IDEDistributionContext: 0x7fcd5de2a770; archive = '<IDEArchive: 0x7fcd5b95ea70>', distributionMethod='<IDEDistributionMethodDirectDistribution: 0x7fcd5ab12980>', team='<IDEProvisioningBasicTeam: 0x7fcd5e09b630; teamID='E467X6539H', teamName='Daniel Skovli'>'>
+	<IDEDistributionContext: 0x7fcd5de5b0c0; archive = '<IDEArchive: 0x7fcd5b95ea70>', distributionMethod='<IDEDistributionMethodDirectDistribution: 0x7fcd5ab12980>', team='(null)'>
+	<IDEDistributionContext: 0x7fcd5da37d20; archive = '<IDEArchive: 0x7fcd5b95ea70>', distributionMethod='(null)', team='(null)'>
+</IDEDistributionProcessingPipelineContext: 0x7fcd5de6d180>
+2018-04-19 12:52:31 +0000  Processing step: IDEDistributionCreateDestRootStep
+2018-04-19 12:52:31 +0000  Processing step: IDEDistributionCopyItemStep
+2018-04-19 12:52:31 +0000  Running /usr/bin/ditto '-V' '/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app'
+2018-04-19 12:52:31 +0000  >>> Copying /Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app 
+2018-04-19 12:52:31 +0000  copying file ./Contents/_CodeSignature/CodeResources ... 
+2018-04-19 12:52:31 +0000  13255 bytes for ./Contents/_CodeSignature/CodeResources
+copying file ./Contents/MacOS/Killswitch ... 
+2018-04-19 12:52:31 +0000  139600 bytes for ./Contents/MacOS/Killswitch
+copying file ./Contents/Resources/AppIcon.icns ... 
+478381 bytes for ./Contents/Resources/AppIcon.icns
+copying file ./Contents/Resources/Base.lproj/Main.storyboardc/NSWindowController-gpN-j9-ye9.nib ... 
+2018-04-19 12:52:31 +0000  3906 bytes for ./Contents/Resources/Base.lproj/Main.storyboardc/NSWindowController-gpN-j9-ye9.nib
+2018-04-19 12:52:31 +0000  copying file ./Contents/Resources/Base.lproj/Main.storyboardc/MainMenu.nib ... 
+2018-04-19 12:52:31 +0000  5618 bytes for ./Contents/Resources/Base.lproj/Main.storyboardc/MainMenu.nib
+2018-04-19 12:52:31 +0000  copying file ./Contents/Resources/Base.lproj/Main.storyboardc/FRA-WM-Afe-view-j74-ES-lGu.nib ... 
+2018-04-19 12:52:31 +0000  19261 bytes for ./Contents/Resources/Base.lproj/Main.storyboardc/FRA-WM-Afe-view-j74-ES-lGu.nib
+2018-04-19 12:52:31 +0000  copying file ./Contents/Resources/Base.lproj/Main.storyboardc/NSWindowController-obD-K7-eUc.nib ... 
+3797 bytes for ./Contents/Resources/Base.lproj/Main.storyboardc/NSWindowController-obD-K7-eUc.nib
+copying file ./Contents/Resources/Base.lproj/Main.storyboardc/tMH-dU-hxK-view-USl-wA-JXl.nib ... 
+2018-04-19 12:52:31 +0000  11872 bytes for ./Contents/Resources/Base.lproj/Main.storyboardc/tMH-dU-hxK-view-USl-wA-JXl.nib
+2018-04-19 12:52:31 +0000  copying file ./Contents/Resources/Base.lproj/Main.storyboardc/bCs-j7-ZzV-view-MCi-43-b08.nib ... 
+2018-04-19 12:52:31 +0000  11362 bytes for ./Contents/Resources/Base.lproj/Main.storyboardc/bCs-j7-ZzV-view-MCi-43-b08.nib
+2018-04-19 12:52:31 +0000  copying file ./Contents/Resources/Base.lproj/Main.storyboardc/prefWindowController.nib ... 
+2018-04-19 12:52:31 +0000  5101 bytes for ./Contents/Resources/Base.lproj/Main.storyboardc/prefWindowController.nib
+copying file ./Contents/Resources/Base.lproj/Main.storyboardc/Info.plist ... 
+2018-04-19 12:52:31 +0000  604 bytes for ./Contents/Resources/Base.lproj/Main.storyboardc/Info.plist
+2018-04-19 12:52:31 +0000  copying file ./Contents/Resources/Assets.car ... 
+2018-04-19 12:52:31 +0000  305480 bytes for ./Contents/Resources/Assets.car
+2018-04-19 12:52:31 +0000  copying file ./Contents/Library/LoginItems/KillswitchLauncher.app/Contents/_CodeSignature/CodeResources ... 
+2018-04-19 12:52:31 +0000  8933 bytes for ./Contents/Library/LoginItems/KillswitchLauncher.app/Contents/_CodeSignature/CodeResources
+copying file ./Contents/Library/LoginItems/KillswitchLauncher.app/Contents/MacOS/KillswitchLauncher ... 
+41808 bytes for ./Contents/Library/LoginItems/KillswitchLauncher.app/Contents/MacOS/KillswitchLauncher
+copying file ./Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Resources/Base.lproj/Main.storyboardc/MainMenu.nib ... 
+2018-04-19 12:52:31 +0000  36334 bytes for ./Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Resources/Base.lproj/Main.storyboardc/MainMenu.nib
+2018-04-19 12:52:31 +0000  copying file ./Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Resources/Base.lproj/Main.storyboardc/Info.plist ... 
+2018-04-19 12:52:31 +0000  163 bytes for ./Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Resources/Base.lproj/Main.storyboardc/Info.plist
+2018-04-19 12:52:31 +0000  copying file ./Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftAppKit.dylib ... 
+2018-04-19 12:52:31 +0000  166848 bytes for ./Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftAppKit.dylib
+copying file ./Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftCoreImage.dylib ... 
+40352 bytes for ./Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftCoreImage.dylib
+copying file ./Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftObjectiveC.dylib ... 
+60928 bytes for ./Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftObjectiveC.dylib
+copying file ./Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftXPC.dylib ... 
+2018-04-19 12:52:31 +0000  35968 bytes for ./Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftXPC.dylib
+copying file ./Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftCore.dylib ... 
+2018-04-19 12:52:31 +0000  6151776 bytes for ./Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftCore.dylib
+copying file ./Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftCoreGraphics.dylib ... 
+2018-04-19 12:52:31 +0000  188160 bytes for ./Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftCoreGraphics.dylib
+copying file ./Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftMetal.dylib ... 
+2018-04-19 12:52:31 +0000  68784 bytes for ./Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftMetal.dylib
+copying file ./Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftCoreData.dylib ... 
+2018-04-19 12:52:31 +0000  95808 bytes for ./Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftCoreData.dylib
+2018-04-19 12:52:31 +0000  copying file ./Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftDispatch.dylib ... 
+2018-04-19 12:52:31 +0000  302288 bytes for ./Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftDispatch.dylib
+2018-04-19 12:52:31 +0000  copying file ./Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftos.dylib ... 
+2018-04-19 12:52:31 +0000  49456 bytes for ./Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftos.dylib
+2018-04-19 12:52:31 +0000  copying file ./Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftCoreFoundation.dylib ... 
+2018-04-19 12:52:31 +0000  31888 bytes for ./Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftCoreFoundation.dylib
+2018-04-19 12:52:31 +0000  copying file ./Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftDarwin.dylib ... 
+89488 bytes for ./Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftDarwin.dylib
+copying file ./Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftQuartzCore.dylib ... 
+52384 bytes for ./Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftQuartzCore.dylib
+copying file ./Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftIOKit.dylib ... 
+2018-04-19 12:52:31 +0000  36064 bytes for ./Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftIOKit.dylib
+2018-04-19 12:52:31 +0000  copying file ./Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftFoundation.dylib ... 
+2018-04-19 12:52:31 +0000  2844176 bytes for ./Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftFoundation.dylib
+2018-04-19 12:52:31 +0000  copying file ./Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Info.plist ... 
+2018-04-19 12:52:31 +0000  1525 bytes for ./Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Info.plist
+copying file ./Contents/Library/LoginItems/KillswitchLauncher.app/Contents/PkgInfo ... 
+2018-04-19 12:52:31 +0000  8 bytes for ./Contents/Library/LoginItems/KillswitchLauncher.app/Contents/PkgInfo
+2018-04-19 12:52:31 +0000  copying file ./Contents/Frameworks/libswiftAppKit.dylib ... 
+2018-04-19 12:52:31 +0000  166848 bytes for ./Contents/Frameworks/libswiftAppKit.dylib
+2018-04-19 12:52:31 +0000  copying file ./Contents/Frameworks/libswiftCoreImage.dylib ... 
+2018-04-19 12:52:31 +0000  40352 bytes for ./Contents/Frameworks/libswiftCoreImage.dylib
+2018-04-19 12:52:31 +0000  copying file ./Contents/Frameworks/libswiftObjectiveC.dylib ... 
+60928 bytes for ./Contents/Frameworks/libswiftObjectiveC.dylib
+copying file ./Contents/Frameworks/libswiftXPC.dylib ... 
+2018-04-19 12:52:31 +0000  35968 bytes for ./Contents/Frameworks/libswiftXPC.dylib
+copying file ./Contents/Frameworks/libswiftCore.dylib ... 
+2018-04-19 12:52:31 +0000  6151776 bytes for ./Contents/Frameworks/libswiftCore.dylib
+2018-04-19 12:52:31 +0000  copying file ./Contents/Frameworks/libswiftCoreGraphics.dylib ... 
+188160 bytes for ./Contents/Frameworks/libswiftCoreGraphics.dylib
+copying file ./Contents/Frameworks/libswiftMetal.dylib ... 
+68784 bytes for ./Contents/Frameworks/libswiftMetal.dylib
+copying file ./Contents/Frameworks/libswiftCoreData.dylib ... 
+2018-04-19 12:52:31 +0000  95808 bytes for ./Contents/Frameworks/libswiftCoreData.dylib
+copying file ./Contents/Frameworks/libswiftDispatch.dylib ... 
+2018-04-19 12:52:31 +0000  302288 bytes for ./Contents/Frameworks/libswiftDispatch.dylib
+2018-04-19 12:52:31 +0000  copying file ./Contents/Frameworks/libswiftos.dylib ... 
+2018-04-19 12:52:31 +0000  49456 bytes for ./Contents/Frameworks/libswiftos.dylib
+2018-04-19 12:52:31 +0000  copying file ./Contents/Frameworks/libswiftCoreFoundation.dylib ... 
+2018-04-19 12:52:31 +0000  31888 bytes for ./Contents/Frameworks/libswiftCoreFoundation.dylib
+2018-04-19 12:52:31 +0000  copying file ./Contents/Frameworks/libswiftDarwin.dylib ... 
+89488 bytes for ./Contents/Frameworks/libswiftDarwin.dylib
+copying file ./Contents/Frameworks/libswiftQuartzCore.dylib ... 
+52384 bytes for ./Contents/Frameworks/libswiftQuartzCore.dylib
+copying file ./Contents/Frameworks/libswiftIOKit.dylib ... 
+36064 bytes for ./Contents/Frameworks/libswiftIOKit.dylib
+copying symlink ./Contents/Frameworks/Alamofire.framework/Alamofire ... 
+2018-04-19 12:52:31 +0000  linked ./Contents/Frameworks/Alamofire.framework/Alamofire
+copying symlink ./Contents/Frameworks/Alamofire.framework/Resources ... 
+2018-04-19 12:52:31 +0000  linked ./Contents/Frameworks/Alamofire.framework/Resources
+copying file ./Contents/Frameworks/Alamofire.framework/Versions/A/_CodeSignature/CodeResources ... 
+2514 bytes for ./Contents/Frameworks/Alamofire.framework/Versions/A/_CodeSignature/CodeResources
+copying file ./Contents/Frameworks/Alamofire.framework/Versions/A/Alamofire ... 
+2018-04-19 12:52:31 +0000  1328864 bytes for ./Contents/Frameworks/Alamofire.framework/Versions/A/Alamofire
+2018-04-19 12:52:31 +0000  copying file ./Contents/Frameworks/Alamofire.framework/Versions/A/Resources/Info.plist ... 
+2018-04-19 12:52:31 +0000  1227 bytes for ./Contents/Frameworks/Alamofire.framework/Versions/A/Resources/Info.plist
+2018-04-19 12:52:31 +0000  copying symlink ./Contents/Frameworks/Alamofire.framework/Versions/Current ... 
+2018-04-19 12:52:31 +0000  linked ./Contents/Frameworks/Alamofire.framework/Versions/Current
+2018-04-19 12:52:31 +0000  copying symlink ./Contents/Frameworks/SwiftHash.framework/Resources ... 
+2018-04-19 12:52:31 +0000  linked ./Contents/Frameworks/SwiftHash.framework/Resources
+2018-04-19 12:52:31 +0000  copying file ./Contents/Frameworks/SwiftHash.framework/Versions/A/_CodeSignature/CodeResources ... 
+2018-04-19 12:52:31 +0000  2514 bytes for ./Contents/Frameworks/SwiftHash.framework/Versions/A/_CodeSignature/CodeResources
+copying file ./Contents/Frameworks/SwiftHash.framework/Versions/A/Resources/Info.plist ... 
+1227 bytes for ./Contents/Frameworks/SwiftHash.framework/Versions/A/Resources/Info.plist
+copying file ./Contents/Frameworks/SwiftHash.framework/Versions/A/SwiftHash ... 
+132304 bytes for ./Contents/Frameworks/SwiftHash.framework/Versions/A/SwiftHash
+copying symlink ./Contents/Frameworks/SwiftHash.framework/Versions/Current ... 
+linked ./Contents/Frameworks/SwiftHash.framework/Versions/Current
+copying symlink ./Contents/Frameworks/SwiftHash.framework/SwiftHash ... 
+2018-04-19 12:52:31 +0000  linked ./Contents/Frameworks/SwiftHash.framework/SwiftHash
+2018-04-19 12:52:31 +0000  copying file ./Contents/Frameworks/libswiftFoundation.dylib ... 
+2018-04-19 12:52:31 +0000  2844176 bytes for ./Contents/Frameworks/libswiftFoundation.dylib
+2018-04-19 12:52:31 +0000  copying file ./Contents/Info.plist ... 
+2018-04-19 12:52:31 +0000  2011 bytes for ./Contents/Info.plist
+copying file ./Contents/PkgInfo ... 
+2018-04-19 12:52:31 +0000  8 bytes for ./Contents/PkgInfo
+2018-04-19 12:52:31 +0000  2018-04-19 12:52:31 +0000  /usr/bin/ditto exited with 0
+2018-04-19 12:52:31 +0000  
+
+2018-04-19 12:52:31 +0000  Processing step: IDEDistributionEmbedProfileStep
+2018-04-19 12:52:31 +0000  Skipping profile for item: <IDEDistributionItem: 0x7fcd5e075790 'com.apple.dt.runtime.swiftAppKit' '<DVTFilePath:0x7fcd5dd99af0:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftAppKit.dylib'>'>
+2018-04-19 12:52:31 +0000  Skipping profile for item: <IDEDistributionItem: 0x7fcd5dd363b0 'com.apple.dt.runtime.swiftCore' '<DVTFilePath:0x7fcd5ddd4fe0:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftCore.dylib'>'>
+2018-04-19 12:52:31 +0000  Skipping profile for item: <IDEDistributionItem: 0x7fcd5aee7220 'com.apple.dt.runtime.swiftCoreData' '<DVTFilePath:0x7fcd5de099c0:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftCoreData.dylib'>'>
+2018-04-19 12:52:31 +0000  Skipping profile for item: <IDEDistributionItem: 0x7fcd5e118440 'com.apple.dt.runtime.swiftCoreFoundation' '<DVTFilePath:0x7fcd5dd9a130:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftCoreFoundation.dylib'>'>
+2018-04-19 12:52:31 +0000  Skipping profile for item: <IDEDistributionItem: 0x7fcd5deef7a0 'com.apple.dt.runtime.swiftCoreGraphics' '<DVTFilePath:0x7fcd5de4e950:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftCoreGraphics.dylib'>'>
+2018-04-19 12:52:31 +0000  Skipping profile for item: <IDEDistributionItem: 0x7fcd5def5940 'com.apple.dt.runtime.swiftCoreImage' '<DVTFilePath:0x7fcd5dd9ed50:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftCoreImage.dylib'>'>
+2018-04-19 12:52:31 +0000  Skipping profile for item: <IDEDistributionItem: 0x7fcd5e10bf50 'com.apple.dt.runtime.swiftDarwin' '<DVTFilePath:0x7fcd5ddf6950:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftDarwin.dylib'>'>
+2018-04-19 12:52:31 +0000  Skipping profile for item: <IDEDistributionItem: 0x7fcd5e070300 'com.apple.dt.runtime.swiftDispatch' '<DVTFilePath:0x7fcd5dd93200:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftDispatch.dylib'>'>
+2018-04-19 12:52:31 +0000  Skipping profile for item: <IDEDistributionItem: 0x7fcd5b8e10e0 'com.apple.dt.runtime.swiftFoundation' '<DVTFilePath:0x7fcd5ddf3160:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftFoundation.dylib'>'>
+2018-04-19 12:52:31 +0000  Skipping profile for item: <IDEDistributionItem: 0x7fcd5b83c330 'com.apple.dt.runtime.swiftIOKit' '<DVTFilePath:0x7fcd5de3f280:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftIOKit.dylib'>'>
+2018-04-19 12:52:31 +0000  Skipping profile for item: <IDEDistributionItem: 0x7fcd5def2c50 'com.apple.dt.runtime.swiftMetal' '<DVTFilePath:0x7fcd5ddea370:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftMetal.dylib'>'>
+2018-04-19 12:52:31 +0000  Skipping profile for item: <IDEDistributionItem: 0x7fcd5e06a6d0 'com.apple.dt.runtime.swiftObjectiveC' '<DVTFilePath:0x7fcd5dd94760:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftObjectiveC.dylib'>'>
+2018-04-19 12:52:31 +0000  Skipping profile for item: <IDEDistributionItem: 0x7fcd5ae8bc10 'com.apple.dt.runtime.swiftQuartzCore' '<DVTFilePath:0x7fcd5af46c80:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftQuartzCore.dylib'>'>
+2018-04-19 12:52:31 +0000  Skipping profile for item: <IDEDistributionItem: 0x7fcd5dcd39f0 'com.apple.dt.runtime.swiftXPC' '<DVTFilePath:0x7fcd5dda08b0:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftXPC.dylib'>'>
+2018-04-19 12:52:31 +0000  Skipping profile for item: <IDEDistributionItem: 0x7fcd5e079190 'com.apple.dt.runtime.swiftos' '<DVTFilePath:0x7fcd5da56e80:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftos.dylib'>'>
+2018-04-19 12:52:31 +0000  Skipping profile for item: <IDEDistributionItem: 0x7fcd5e05be30 'org.cocoapods.Alamofire' '<DVTFilePath:0x7fcd5debaca0:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/Alamofire.framework/Versions/A'>'>
+2018-04-19 12:52:31 +0000  Skipping profile for item: <IDEDistributionItem: 0x7fcd5dee9900 'org.cocoapods.SwiftHash' '<DVTFilePath:0x7fcd5dec4420:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/SwiftHash.framework/Versions/A'>'>
+2018-04-19 12:52:31 +0000  Skipping profile for item: <IDEDistributionItem: 0x7fcd5da57290 'com.danielskovli.killswitchLauncher' '<DVTFilePath:0x7fcd5de91190:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app'>'>
+2018-04-19 12:52:31 +0000  Skipping profile for item: <IDEDistributionItem: 0x7fcd5e083bc0 'com.apple.dt.runtime.swiftAppKit' '<DVTFilePath:0x7fcd5deabc40:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/libswiftAppKit.dylib'>'>
+2018-04-19 12:52:31 +0000  Skipping profile for item: <IDEDistributionItem: 0x7fcd5ded6ea0 'com.apple.dt.runtime.swiftCore' '<DVTFilePath:0x7fcd5deac9b0:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/libswiftCore.dylib'>'>
+2018-04-19 12:52:31 +0000  Skipping profile for item: <IDEDistributionItem: 0x7fcd5e11d5c0 'com.apple.dt.runtime.swiftCoreData' '<DVTFilePath:0x7fcd5deb0560:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/libswiftCoreData.dylib'>'>
+2018-04-19 12:52:31 +0000  Skipping profile for item: <IDEDistributionItem: 0x7fcd5e11d4f0 'com.apple.dt.runtime.swiftCoreFoundation' '<DVTFilePath:0x7fcd5deb40c0:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/libswiftCoreFoundation.dylib'>'>
+2018-04-19 12:52:31 +0000  Skipping profile for item: <IDEDistributionItem: 0x7fcd5e05b1e0 'com.apple.dt.runtime.swiftCoreGraphics' '<DVTFilePath:0x7fcd5deadda0:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/libswiftCoreGraphics.dylib'>'>
+2018-04-19 12:52:31 +0000  Skipping profile for item: <IDEDistributionItem: 0x7fcd5b8af2b0 'com.apple.dt.runtime.swiftCoreImage' '<DVTFilePath:0x7fcd5dea9e80:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/libswiftCoreImage.dylib'>'>
+2018-04-19 12:52:31 +0000  Skipping profile for item: <IDEDistributionItem: 0x7fcd5d97e180 'com.apple.dt.runtime.swiftDarwin' '<DVTFilePath:0x7fcd5deb5530:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/libswiftDarwin.dylib'>'>
+2018-04-19 12:52:31 +0000  Skipping profile for item: <IDEDistributionItem: 0x7fcd5e12b290 'com.apple.dt.runtime.swiftDispatch' '<DVTFilePath:0x7fcd5deb1110:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/libswiftDispatch.dylib'>'>
+2018-04-19 12:52:31 +0000  Skipping profile for item: <IDEDistributionItem: 0x7fcd5dcb5460 'com.apple.dt.runtime.swiftFoundation' '<DVTFilePath:0x7fcd5decc190:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/libswiftFoundation.dylib'>'>
+2018-04-19 12:52:31 +0000  Skipping profile for item: <IDEDistributionItem: 0x7fcd5de52900 'com.apple.dt.runtime.swiftIOKit' '<DVTFilePath:0x7fcd5deb7cc0:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/libswiftIOKit.dylib'>'>
+2018-04-19 12:52:31 +0000  Skipping profile for item: <IDEDistributionItem: 0x7fcd5ded37d0 'com.apple.dt.runtime.swiftMetal' '<DVTFilePath:0x7fcd5deaf4a0:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/libswiftMetal.dylib'>'>
+2018-04-19 12:52:31 +0000  Skipping profile for item: <IDEDistributionItem: 0x7fcd5e090cf0 'com.apple.dt.runtime.swiftObjectiveC' '<DVTFilePath:0x7fcd5dea9bd0:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/libswiftObjectiveC.dylib'>'>
+2018-04-19 12:52:31 +0000  Skipping profile for item: <IDEDistributionItem: 0x7fcd5da5eaa0 'com.apple.dt.runtime.swiftQuartzCore' '<DVTFilePath:0x7fcd5deb6900:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/libswiftQuartzCore.dylib'>'>
+2018-04-19 12:52:31 +0000  Skipping profile for item: <IDEDistributionItem: 0x7fcd5dc9ae20 'com.apple.dt.runtime.swiftXPC' '<DVTFilePath:0x7fcd5de9d7c0:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/libswiftXPC.dylib'>'>
+2018-04-19 12:52:31 +0000  Skipping profile for item: <IDEDistributionItem: 0x7fcd5dc54910 'com.apple.dt.runtime.swiftos' '<DVTFilePath:0x7fcd5deb3070:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/libswiftos.dylib'>'>
+2018-04-19 12:52:31 +0000  Skipping profile for item: <IDEDistributionItem: 0x7fcd5e097830 'com.danielskovli.killswitchListener' '<DVTFilePath:0x7fcd5dd19f40:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app'>'>
+2018-04-19 12:52:31 +0000  Processing step: IDEDistributionAppThinningPlistStep
+2018-04-19 12:52:31 +0000  Processing step: IDEDistributionCompileBitcodeStep
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionCompileBitcodeStep because it said so
+2018-04-19 12:52:31 +0000  Processing step: IDEDistributionCodeSlimmingStep
+2018-04-19 12:52:31 +0000  Processing step: IDEDistributionCopyBCSymbolMapsStep
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionCopyBCSymbolMapsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionCopyBCSymbolMapsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionCopyBCSymbolMapsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionCopyBCSymbolMapsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionCopyBCSymbolMapsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionCopyBCSymbolMapsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionCopyBCSymbolMapsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionCopyBCSymbolMapsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionCopyBCSymbolMapsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionCopyBCSymbolMapsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionCopyBCSymbolMapsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionCopyBCSymbolMapsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionCopyBCSymbolMapsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionCopyBCSymbolMapsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionCopyBCSymbolMapsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionCopyBCSymbolMapsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionCopyBCSymbolMapsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionCopyBCSymbolMapsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionCopyBCSymbolMapsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionCopyBCSymbolMapsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionCopyBCSymbolMapsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionCopyBCSymbolMapsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionCopyBCSymbolMapsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionCopyBCSymbolMapsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionCopyBCSymbolMapsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionCopyBCSymbolMapsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionCopyBCSymbolMapsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionCopyBCSymbolMapsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionCopyBCSymbolMapsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionCopyBCSymbolMapsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionCopyBCSymbolMapsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionCopyBCSymbolMapsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionCopyBCSymbolMapsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionCopyBCSymbolMapsStep because it said so
+2018-04-19 12:52:31 +0000  Processing step: IDEDistributionSymbolsStep
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionSymbolsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionSymbolsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionSymbolsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionSymbolsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionSymbolsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionSymbolsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionSymbolsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionSymbolsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionSymbolsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionSymbolsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionSymbolsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionSymbolsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionSymbolsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionSymbolsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionSymbolsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionSymbolsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionSymbolsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionSymbolsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionSymbolsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionSymbolsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionSymbolsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionSymbolsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionSymbolsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionSymbolsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionSymbolsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionSymbolsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionSymbolsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionSymbolsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionSymbolsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionSymbolsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionSymbolsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionSymbolsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionSymbolsStep because it said so
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionSymbolsStep because it said so
+2018-04-19 12:52:31 +0000  Processing step: IDEDistributionAppThinningStep
+2018-04-19 12:52:31 +0000  Skipping step: IDEDistributionAppThinningStep because it said so
+2018-04-19 12:52:31 +0000  Processing step: IDEDistributionODRStep
+2018-04-19 12:52:31 +0000  Processing step: IDEDistributionStripXattrsStep
+2018-04-19 12:52:31 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7fcd5e075790 'com.apple.dt.runtime.swiftAppKit' '<DVTFilePath:0x7fcd5dd99af0:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftAppKit.dylib'>'>
+2018-04-19 12:52:31 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7fcd5dd363b0 'com.apple.dt.runtime.swiftCore' '<DVTFilePath:0x7fcd5ddd4fe0:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftCore.dylib'>'>
+2018-04-19 12:52:31 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7fcd5aee7220 'com.apple.dt.runtime.swiftCoreData' '<DVTFilePath:0x7fcd5de099c0:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftCoreData.dylib'>'>
+2018-04-19 12:52:31 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7fcd5e118440 'com.apple.dt.runtime.swiftCoreFoundation' '<DVTFilePath:0x7fcd5dd9a130:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftCoreFoundation.dylib'>'>
+2018-04-19 12:52:31 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7fcd5deef7a0 'com.apple.dt.runtime.swiftCoreGraphics' '<DVTFilePath:0x7fcd5de4e950:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftCoreGraphics.dylib'>'>
+2018-04-19 12:52:31 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7fcd5def5940 'com.apple.dt.runtime.swiftCoreImage' '<DVTFilePath:0x7fcd5dd9ed50:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftCoreImage.dylib'>'>
+2018-04-19 12:52:31 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7fcd5e10bf50 'com.apple.dt.runtime.swiftDarwin' '<DVTFilePath:0x7fcd5ddf6950:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftDarwin.dylib'>'>
+2018-04-19 12:52:31 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7fcd5e070300 'com.apple.dt.runtime.swiftDispatch' '<DVTFilePath:0x7fcd5dd93200:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftDispatch.dylib'>'>
+2018-04-19 12:52:31 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7fcd5b8e10e0 'com.apple.dt.runtime.swiftFoundation' '<DVTFilePath:0x7fcd5ddf3160:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftFoundation.dylib'>'>
+2018-04-19 12:52:31 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7fcd5b83c330 'com.apple.dt.runtime.swiftIOKit' '<DVTFilePath:0x7fcd5de3f280:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftIOKit.dylib'>'>
+2018-04-19 12:52:31 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7fcd5def2c50 'com.apple.dt.runtime.swiftMetal' '<DVTFilePath:0x7fcd5ddea370:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftMetal.dylib'>'>
+2018-04-19 12:52:31 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7fcd5e06a6d0 'com.apple.dt.runtime.swiftObjectiveC' '<DVTFilePath:0x7fcd5dd94760:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftObjectiveC.dylib'>'>
+2018-04-19 12:52:31 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7fcd5ae8bc10 'com.apple.dt.runtime.swiftQuartzCore' '<DVTFilePath:0x7fcd5af46c80:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftQuartzCore.dylib'>'>
+2018-04-19 12:52:31 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7fcd5dcd39f0 'com.apple.dt.runtime.swiftXPC' '<DVTFilePath:0x7fcd5dda08b0:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftXPC.dylib'>'>
+2018-04-19 12:52:31 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7fcd5e079190 'com.apple.dt.runtime.swiftos' '<DVTFilePath:0x7fcd5da56e80:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftos.dylib'>'>
+2018-04-19 12:52:31 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7fcd5e05be30 'org.cocoapods.Alamofire' '<DVTFilePath:0x7fcd5debaca0:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/Alamofire.framework/Versions/A'>'>
+2018-04-19 12:52:31 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7fcd5dee9900 'org.cocoapods.SwiftHash' '<DVTFilePath:0x7fcd5dec4420:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/SwiftHash.framework/Versions/A'>'>
+2018-04-19 12:52:31 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7fcd5da57290 'com.danielskovli.killswitchLauncher' '<DVTFilePath:0x7fcd5de91190:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app'>'>
+2018-04-19 12:52:31 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7fcd5e083bc0 'com.apple.dt.runtime.swiftAppKit' '<DVTFilePath:0x7fcd5deabc40:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/libswiftAppKit.dylib'>'>
+2018-04-19 12:52:31 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7fcd5ded6ea0 'com.apple.dt.runtime.swiftCore' '<DVTFilePath:0x7fcd5deac9b0:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/libswiftCore.dylib'>'>
+2018-04-19 12:52:31 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7fcd5e11d5c0 'com.apple.dt.runtime.swiftCoreData' '<DVTFilePath:0x7fcd5deb0560:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/libswiftCoreData.dylib'>'>
+2018-04-19 12:52:31 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7fcd5e11d4f0 'com.apple.dt.runtime.swiftCoreFoundation' '<DVTFilePath:0x7fcd5deb40c0:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/libswiftCoreFoundation.dylib'>'>
+2018-04-19 12:52:31 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7fcd5e05b1e0 'com.apple.dt.runtime.swiftCoreGraphics' '<DVTFilePath:0x7fcd5deadda0:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/libswiftCoreGraphics.dylib'>'>
+2018-04-19 12:52:32 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7fcd5b8af2b0 'com.apple.dt.runtime.swiftCoreImage' '<DVTFilePath:0x7fcd5dea9e80:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/libswiftCoreImage.dylib'>'>
+2018-04-19 12:52:32 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7fcd5d97e180 'com.apple.dt.runtime.swiftDarwin' '<DVTFilePath:0x7fcd5deb5530:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/libswiftDarwin.dylib'>'>
+2018-04-19 12:52:32 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7fcd5e12b290 'com.apple.dt.runtime.swiftDispatch' '<DVTFilePath:0x7fcd5deb1110:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/libswiftDispatch.dylib'>'>
+2018-04-19 12:52:32 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7fcd5dcb5460 'com.apple.dt.runtime.swiftFoundation' '<DVTFilePath:0x7fcd5decc190:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/libswiftFoundation.dylib'>'>
+2018-04-19 12:52:32 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7fcd5de52900 'com.apple.dt.runtime.swiftIOKit' '<DVTFilePath:0x7fcd5deb7cc0:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/libswiftIOKit.dylib'>'>
+2018-04-19 12:52:32 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7fcd5ded37d0 'com.apple.dt.runtime.swiftMetal' '<DVTFilePath:0x7fcd5deaf4a0:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/libswiftMetal.dylib'>'>
+2018-04-19 12:52:32 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7fcd5e090cf0 'com.apple.dt.runtime.swiftObjectiveC' '<DVTFilePath:0x7fcd5dea9bd0:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/libswiftObjectiveC.dylib'>'>
+2018-04-19 12:52:32 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7fcd5da5eaa0 'com.apple.dt.runtime.swiftQuartzCore' '<DVTFilePath:0x7fcd5deb6900:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/libswiftQuartzCore.dylib'>'>
+2018-04-19 12:52:32 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7fcd5dc9ae20 'com.apple.dt.runtime.swiftXPC' '<DVTFilePath:0x7fcd5de9d7c0:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/libswiftXPC.dylib'>'>
+2018-04-19 12:52:32 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7fcd5dc54910 'com.apple.dt.runtime.swiftos' '<DVTFilePath:0x7fcd5deb3070:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/libswiftos.dylib'>'>
+2018-04-19 12:52:32 +0000  Running /usr/bin/xattr '-crs' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app'
+2018-04-19 12:52:33 +0000  2018-04-19 12:52:33 +0000  2018-04-19 12:52:33 +0000  /usr/bin/xattr exited with 0
+
+
+2018-04-19 12:52:33 +0000  Processing step: IDEDistributionCodesignStep
+2018-04-19 12:52:33 +0000  Entitlements for <IDEDistributionItem: 0x7fcd5e075790 'com.apple.dt.runtime.swiftAppKit' '<DVTFilePath:0x7fcd5dd99af0:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftAppKit.dylib'>'>: {
+}
+2018-04-19 12:52:33 +0000  Writing entitlements for <IDEDistributionItem: 0x7fcd5e075790 'com.apple.dt.runtime.swiftAppKit' '<DVTFilePath:0x7fcd5dd99af0:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftAppKit.dylib'>'> to: /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlements3hKgf3
+2018-04-19 12:52:33 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' 'EE3BD8DDB4FC5B62A936638623E48DA7F9D2ABE8' '--preserve-metadata=identifier,flags' '--entitlements' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlements3hKgf3' '--requirements' '=designated => anchor apple generic  and identifier "$self.identifier" and ((cert leaf[field.1.2.840.113635.100.6.1.9] exists) or ( certificate 1[field.1.2.840.113635.100.6.2.6] exists and certificate leaf[field.1.2.840.113635.100.6.1.13] exists  and certificate leaf[subject.OU] = "E467X6539H" ))' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftAppKit.dylib'
+2018-04-19 12:52:33 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftAppKit.dylib: replacing existing signature
+2018-04-19 12:52:33 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftAppKit.dylib: signed Mach-O thin (x86_64) [com.apple.dt.runtime.swiftAppKit]
+2018-04-19 12:52:33 +0000  
+2018-04-19 12:52:33 +0000  2018-04-19 12:52:33 +0000  /usr/bin/codesign exited with 0
+
+2018-04-19 12:52:33 +0000  
+2018-04-19 12:52:33 +0000  Entitlements for <IDEDistributionItem: 0x7fcd5dd363b0 'com.apple.dt.runtime.swiftCore' '<DVTFilePath:0x7fcd5ddd4fe0:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftCore.dylib'>'>: {
+}
+2018-04-19 12:52:33 +0000  Writing entitlements for <IDEDistributionItem: 0x7fcd5dd363b0 'com.apple.dt.runtime.swiftCore' '<DVTFilePath:0x7fcd5ddd4fe0:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftCore.dylib'>'> to: /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlementsltqLjT
+2018-04-19 12:52:33 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' 'EE3BD8DDB4FC5B62A936638623E48DA7F9D2ABE8' '--preserve-metadata=identifier,flags' '--entitlements' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlementsltqLjT' '--requirements' '=designated => anchor apple generic  and identifier "$self.identifier" and ((cert leaf[field.1.2.840.113635.100.6.1.9] exists) or ( certificate 1[field.1.2.840.113635.100.6.2.6] exists and certificate leaf[field.1.2.840.113635.100.6.1.13] exists  and certificate leaf[subject.OU] = "E467X6539H" ))' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftCore.dylib'
+2018-04-19 12:52:34 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftCore.dylib: replacing existing signature
+2018-04-19 12:52:34 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftCore.dylib: signed Mach-O thin (x86_64) [com.apple.dt.runtime.swiftCore]
+2018-04-19 12:52:34 +0000  
+2018-04-19 12:52:34 +0000  2018-04-19 12:52:34 +0000  /usr/bin/codesign exited with 0
+
+2018-04-19 12:52:34 +0000  
+2018-04-19 12:52:34 +0000  Entitlements for <IDEDistributionItem: 0x7fcd5aee7220 'com.apple.dt.runtime.swiftCoreData' '<DVTFilePath:0x7fcd5de099c0:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftCoreData.dylib'>'>: {
+}
+2018-04-19 12:52:34 +0000  Writing entitlements for <IDEDistributionItem: 0x7fcd5aee7220 'com.apple.dt.runtime.swiftCoreData' '<DVTFilePath:0x7fcd5de099c0:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftCoreData.dylib'>'> to: /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlementshKu1Hp
+2018-04-19 12:52:34 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' 'EE3BD8DDB4FC5B62A936638623E48DA7F9D2ABE8' '--preserve-metadata=identifier,flags' '--entitlements' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlementshKu1Hp' '--requirements' '=designated => anchor apple generic  and identifier "$self.identifier" and ((cert leaf[field.1.2.840.113635.100.6.1.9] exists) or ( certificate 1[field.1.2.840.113635.100.6.2.6] exists and certificate leaf[field.1.2.840.113635.100.6.1.13] exists  and certificate leaf[subject.OU] = "E467X6539H" ))' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftCoreData.dylib'
+2018-04-19 12:52:34 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftCoreData.dylib: replacing existing signature
+2018-04-19 12:52:34 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftCoreData.dylib: signed Mach-O thin (x86_64) [com.apple.dt.runtime.swiftCoreData]
+2018-04-19 12:52:34 +0000  
+2018-04-19 12:52:34 +0000  2018-04-19 12:52:34 +0000  /usr/bin/codesign exited with 0
+
+2018-04-19 12:52:34 +0000  
+2018-04-19 12:52:34 +0000  Entitlements for <IDEDistributionItem: 0x7fcd5e118440 'com.apple.dt.runtime.swiftCoreFoundation' '<DVTFilePath:0x7fcd5dd9a130:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftCoreFoundation.dylib'>'>: {
+}
+2018-04-19 12:52:34 +0000  Writing entitlements for <IDEDistributionItem: 0x7fcd5e118440 'com.apple.dt.runtime.swiftCoreFoundation' '<DVTFilePath:0x7fcd5dd9a130:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftCoreFoundation.dylib'>'> to: /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlementslCx6KF
+2018-04-19 12:52:34 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' 'EE3BD8DDB4FC5B62A936638623E48DA7F9D2ABE8' '--preserve-metadata=identifier,flags' '--entitlements' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlementslCx6KF' '--requirements' '=designated => anchor apple generic  and identifier "$self.identifier" and ((cert leaf[field.1.2.840.113635.100.6.1.9] exists) or ( certificate 1[field.1.2.840.113635.100.6.2.6] exists and certificate leaf[field.1.2.840.113635.100.6.1.13] exists  and certificate leaf[subject.OU] = "E467X6539H" ))' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftCoreFoundation.dylib'
+2018-04-19 12:52:35 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftCoreFoundation.dylib: replacing existing signature
+2018-04-19 12:52:35 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftCoreFoundation.dylib: signed Mach-O thin (x86_64) [com.apple.dt.runtime.swiftCoreFoundation]
+2018-04-19 12:52:35 +0000  
+2018-04-19 12:52:35 +0000  2018-04-19 12:52:35 +0000  /usr/bin/codesign exited with 0
+
+2018-04-19 12:52:35 +0000  
+2018-04-19 12:52:35 +0000  
+2018-04-19 12:52:35 +0000  Entitlements for <IDEDistributionItem: 0x7fcd5deef7a0 'com.apple.dt.runtime.swiftCoreGraphics' '<DVTFilePath:0x7fcd5de4e950:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftCoreGraphics.dylib'>'>: {
+}
+2018-04-19 12:52:35 +0000  Writing entitlements for <IDEDistributionItem: 0x7fcd5deef7a0 'com.apple.dt.runtime.swiftCoreGraphics' '<DVTFilePath:0x7fcd5de4e950:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftCoreGraphics.dylib'>'> to: /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlementsDM5mxr
+2018-04-19 12:52:35 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' 'EE3BD8DDB4FC5B62A936638623E48DA7F9D2ABE8' '--preserve-metadata=identifier,flags' '--entitlements' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlementsDM5mxr' '--requirements' '=designated => anchor apple generic  and identifier "$self.identifier" and ((cert leaf[field.1.2.840.113635.100.6.1.9] exists) or ( certificate 1[field.1.2.840.113635.100.6.2.6] exists and certificate leaf[field.1.2.840.113635.100.6.1.13] exists  and certificate leaf[subject.OU] = "E467X6539H" ))' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftCoreGraphics.dylib'
+2018-04-19 12:52:35 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftCoreGraphics.dylib: replacing existing signature
+2018-04-19 12:52:35 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftCoreGraphics.dylib: signed Mach-O thin (x86_64) [com.apple.dt.runtime.swiftCoreGraphics]
+2018-04-19 12:52:35 +0000  
+2018-04-19 12:52:35 +0000  2018-04-19 12:52:35 +0000  /usr/bin/codesign exited with 0
+
+2018-04-19 12:52:35 +0000  
+2018-04-19 12:52:35 +0000  
+2018-04-19 12:52:35 +0000  Entitlements for <IDEDistributionItem: 0x7fcd5def5940 'com.apple.dt.runtime.swiftCoreImage' '<DVTFilePath:0x7fcd5dd9ed50:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftCoreImage.dylib'>'>: {
+}
+2018-04-19 12:52:35 +0000  Writing entitlements for <IDEDistributionItem: 0x7fcd5def5940 'com.apple.dt.runtime.swiftCoreImage' '<DVTFilePath:0x7fcd5dd9ed50:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftCoreImage.dylib'>'> to: /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlementsATdmte
+2018-04-19 12:52:35 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' 'EE3BD8DDB4FC5B62A936638623E48DA7F9D2ABE8' '--preserve-metadata=identifier,flags' '--entitlements' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlementsATdmte' '--requirements' '=designated => anchor apple generic  and identifier "$self.identifier" and ((cert leaf[field.1.2.840.113635.100.6.1.9] exists) or ( certificate 1[field.1.2.840.113635.100.6.2.6] exists and certificate leaf[field.1.2.840.113635.100.6.1.13] exists  and certificate leaf[subject.OU] = "E467X6539H" ))' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftCoreImage.dylib'
+2018-04-19 12:52:35 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftCoreImage.dylib: replacing existing signature
+2018-04-19 12:52:36 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftCoreImage.dylib: signed Mach-O thin (x86_64) [com.apple.dt.runtime.swiftCoreImage]
+2018-04-19 12:52:36 +0000  
+2018-04-19 12:52:36 +0000  2018-04-19 12:52:36 +0000  /usr/bin/codesign exited with 0
+
+2018-04-19 12:52:36 +0000  
+2018-04-19 12:52:36 +0000  Entitlements for <IDEDistributionItem: 0x7fcd5e10bf50 'com.apple.dt.runtime.swiftDarwin' '<DVTFilePath:0x7fcd5ddf6950:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftDarwin.dylib'>'>: {
+}
+2018-04-19 12:52:36 +0000  Writing entitlements for <IDEDistributionItem: 0x7fcd5e10bf50 'com.apple.dt.runtime.swiftDarwin' '<DVTFilePath:0x7fcd5ddf6950:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftDarwin.dylib'>'> to: /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlementsc38v3W
+2018-04-19 12:52:36 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' 'EE3BD8DDB4FC5B62A936638623E48DA7F9D2ABE8' '--preserve-metadata=identifier,flags' '--entitlements' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlementsc38v3W' '--requirements' '=designated => anchor apple generic  and identifier "$self.identifier" and ((cert leaf[field.1.2.840.113635.100.6.1.9] exists) or ( certificate 1[field.1.2.840.113635.100.6.2.6] exists and certificate leaf[field.1.2.840.113635.100.6.1.13] exists  and certificate leaf[subject.OU] = "E467X6539H" ))' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftDarwin.dylib'
+2018-04-19 12:52:36 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftDarwin.dylib: replacing existing signature
+2018-04-19 12:52:36 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftDarwin.dylib: signed Mach-O thin (x86_64) [com.apple.dt.runtime.swiftDarwin]
+2018-04-19 12:52:36 +0000  
+2018-04-19 12:52:36 +0000  2018-04-19 12:52:36 +0000  /usr/bin/codesign exited with 0
+
+2018-04-19 12:52:36 +0000  
+2018-04-19 12:52:36 +0000  
+2018-04-19 12:52:36 +0000  Entitlements for <IDEDistributionItem: 0x7fcd5e070300 'com.apple.dt.runtime.swiftDispatch' '<DVTFilePath:0x7fcd5dd93200:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftDispatch.dylib'>'>: {
+}
+2018-04-19 12:52:36 +0000  Writing entitlements for <IDEDistributionItem: 0x7fcd5e070300 'com.apple.dt.runtime.swiftDispatch' '<DVTFilePath:0x7fcd5dd93200:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftDispatch.dylib'>'> to: /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlementspfpw8W
+2018-04-19 12:52:36 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' 'EE3BD8DDB4FC5B62A936638623E48DA7F9D2ABE8' '--preserve-metadata=identifier,flags' '--entitlements' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlementspfpw8W' '--requirements' '=designated => anchor apple generic  and identifier "$self.identifier" and ((cert leaf[field.1.2.840.113635.100.6.1.9] exists) or ( certificate 1[field.1.2.840.113635.100.6.2.6] exists and certificate leaf[field.1.2.840.113635.100.6.1.13] exists  and certificate leaf[subject.OU] = "E467X6539H" ))' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftDispatch.dylib'
+2018-04-19 12:52:36 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftDispatch.dylib: replacing existing signature
+2018-04-19 12:52:37 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftDispatch.dylib: signed Mach-O thin (x86_64) [com.apple.dt.runtime.swiftDispatch]
+2018-04-19 12:52:37 +0000  
+2018-04-19 12:52:37 +0000  
+2018-04-19 12:52:37 +0000  /usr/bin/codesign exited with 02018-04-19 12:52:37 +0000  
+
+2018-04-19 12:52:37 +0000  
+2018-04-19 12:52:37 +0000  Entitlements for <IDEDistributionItem: 0x7fcd5b8e10e0 'com.apple.dt.runtime.swiftFoundation' '<DVTFilePath:0x7fcd5ddf3160:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftFoundation.dylib'>'>: {
+}
+2018-04-19 12:52:37 +0000  Writing entitlements for <IDEDistributionItem: 0x7fcd5b8e10e0 'com.apple.dt.runtime.swiftFoundation' '<DVTFilePath:0x7fcd5ddf3160:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftFoundation.dylib'>'> to: /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlementsEnDV4p
+2018-04-19 12:52:37 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' 'EE3BD8DDB4FC5B62A936638623E48DA7F9D2ABE8' '--preserve-metadata=identifier,flags' '--entitlements' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlementsEnDV4p' '--requirements' '=designated => anchor apple generic  and identifier "$self.identifier" and ((cert leaf[field.1.2.840.113635.100.6.1.9] exists) or ( certificate 1[field.1.2.840.113635.100.6.2.6] exists and certificate leaf[field.1.2.840.113635.100.6.1.13] exists  and certificate leaf[subject.OU] = "E467X6539H" ))' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftFoundation.dylib'
+2018-04-19 12:52:37 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftFoundation.dylib: replacing existing signature
+2018-04-19 12:52:37 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftFoundation.dylib: signed Mach-O thin (x86_64) [com.apple.dt.runtime.swiftFoundation]
+2018-04-19 12:52:37 +0000  2018-04-19 12:52:37 +0000  
+
+2018-04-19 12:52:37 +0000  /usr/bin/codesign exited with 0
+2018-04-19 12:52:37 +0000  2018-04-19 12:52:37 +0000  
+
+2018-04-19 12:52:37 +0000  Entitlements for <IDEDistributionItem: 0x7fcd5b83c330 'com.apple.dt.runtime.swiftIOKit' '<DVTFilePath:0x7fcd5de3f280:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftIOKit.dylib'>'>: {
+}
+2018-04-19 12:52:37 +0000  Writing entitlements for <IDEDistributionItem: 0x7fcd5b83c330 'com.apple.dt.runtime.swiftIOKit' '<DVTFilePath:0x7fcd5de3f280:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftIOKit.dylib'>'> to: /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlementsp5kfix
+2018-04-19 12:52:37 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' 'EE3BD8DDB4FC5B62A936638623E48DA7F9D2ABE8' '--preserve-metadata=identifier,flags' '--entitlements' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlementsp5kfix' '--requirements' '=designated => anchor apple generic  and identifier "$self.identifier" and ((cert leaf[field.1.2.840.113635.100.6.1.9] exists) or ( certificate 1[field.1.2.840.113635.100.6.2.6] exists and certificate leaf[field.1.2.840.113635.100.6.1.13] exists  and certificate leaf[subject.OU] = "E467X6539H" ))' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftIOKit.dylib'
+2018-04-19 12:52:37 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftIOKit.dylib: replacing existing signature
+2018-04-19 12:52:38 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftIOKit.dylib: signed Mach-O thin (x86_64) [com.apple.dt.runtime.swiftIOKit]
+2018-04-19 12:52:38 +0000  
+2018-04-19 12:52:38 +0000  2018-04-19 12:52:38 +0000  /usr/bin/codesign exited with 0
+
+2018-04-19 12:52:38 +0000  
+2018-04-19 12:52:38 +0000  Entitlements for <IDEDistributionItem: 0x7fcd5def2c50 'com.apple.dt.runtime.swiftMetal' '<DVTFilePath:0x7fcd5ddea370:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftMetal.dylib'>'>: {
+}
+2018-04-19 12:52:38 +0000  Writing entitlements for <IDEDistributionItem: 0x7fcd5def2c50 'com.apple.dt.runtime.swiftMetal' '<DVTFilePath:0x7fcd5ddea370:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftMetal.dylib'>'> to: /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlementsrVverz
+2018-04-19 12:52:38 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' 'EE3BD8DDB4FC5B62A936638623E48DA7F9D2ABE8' '--preserve-metadata=identifier,flags' '--entitlements' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlementsrVverz' '--requirements' '=designated => anchor apple generic  and identifier "$self.identifier" and ((cert leaf[field.1.2.840.113635.100.6.1.9] exists) or ( certificate 1[field.1.2.840.113635.100.6.2.6] exists and certificate leaf[field.1.2.840.113635.100.6.1.13] exists  and certificate leaf[subject.OU] = "E467X6539H" ))' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftMetal.dylib'
+2018-04-19 12:52:38 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftMetal.dylib: replacing existing signature
+2018-04-19 12:52:38 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftMetal.dylib: signed Mach-O thin (x86_64) [com.apple.dt.runtime.swiftMetal]
+2018-04-19 12:52:38 +0000  2018-04-19 12:52:38 +0000  
+
+2018-04-19 12:52:38 +0000  /usr/bin/codesign exited with 0
+2018-04-19 12:52:38 +0000  
+2018-04-19 12:52:38 +0000  
+2018-04-19 12:52:38 +0000  Entitlements for <IDEDistributionItem: 0x7fcd5e06a6d0 'com.apple.dt.runtime.swiftObjectiveC' '<DVTFilePath:0x7fcd5dd94760:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftObjectiveC.dylib'>'>: {
+}
+2018-04-19 12:52:38 +0000  Writing entitlements for <IDEDistributionItem: 0x7fcd5e06a6d0 'com.apple.dt.runtime.swiftObjectiveC' '<DVTFilePath:0x7fcd5dd94760:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftObjectiveC.dylib'>'> to: /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlementsKlY23r
+2018-04-19 12:52:38 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' 'EE3BD8DDB4FC5B62A936638623E48DA7F9D2ABE8' '--preserve-metadata=identifier,flags' '--entitlements' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlementsKlY23r' '--requirements' '=designated => anchor apple generic  and identifier "$self.identifier" and ((cert leaf[field.1.2.840.113635.100.6.1.9] exists) or ( certificate 1[field.1.2.840.113635.100.6.2.6] exists and certificate leaf[field.1.2.840.113635.100.6.1.13] exists  and certificate leaf[subject.OU] = "E467X6539H" ))' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftObjectiveC.dylib'
+2018-04-19 12:52:38 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftObjectiveC.dylib: replacing existing signature
+2018-04-19 12:52:38 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftObjectiveC.dylib: signed Mach-O thin (x86_64) [com.apple.dt.runtime.swiftObjectiveC]
+2018-04-19 12:52:38 +0000  
+2018-04-19 12:52:38 +0000  2018-04-19 12:52:38 +0000  /usr/bin/codesign exited with 0
+
+2018-04-19 12:52:38 +0000  
+2018-04-19 12:52:38 +0000  Entitlements for <IDEDistributionItem: 0x7fcd5ae8bc10 'com.apple.dt.runtime.swiftQuartzCore' '<DVTFilePath:0x7fcd5af46c80:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftQuartzCore.dylib'>'>: {
+}
+2018-04-19 12:52:38 +0000  Writing entitlements for <IDEDistributionItem: 0x7fcd5ae8bc10 'com.apple.dt.runtime.swiftQuartzCore' '<DVTFilePath:0x7fcd5af46c80:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftQuartzCore.dylib'>'> to: /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlementsjczq67
+2018-04-19 12:52:38 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' 'EE3BD8DDB4FC5B62A936638623E48DA7F9D2ABE8' '--preserve-metadata=identifier,flags' '--entitlements' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlementsjczq67' '--requirements' '=designated => anchor apple generic  and identifier "$self.identifier" and ((cert leaf[field.1.2.840.113635.100.6.1.9] exists) or ( certificate 1[field.1.2.840.113635.100.6.2.6] exists and certificate leaf[field.1.2.840.113635.100.6.1.13] exists  and certificate leaf[subject.OU] = "E467X6539H" ))' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftQuartzCore.dylib'
+2018-04-19 12:52:39 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftQuartzCore.dylib: replacing existing signature
+2018-04-19 12:52:39 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftQuartzCore.dylib: signed Mach-O thin (x86_64) [com.apple.dt.runtime.swiftQuartzCore]
+2018-04-19 12:52:39 +0000  
+2018-04-19 12:52:39 +0000  2018-04-19 12:52:39 +0000  /usr/bin/codesign exited with 0
+
+2018-04-19 12:52:39 +0000  2018-04-19 12:52:39 +0000  
+
+2018-04-19 12:52:39 +0000  Entitlements for <IDEDistributionItem: 0x7fcd5dcd39f0 'com.apple.dt.runtime.swiftXPC' '<DVTFilePath:0x7fcd5dda08b0:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftXPC.dylib'>'>: {
+}
+2018-04-19 12:52:39 +0000  Writing entitlements for <IDEDistributionItem: 0x7fcd5dcd39f0 'com.apple.dt.runtime.swiftXPC' '<DVTFilePath:0x7fcd5dda08b0:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftXPC.dylib'>'> to: /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlementsg2bSuP
+2018-04-19 12:52:39 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' 'EE3BD8DDB4FC5B62A936638623E48DA7F9D2ABE8' '--preserve-metadata=identifier,flags' '--entitlements' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlementsg2bSuP' '--requirements' '=designated => anchor apple generic  and identifier "$self.identifier" and ((cert leaf[field.1.2.840.113635.100.6.1.9] exists) or ( certificate 1[field.1.2.840.113635.100.6.2.6] exists and certificate leaf[field.1.2.840.113635.100.6.1.13] exists  and certificate leaf[subject.OU] = "E467X6539H" ))' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftXPC.dylib'
+2018-04-19 12:52:39 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftXPC.dylib: replacing existing signature
+2018-04-19 12:52:39 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftXPC.dylib: signed Mach-O thin (x86_64) [com.apple.dt.runtime.swiftXPC]
+2018-04-19 12:52:39 +0000  
+2018-04-19 12:52:39 +0000  2018-04-19 12:52:39 +0000  
+
+2018-04-19 12:52:39 +0000  /usr/bin/codesign exited with 0
+2018-04-19 12:52:39 +0000  
+2018-04-19 12:52:39 +0000  Entitlements for <IDEDistributionItem: 0x7fcd5e079190 'com.apple.dt.runtime.swiftos' '<DVTFilePath:0x7fcd5da56e80:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftos.dylib'>'>: {
+}
+2018-04-19 12:52:39 +0000  Writing entitlements for <IDEDistributionItem: 0x7fcd5e079190 'com.apple.dt.runtime.swiftos' '<DVTFilePath:0x7fcd5da56e80:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftos.dylib'>'> to: /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlementsHAesIh
+2018-04-19 12:52:39 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' 'EE3BD8DDB4FC5B62A936638623E48DA7F9D2ABE8' '--preserve-metadata=identifier,flags' '--entitlements' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlementsHAesIh' '--requirements' '=designated => anchor apple generic  and identifier "$self.identifier" and ((cert leaf[field.1.2.840.113635.100.6.1.9] exists) or ( certificate 1[field.1.2.840.113635.100.6.2.6] exists and certificate leaf[field.1.2.840.113635.100.6.1.13] exists  and certificate leaf[subject.OU] = "E467X6539H" ))' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftos.dylib'
+2018-04-19 12:52:39 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftos.dylib: replacing existing signature
+2018-04-19 12:52:40 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app/Contents/Frameworks/libswiftos.dylib: signed Mach-O thin (x86_64) [com.apple.dt.runtime.swiftos]
+2018-04-19 12:52:40 +0000  
+2018-04-19 12:52:40 +0000  2018-04-19 12:52:40 +0000  /usr/bin/codesign exited with 0
+
+2018-04-19 12:52:40 +0000  
+2018-04-19 12:52:40 +0000  Entitlements for <IDEDistributionItem: 0x7fcd5e05be30 'org.cocoapods.Alamofire' '<DVTFilePath:0x7fcd5debaca0:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/Alamofire.framework/Versions/A'>'>: {
+}
+2018-04-19 12:52:40 +0000  Writing entitlements for <IDEDistributionItem: 0x7fcd5e05be30 'org.cocoapods.Alamofire' '<DVTFilePath:0x7fcd5debaca0:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/Alamofire.framework/Versions/A'>'> to: /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlementsk7Pqd8
+2018-04-19 12:52:40 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' 'EE3BD8DDB4FC5B62A936638623E48DA7F9D2ABE8' '--preserve-metadata=identifier,flags' '--entitlements' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlementsk7Pqd8' '--requirements' '=designated => anchor apple generic  and identifier "$self.identifier" and ((cert leaf[field.1.2.840.113635.100.6.1.9] exists) or ( certificate 1[field.1.2.840.113635.100.6.2.6] exists and certificate leaf[field.1.2.840.113635.100.6.1.13] exists  and certificate leaf[subject.OU] = "E467X6539H" ))' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Frameworks/Alamofire.framework/Versions/A'
+2018-04-19 12:52:40 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Frameworks/Alamofire.framework/Versions/A: replacing existing signature
+2018-04-19 12:52:40 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Frameworks/Alamofire.framework/Versions/A: signed bundle with Mach-O thin (x86_64) [org.cocoapods.Alamofire]
+2018-04-19 12:52:40 +0000  
+2018-04-19 12:52:40 +0000  2018-04-19 12:52:40 +0000  /usr/bin/codesign exited with 0
+
+2018-04-19 12:52:40 +0000  
+2018-04-19 12:52:40 +0000  Entitlements for <IDEDistributionItem: 0x7fcd5dee9900 'org.cocoapods.SwiftHash' '<DVTFilePath:0x7fcd5dec4420:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/SwiftHash.framework/Versions/A'>'>: {
+}
+2018-04-19 12:52:40 +0000  Writing entitlements for <IDEDistributionItem: 0x7fcd5dee9900 'org.cocoapods.SwiftHash' '<DVTFilePath:0x7fcd5dec4420:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/SwiftHash.framework/Versions/A'>'> to: /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlementsuMdstu
+2018-04-19 12:52:40 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' 'EE3BD8DDB4FC5B62A936638623E48DA7F9D2ABE8' '--preserve-metadata=identifier,flags' '--entitlements' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlementsuMdstu' '--requirements' '=designated => anchor apple generic  and identifier "$self.identifier" and ((cert leaf[field.1.2.840.113635.100.6.1.9] exists) or ( certificate 1[field.1.2.840.113635.100.6.2.6] exists and certificate leaf[field.1.2.840.113635.100.6.1.13] exists  and certificate leaf[subject.OU] = "E467X6539H" ))' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Frameworks/SwiftHash.framework/Versions/A'
+2018-04-19 12:52:40 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Frameworks/SwiftHash.framework/Versions/A: replacing existing signature
+2018-04-19 12:52:40 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Frameworks/SwiftHash.framework/Versions/A: signed bundle with Mach-O thin (x86_64) [org.cocoapods.SwiftHash]
+2018-04-19 12:52:40 +0000  
+2018-04-19 12:52:40 +0000  2018-04-19 12:52:40 +0000  /usr/bin/codesign exited with 0
+
+2018-04-19 12:52:40 +0000  
+2018-04-19 12:52:40 +0000  Entitlements for <IDEDistributionItem: 0x7fcd5da57290 'com.danielskovli.killswitchLauncher' '<DVTFilePath:0x7fcd5de91190:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app'>'>: {
+    "com.apple.security.app-sandbox" = 1;
+    "com.apple.security.files.user-selected.read-only" = 1;
+}
+2018-04-19 12:52:40 +0000  Writing entitlements for <IDEDistributionItem: 0x7fcd5da57290 'com.danielskovli.killswitchLauncher' '<DVTFilePath:0x7fcd5de91190:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app'>'> to: /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlementscDXSSC
+2018-04-19 12:52:41 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' 'EE3BD8DDB4FC5B62A936638623E48DA7F9D2ABE8' '--preserve-metadata=identifier,flags' '--entitlements' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlementscDXSSC' '--requirements' '=designated => anchor apple generic  and identifier "$self.identifier" and ((cert leaf[field.1.2.840.113635.100.6.1.9] exists) or ( certificate 1[field.1.2.840.113635.100.6.2.6] exists and certificate leaf[field.1.2.840.113635.100.6.1.13] exists  and certificate leaf[subject.OU] = "E467X6539H" ))' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app'
+2018-04-19 12:52:41 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app: replacing existing signature
+2018-04-19 12:52:41 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Library/LoginItems/KillswitchLauncher.app: signed app bundle with Mach-O thin (x86_64) [com.danielskovli.killswitchLauncher]
+2018-04-19 12:52:41 +0000  
+2018-04-19 12:52:41 +0000  2018-04-19 12:52:41 +0000  /usr/bin/codesign exited with 0
+
+2018-04-19 12:52:41 +0000  
+2018-04-19 12:52:41 +0000  Entitlements for <IDEDistributionItem: 0x7fcd5e083bc0 'com.apple.dt.runtime.swiftAppKit' '<DVTFilePath:0x7fcd5deabc40:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/libswiftAppKit.dylib'>'>: {
+}
+2018-04-19 12:52:41 +0000  Writing entitlements for <IDEDistributionItem: 0x7fcd5e083bc0 'com.apple.dt.runtime.swiftAppKit' '<DVTFilePath:0x7fcd5deabc40:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/libswiftAppKit.dylib'>'> to: /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlementsSTfCA4
+2018-04-19 12:52:41 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' 'EE3BD8DDB4FC5B62A936638623E48DA7F9D2ABE8' '--preserve-metadata=identifier,flags' '--entitlements' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlementsSTfCA4' '--requirements' '=designated => anchor apple generic  and identifier "$self.identifier" and ((cert leaf[field.1.2.840.113635.100.6.1.9] exists) or ( certificate 1[field.1.2.840.113635.100.6.2.6] exists and certificate leaf[field.1.2.840.113635.100.6.1.13] exists  and certificate leaf[subject.OU] = "E467X6539H" ))' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Frameworks/libswiftAppKit.dylib'
+2018-04-19 12:52:41 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Frameworks/libswiftAppKit.dylib: replacing existing signature
+2018-04-19 12:52:41 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Frameworks/libswiftAppKit.dylib: signed Mach-O thin (x86_64) [com.apple.dt.runtime.swiftAppKit]
+2018-04-19 12:52:41 +0000  
+2018-04-19 12:52:41 +0000  2018-04-19 12:52:41 +0000  /usr/bin/codesign exited with 0
+
+2018-04-19 12:52:41 +0000  2018-04-19 12:52:41 +0000  
+
+2018-04-19 12:52:41 +0000  Entitlements for <IDEDistributionItem: 0x7fcd5ded6ea0 'com.apple.dt.runtime.swiftCore' '<DVTFilePath:0x7fcd5deac9b0:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/libswiftCore.dylib'>'>: {
+}
+2018-04-19 12:52:41 +0000  Writing entitlements for <IDEDistributionItem: 0x7fcd5ded6ea0 'com.apple.dt.runtime.swiftCore' '<DVTFilePath:0x7fcd5deac9b0:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/libswiftCore.dylib'>'> to: /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlementsRzrBvV
+2018-04-19 12:52:41 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' 'EE3BD8DDB4FC5B62A936638623E48DA7F9D2ABE8' '--preserve-metadata=identifier,flags' '--entitlements' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlementsRzrBvV' '--requirements' '=designated => anchor apple generic  and identifier "$self.identifier" and ((cert leaf[field.1.2.840.113635.100.6.1.9] exists) or ( certificate 1[field.1.2.840.113635.100.6.2.6] exists and certificate leaf[field.1.2.840.113635.100.6.1.13] exists  and certificate leaf[subject.OU] = "E467X6539H" ))' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Frameworks/libswiftCore.dylib'
+2018-04-19 12:52:41 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Frameworks/libswiftCore.dylib: replacing existing signature
+2018-04-19 12:52:42 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Frameworks/libswiftCore.dylib: signed Mach-O thin (x86_64) [com.apple.dt.runtime.swiftCore]
+2018-04-19 12:52:42 +0000  
+2018-04-19 12:52:42 +0000  2018-04-19 12:52:42 +0000  /usr/bin/codesign exited with 0
+
+2018-04-19 12:52:42 +0000  2018-04-19 12:52:42 +0000  
+
+2018-04-19 12:52:42 +0000  Entitlements for <IDEDistributionItem: 0x7fcd5e11d5c0 'com.apple.dt.runtime.swiftCoreData' '<DVTFilePath:0x7fcd5deb0560:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/libswiftCoreData.dylib'>'>: {
+}
+2018-04-19 12:52:42 +0000  Writing entitlements for <IDEDistributionItem: 0x7fcd5e11d5c0 'com.apple.dt.runtime.swiftCoreData' '<DVTFilePath:0x7fcd5deb0560:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/libswiftCoreData.dylib'>'> to: /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlements3iOHNm
+2018-04-19 12:52:42 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' 'EE3BD8DDB4FC5B62A936638623E48DA7F9D2ABE8' '--preserve-metadata=identifier,flags' '--entitlements' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlements3iOHNm' '--requirements' '=designated => anchor apple generic  and identifier "$self.identifier" and ((cert leaf[field.1.2.840.113635.100.6.1.9] exists) or ( certificate 1[field.1.2.840.113635.100.6.2.6] exists and certificate leaf[field.1.2.840.113635.100.6.1.13] exists  and certificate leaf[subject.OU] = "E467X6539H" ))' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Frameworks/libswiftCoreData.dylib'
+2018-04-19 12:52:42 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Frameworks/libswiftCoreData.dylib: replacing existing signature
+2018-04-19 12:52:42 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Frameworks/libswiftCoreData.dylib: signed Mach-O thin (x86_64) [com.apple.dt.runtime.swiftCoreData]
+2018-04-19 12:52:42 +0000  
+2018-04-19 12:52:42 +0000  
+2018-04-19 12:52:42 +0000  /usr/bin/codesign exited with 0
+2018-04-19 12:52:42 +0000  2018-04-19 12:52:42 +0000  
+
+2018-04-19 12:52:42 +0000  Entitlements for <IDEDistributionItem: 0x7fcd5e11d4f0 'com.apple.dt.runtime.swiftCoreFoundation' '<DVTFilePath:0x7fcd5deb40c0:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/libswiftCoreFoundation.dylib'>'>: {
+}
+2018-04-19 12:52:42 +0000  Writing entitlements for <IDEDistributionItem: 0x7fcd5e11d4f0 'com.apple.dt.runtime.swiftCoreFoundation' '<DVTFilePath:0x7fcd5deb40c0:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/libswiftCoreFoundation.dylib'>'> to: /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlementsj5QvZn
+2018-04-19 12:52:42 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' 'EE3BD8DDB4FC5B62A936638623E48DA7F9D2ABE8' '--preserve-metadata=identifier,flags' '--entitlements' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlementsj5QvZn' '--requirements' '=designated => anchor apple generic  and identifier "$self.identifier" and ((cert leaf[field.1.2.840.113635.100.6.1.9] exists) or ( certificate 1[field.1.2.840.113635.100.6.2.6] exists and certificate leaf[field.1.2.840.113635.100.6.1.13] exists  and certificate leaf[subject.OU] = "E467X6539H" ))' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Frameworks/libswiftCoreFoundation.dylib'
+2018-04-19 12:52:42 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Frameworks/libswiftCoreFoundation.dylib: replacing existing signature
+2018-04-19 12:52:43 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Frameworks/libswiftCoreFoundation.dylib: signed Mach-O thin (x86_64) [com.apple.dt.runtime.swiftCoreFoundation]
+2018-04-19 12:52:43 +0000  
+2018-04-19 12:52:43 +0000  
+2018-04-19 12:52:43 +0000  /usr/bin/codesign exited with 02018-04-19 12:52:43 +0000  
+
+2018-04-19 12:52:43 +0000  
+2018-04-19 12:52:43 +0000  Entitlements for <IDEDistributionItem: 0x7fcd5e05b1e0 'com.apple.dt.runtime.swiftCoreGraphics' '<DVTFilePath:0x7fcd5deadda0:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/libswiftCoreGraphics.dylib'>'>: {
+}
+2018-04-19 12:52:43 +0000  Writing entitlements for <IDEDistributionItem: 0x7fcd5e05b1e0 'com.apple.dt.runtime.swiftCoreGraphics' '<DVTFilePath:0x7fcd5deadda0:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/libswiftCoreGraphics.dylib'>'> to: /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlementsWwLM4q
+2018-04-19 12:52:43 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' 'EE3BD8DDB4FC5B62A936638623E48DA7F9D2ABE8' '--preserve-metadata=identifier,flags' '--entitlements' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlementsWwLM4q' '--requirements' '=designated => anchor apple generic  and identifier "$self.identifier" and ((cert leaf[field.1.2.840.113635.100.6.1.9] exists) or ( certificate 1[field.1.2.840.113635.100.6.2.6] exists and certificate leaf[field.1.2.840.113635.100.6.1.13] exists  and certificate leaf[subject.OU] = "E467X6539H" ))' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Frameworks/libswiftCoreGraphics.dylib'
+2018-04-19 12:52:43 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Frameworks/libswiftCoreGraphics.dylib: replacing existing signature
+2018-04-19 12:52:43 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Frameworks/libswiftCoreGraphics.dylib: signed Mach-O thin (x86_64) [com.apple.dt.runtime.swiftCoreGraphics]
+2018-04-19 12:52:43 +0000  
+2018-04-19 12:52:43 +0000  2018-04-19 12:52:43 +0000  /usr/bin/codesign exited with 0
+
+2018-04-19 12:52:43 +0000  
+2018-04-19 12:52:43 +0000  
+2018-04-19 12:52:43 +0000  Entitlements for <IDEDistributionItem: 0x7fcd5b8af2b0 'com.apple.dt.runtime.swiftCoreImage' '<DVTFilePath:0x7fcd5dea9e80:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/libswiftCoreImage.dylib'>'>: {
+}
+2018-04-19 12:52:43 +0000  Writing entitlements for <IDEDistributionItem: 0x7fcd5b8af2b0 'com.apple.dt.runtime.swiftCoreImage' '<DVTFilePath:0x7fcd5dea9e80:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/libswiftCoreImage.dylib'>'> to: /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlementsS5k65K
+2018-04-19 12:52:43 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' 'EE3BD8DDB4FC5B62A936638623E48DA7F9D2ABE8' '--preserve-metadata=identifier,flags' '--entitlements' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlementsS5k65K' '--requirements' '=designated => anchor apple generic  and identifier "$self.identifier" and ((cert leaf[field.1.2.840.113635.100.6.1.9] exists) or ( certificate 1[field.1.2.840.113635.100.6.2.6] exists and certificate leaf[field.1.2.840.113635.100.6.1.13] exists  and certificate leaf[subject.OU] = "E467X6539H" ))' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Frameworks/libswiftCoreImage.dylib'
+2018-04-19 12:52:43 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Frameworks/libswiftCoreImage.dylib: replacing existing signature
+2018-04-19 12:52:44 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Frameworks/libswiftCoreImage.dylib: signed Mach-O thin (x86_64) [com.apple.dt.runtime.swiftCoreImage]
+2018-04-19 12:52:44 +0000  
+2018-04-19 12:52:44 +0000  
+2018-04-19 12:52:44 +0000  2018-04-19 12:52:44 +0000  /usr/bin/codesign exited with 0
+
+2018-04-19 12:52:44 +0000  
+2018-04-19 12:52:44 +0000  
+2018-04-19 12:52:44 +0000  Entitlements for <IDEDistributionItem: 0x7fcd5d97e180 'com.apple.dt.runtime.swiftDarwin' '<DVTFilePath:0x7fcd5deb5530:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/libswiftDarwin.dylib'>'>: {
+}
+2018-04-19 12:52:44 +0000  Writing entitlements for <IDEDistributionItem: 0x7fcd5d97e180 'com.apple.dt.runtime.swiftDarwin' '<DVTFilePath:0x7fcd5deb5530:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/libswiftDarwin.dylib'>'> to: /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlements5M8PDA
+2018-04-19 12:52:44 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' 'EE3BD8DDB4FC5B62A936638623E48DA7F9D2ABE8' '--preserve-metadata=identifier,flags' '--entitlements' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlements5M8PDA' '--requirements' '=designated => anchor apple generic  and identifier "$self.identifier" and ((cert leaf[field.1.2.840.113635.100.6.1.9] exists) or ( certificate 1[field.1.2.840.113635.100.6.2.6] exists and certificate leaf[field.1.2.840.113635.100.6.1.13] exists  and certificate leaf[subject.OU] = "E467X6539H" ))' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Frameworks/libswiftDarwin.dylib'
+2018-04-19 12:52:44 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Frameworks/libswiftDarwin.dylib: replacing existing signature
+2018-04-19 12:52:44 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Frameworks/libswiftDarwin.dylib: signed Mach-O thin (x86_64) [com.apple.dt.runtime.swiftDarwin]
+2018-04-19 12:52:44 +0000  
+2018-04-19 12:52:44 +0000  2018-04-19 12:52:44 +0000  /usr/bin/codesign exited with 0
+
+2018-04-19 12:52:44 +0000  
+2018-04-19 12:52:44 +0000  
+2018-04-19 12:52:44 +0000  Entitlements for <IDEDistributionItem: 0x7fcd5e12b290 'com.apple.dt.runtime.swiftDispatch' '<DVTFilePath:0x7fcd5deb1110:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/libswiftDispatch.dylib'>'>: {
+}
+2018-04-19 12:52:44 +0000  Writing entitlements for <IDEDistributionItem: 0x7fcd5e12b290 'com.apple.dt.runtime.swiftDispatch' '<DVTFilePath:0x7fcd5deb1110:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/libswiftDispatch.dylib'>'> to: /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlementsxlB5Xb
+2018-04-19 12:52:44 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' 'EE3BD8DDB4FC5B62A936638623E48DA7F9D2ABE8' '--preserve-metadata=identifier,flags' '--entitlements' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlementsxlB5Xb' '--requirements' '=designated => anchor apple generic  and identifier "$self.identifier" and ((cert leaf[field.1.2.840.113635.100.6.1.9] exists) or ( certificate 1[field.1.2.840.113635.100.6.2.6] exists and certificate leaf[field.1.2.840.113635.100.6.1.13] exists  and certificate leaf[subject.OU] = "E467X6539H" ))' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Frameworks/libswiftDispatch.dylib'
+2018-04-19 12:52:44 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Frameworks/libswiftDispatch.dylib: replacing existing signature
+2018-04-19 12:52:45 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Frameworks/libswiftDispatch.dylib: signed Mach-O thin (x86_64) [com.apple.dt.runtime.swiftDispatch]
+2018-04-19 12:52:45 +0000  
+2018-04-19 12:52:45 +0000  2018-04-19 12:52:45 +0000  /usr/bin/codesign exited with 0
+
+2018-04-19 12:52:45 +0000  2018-04-19 12:52:45 +0000  
+
+2018-04-19 12:52:45 +0000  Entitlements for <IDEDistributionItem: 0x7fcd5dcb5460 'com.apple.dt.runtime.swiftFoundation' '<DVTFilePath:0x7fcd5decc190:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/libswiftFoundation.dylib'>'>: {
+}
+2018-04-19 12:52:45 +0000  Writing entitlements for <IDEDistributionItem: 0x7fcd5dcb5460 'com.apple.dt.runtime.swiftFoundation' '<DVTFilePath:0x7fcd5decc190:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/libswiftFoundation.dylib'>'> to: /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlementsSMbKfk
+2018-04-19 12:52:45 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' 'EE3BD8DDB4FC5B62A936638623E48DA7F9D2ABE8' '--preserve-metadata=identifier,flags' '--entitlements' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlementsSMbKfk' '--requirements' '=designated => anchor apple generic  and identifier "$self.identifier" and ((cert leaf[field.1.2.840.113635.100.6.1.9] exists) or ( certificate 1[field.1.2.840.113635.100.6.2.6] exists and certificate leaf[field.1.2.840.113635.100.6.1.13] exists  and certificate leaf[subject.OU] = "E467X6539H" ))' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Frameworks/libswiftFoundation.dylib'
+2018-04-19 12:52:45 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Frameworks/libswiftFoundation.dylib: replacing existing signature
+2018-04-19 12:52:49 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Frameworks/libswiftFoundation.dylib: signed Mach-O thin (x86_64) [com.apple.dt.runtime.swiftFoundation]
+2018-04-19 12:52:49 +0000  
+2018-04-19 12:52:49 +0000  2018-04-19 12:52:49 +0000  /usr/bin/codesign exited with 0
+
+2018-04-19 12:52:49 +0000  
+2018-04-19 12:52:49 +0000  
+2018-04-19 12:52:49 +0000  Entitlements for <IDEDistributionItem: 0x7fcd5de52900 'com.apple.dt.runtime.swiftIOKit' '<DVTFilePath:0x7fcd5deb7cc0:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/libswiftIOKit.dylib'>'>: {
+}
+2018-04-19 12:52:49 +0000  Writing entitlements for <IDEDistributionItem: 0x7fcd5de52900 'com.apple.dt.runtime.swiftIOKit' '<DVTFilePath:0x7fcd5deb7cc0:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/libswiftIOKit.dylib'>'> to: /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlements9VrOjq
+2018-04-19 12:52:49 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' 'EE3BD8DDB4FC5B62A936638623E48DA7F9D2ABE8' '--preserve-metadata=identifier,flags' '--entitlements' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlements9VrOjq' '--requirements' '=designated => anchor apple generic  and identifier "$self.identifier" and ((cert leaf[field.1.2.840.113635.100.6.1.9] exists) or ( certificate 1[field.1.2.840.113635.100.6.2.6] exists and certificate leaf[field.1.2.840.113635.100.6.1.13] exists  and certificate leaf[subject.OU] = "E467X6539H" ))' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Frameworks/libswiftIOKit.dylib'
+2018-04-19 12:52:49 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Frameworks/libswiftIOKit.dylib: replacing existing signature
+2018-04-19 12:52:49 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Frameworks/libswiftIOKit.dylib: signed Mach-O thin (x86_64) [com.apple.dt.runtime.swiftIOKit]
+2018-04-19 12:52:49 +0000  
+2018-04-19 12:52:49 +0000  /usr/bin/codesign exited with 02018-04-19 12:52:49 +0000  
+
+2018-04-19 12:52:49 +0000  
+2018-04-19 12:52:49 +0000  Entitlements for <IDEDistributionItem: 0x7fcd5ded37d0 'com.apple.dt.runtime.swiftMetal' '<DVTFilePath:0x7fcd5deaf4a0:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/libswiftMetal.dylib'>'>: {
+}
+2018-04-19 12:52:49 +0000  Writing entitlements for <IDEDistributionItem: 0x7fcd5ded37d0 'com.apple.dt.runtime.swiftMetal' '<DVTFilePath:0x7fcd5deaf4a0:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/libswiftMetal.dylib'>'> to: /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlements9mjqn3
+2018-04-19 12:52:49 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' 'EE3BD8DDB4FC5B62A936638623E48DA7F9D2ABE8' '--preserve-metadata=identifier,flags' '--entitlements' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlements9mjqn3' '--requirements' '=designated => anchor apple generic  and identifier "$self.identifier" and ((cert leaf[field.1.2.840.113635.100.6.1.9] exists) or ( certificate 1[field.1.2.840.113635.100.6.2.6] exists and certificate leaf[field.1.2.840.113635.100.6.1.13] exists  and certificate leaf[subject.OU] = "E467X6539H" ))' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Frameworks/libswiftMetal.dylib'
+2018-04-19 12:52:50 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Frameworks/libswiftMetal.dylib: replacing existing signature
+2018-04-19 12:52:50 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Frameworks/libswiftMetal.dylib: signed Mach-O thin (x86_64) [com.apple.dt.runtime.swiftMetal]
+2018-04-19 12:52:50 +0000  
+2018-04-19 12:52:50 +0000  2018-04-19 12:52:50 +0000  /usr/bin/codesign exited with 0
+
+2018-04-19 12:52:50 +0000  
+2018-04-19 12:52:50 +0000  Entitlements for <IDEDistributionItem: 0x7fcd5e090cf0 'com.apple.dt.runtime.swiftObjectiveC' '<DVTFilePath:0x7fcd5dea9bd0:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/libswiftObjectiveC.dylib'>'>: {
+}
+2018-04-19 12:52:50 +0000  Writing entitlements for <IDEDistributionItem: 0x7fcd5e090cf0 'com.apple.dt.runtime.swiftObjectiveC' '<DVTFilePath:0x7fcd5dea9bd0:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/libswiftObjectiveC.dylib'>'> to: /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlementsib5IGL
+2018-04-19 12:52:50 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' 'EE3BD8DDB4FC5B62A936638623E48DA7F9D2ABE8' '--preserve-metadata=identifier,flags' '--entitlements' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlementsib5IGL' '--requirements' '=designated => anchor apple generic  and identifier "$self.identifier" and ((cert leaf[field.1.2.840.113635.100.6.1.9] exists) or ( certificate 1[field.1.2.840.113635.100.6.2.6] exists and certificate leaf[field.1.2.840.113635.100.6.1.13] exists  and certificate leaf[subject.OU] = "E467X6539H" ))' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Frameworks/libswiftObjectiveC.dylib'
+2018-04-19 12:52:50 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Frameworks/libswiftObjectiveC.dylib: replacing existing signature
+2018-04-19 12:52:50 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Frameworks/libswiftObjectiveC.dylib: signed Mach-O thin (x86_64) [com.apple.dt.runtime.swiftObjectiveC]
+2018-04-19 12:52:50 +0000  
+2018-04-19 12:52:50 +0000  2018-04-19 12:52:50 +0000  /usr/bin/codesign exited with 0
+
+2018-04-19 12:52:50 +0000  
+2018-04-19 12:52:50 +0000  Entitlements for <IDEDistributionItem: 0x7fcd5da5eaa0 'com.apple.dt.runtime.swiftQuartzCore' '<DVTFilePath:0x7fcd5deb6900:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/libswiftQuartzCore.dylib'>'>: {
+}
+2018-04-19 12:52:50 +0000  Writing entitlements for <IDEDistributionItem: 0x7fcd5da5eaa0 'com.apple.dt.runtime.swiftQuartzCore' '<DVTFilePath:0x7fcd5deb6900:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/libswiftQuartzCore.dylib'>'> to: /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlementsHfD4KW
+2018-04-19 12:52:50 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' 'EE3BD8DDB4FC5B62A936638623E48DA7F9D2ABE8' '--preserve-metadata=identifier,flags' '--entitlements' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlementsHfD4KW' '--requirements' '=designated => anchor apple generic  and identifier "$self.identifier" and ((cert leaf[field.1.2.840.113635.100.6.1.9] exists) or ( certificate 1[field.1.2.840.113635.100.6.2.6] exists and certificate leaf[field.1.2.840.113635.100.6.1.13] exists  and certificate leaf[subject.OU] = "E467X6539H" ))' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Frameworks/libswiftQuartzCore.dylib'
+2018-04-19 12:52:50 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Frameworks/libswiftQuartzCore.dylib: replacing existing signature
+2018-04-19 12:52:51 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Frameworks/libswiftQuartzCore.dylib: signed Mach-O thin (x86_64) [com.apple.dt.runtime.swiftQuartzCore]
+2018-04-19 12:52:51 +0000  2018-04-19 12:52:51 +0000  
+
+2018-04-19 12:52:51 +0000  /usr/bin/codesign exited with 02018-04-19 12:52:51 +0000  
+
+2018-04-19 12:52:51 +0000  
+2018-04-19 12:52:51 +0000  Entitlements for <IDEDistributionItem: 0x7fcd5dc9ae20 'com.apple.dt.runtime.swiftXPC' '<DVTFilePath:0x7fcd5de9d7c0:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/libswiftXPC.dylib'>'>: {
+}
+2018-04-19 12:52:51 +0000  Writing entitlements for <IDEDistributionItem: 0x7fcd5dc9ae20 'com.apple.dt.runtime.swiftXPC' '<DVTFilePath:0x7fcd5de9d7c0:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/libswiftXPC.dylib'>'> to: /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlements5HwyyV
+2018-04-19 12:52:51 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' 'EE3BD8DDB4FC5B62A936638623E48DA7F9D2ABE8' '--preserve-metadata=identifier,flags' '--entitlements' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlements5HwyyV' '--requirements' '=designated => anchor apple generic  and identifier "$self.identifier" and ((cert leaf[field.1.2.840.113635.100.6.1.9] exists) or ( certificate 1[field.1.2.840.113635.100.6.2.6] exists and certificate leaf[field.1.2.840.113635.100.6.1.13] exists  and certificate leaf[subject.OU] = "E467X6539H" ))' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Frameworks/libswiftXPC.dylib'
+2018-04-19 12:52:51 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Frameworks/libswiftXPC.dylib: replacing existing signature
+2018-04-19 12:52:52 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Frameworks/libswiftXPC.dylib: signed Mach-O thin (x86_64) [com.apple.dt.runtime.swiftXPC]
+2018-04-19 12:52:52 +0000  
+2018-04-19 12:52:52 +0000  
+2018-04-19 12:52:52 +0000  /usr/bin/codesign exited with 0
+2018-04-19 12:52:52 +0000  2018-04-19 12:52:52 +0000  
+
+2018-04-19 12:52:52 +0000  Entitlements for <IDEDistributionItem: 0x7fcd5dc54910 'com.apple.dt.runtime.swiftos' '<DVTFilePath:0x7fcd5deb3070:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/libswiftos.dylib'>'>: {
+}
+2018-04-19 12:52:52 +0000  Writing entitlements for <IDEDistributionItem: 0x7fcd5dc54910 'com.apple.dt.runtime.swiftos' '<DVTFilePath:0x7fcd5deb3070:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app/Contents/Frameworks/libswiftos.dylib'>'> to: /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlementsdcMqh4
+2018-04-19 12:52:52 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' 'EE3BD8DDB4FC5B62A936638623E48DA7F9D2ABE8' '--preserve-metadata=identifier,flags' '--entitlements' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlementsdcMqh4' '--requirements' '=designated => anchor apple generic  and identifier "$self.identifier" and ((cert leaf[field.1.2.840.113635.100.6.1.9] exists) or ( certificate 1[field.1.2.840.113635.100.6.2.6] exists and certificate leaf[field.1.2.840.113635.100.6.1.13] exists  and certificate leaf[subject.OU] = "E467X6539H" ))' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Frameworks/libswiftos.dylib'
+2018-04-19 12:52:52 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Frameworks/libswiftos.dylib: replacing existing signature
+2018-04-19 12:52:53 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app/Contents/Frameworks/libswiftos.dylib: signed Mach-O thin (x86_64) [com.apple.dt.runtime.swiftos]
+2018-04-19 12:52:53 +0000  
+2018-04-19 12:52:53 +0000  2018-04-19 12:52:53 +0000  /usr/bin/codesign exited with 0
+
+2018-04-19 12:52:53 +0000  
+2018-04-19 12:52:53 +0000  Entitlements for <IDEDistributionItem: 0x7fcd5e097830 'com.danielskovli.killswitchListener' '<DVTFilePath:0x7fcd5dd19f40:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app'>'>: {
+    "com.apple.security.app-sandbox" = 1;
+    "com.apple.security.files.user-selected.read-write" = 1;
+    "com.apple.security.network.client" = 1;
+}
+2018-04-19 12:52:53 +0000  Writing entitlements for <IDEDistributionItem: 0x7fcd5e097830 'com.danielskovli.killswitchListener' '<DVTFilePath:0x7fcd5dd19f40:'/Users/danielskovli/Library/Developer/Xcode/Archives/2018-04-19/Killswitch 19-4-18, 10.52 pm.xcarchive/Products/Applications/Killswitch.app'>'> to: /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlementsptMkdG
+2018-04-19 12:52:53 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' 'EE3BD8DDB4FC5B62A936638623E48DA7F9D2ABE8' '--preserve-metadata=identifier,flags' '--entitlements' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/entitlementsptMkdG' '--requirements' '=designated => anchor apple generic  and identifier "$self.identifier" and ((cert leaf[field.1.2.840.113635.100.6.1.9] exists) or ( certificate 1[field.1.2.840.113635.100.6.2.6] exists and certificate leaf[field.1.2.840.113635.100.6.1.13] exists  and certificate leaf[subject.OU] = "E467X6539H" ))' '/var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app'
+2018-04-19 12:52:53 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app: replacing existing signature
+2018-04-19 12:52:53 +0000  /var/folders/nw/4qpngzn91qn96slfj1wnlys00000gn/T/XcodeDistPipeline.G95/Root/Applications/Killswitch.app: signed app bundle with Mach-O thin (x86_64) [com.danielskovli.killswitchListener]
+2018-04-19 12:52:53 +0000  
+2018-04-19 12:52:53 +0000  2018-04-19 12:52:53 +0000  /usr/bin/codesign exited with 0
+
+2018-04-19 12:52:53 +0000  
+2018-04-19 12:52:53 +0000  Processing step: IDEDistributionStreamingZipItemStep
+2018-04-19 12:52:53 +0000  Skipping step: IDEDistributionStreamingZipItemStep because it said so
+2018-04-19 12:52:53 +0000  Skipping step: IDEDistributionStreamingZipItemStep because it said so
+2018-04-19 12:52:53 +0000  Skipping step: IDEDistributionStreamingZipItemStep because it said so
+2018-04-19 12:52:53 +0000  Skipping step: IDEDistributionStreamingZipItemStep because it said so
+2018-04-19 12:52:53 +0000  Skipping step: IDEDistributionStreamingZipItemStep because it said so
+2018-04-19 12:52:53 +0000  Skipping step: IDEDistributionStreamingZipItemStep because it said so
+2018-04-19 12:52:53 +0000  Skipping step: IDEDistributionStreamingZipItemStep because it said so
+2018-04-19 12:52:53 +0000  Skipping step: IDEDistributionStreamingZipItemStep because it said so
+2018-04-19 12:52:53 +0000  Skipping step: IDEDistributionStreamingZipItemStep because it said so
+2018-04-19 12:52:53 +0000  Skipping step: IDEDistributionStreamingZipItemStep because it said so
+2018-04-19 12:52:53 +0000  Skipping step: IDEDistributionStreamingZipItemStep because it said so
+2018-04-19 12:52:53 +0000  Skipping step: IDEDistributionStreamingZipItemStep because it said so
+2018-04-19 12:52:53 +0000  Skipping step: IDEDistributionStreamingZipItemStep because it said so
+2018-04-19 12:52:53 +0000  Skipping step: IDEDistributionStreamingZipItemStep because it said so
+2018-04-19 12:52:53 +0000  Skipping step: IDEDistributionStreamingZipItemStep because it said so
+2018-04-19 12:52:53 +0000  Skipping step: IDEDistributionStreamingZipItemStep because it said so
+2018-04-19 12:52:53 +0000  Skipping step: IDEDistributionStreamingZipItemStep because it said so
+2018-04-19 12:52:53 +0000  Skipping step: IDEDistributionStreamingZipItemStep because it said so
+2018-04-19 12:52:53 +0000  Skipping step: IDEDistributionStreamingZipItemStep because it said so
+2018-04-19 12:52:53 +0000  Skipping step: IDEDistributionStreamingZipItemStep because it said so
+2018-04-19 12:52:53 +0000  Skipping step: IDEDistributionStreamingZipItemStep because it said so
+2018-04-19 12:52:53 +0000  Skipping step: IDEDistributionStreamingZipItemStep because it said so
+2018-04-19 12:52:53 +0000  Skipping step: IDEDistributionStreamingZipItemStep because it said so
+2018-04-19 12:52:53 +0000  Skipping step: IDEDistributionStreamingZipItemStep because it said so
+2018-04-19 12:52:53 +0000  Skipping step: IDEDistributionStreamingZipItemStep because it said so
+2018-04-19 12:52:53 +0000  Skipping step: IDEDistributionStreamingZipItemStep because it said so
+2018-04-19 12:52:53 +0000  Skipping step: IDEDistributionStreamingZipItemStep because it said so
+2018-04-19 12:52:53 +0000  Skipping step: IDEDistributionStreamingZipItemStep because it said so
+2018-04-19 12:52:53 +0000  Skipping step: IDEDistributionStreamingZipItemStep because it said so
+2018-04-19 12:52:53 +0000  Skipping step: IDEDistributionStreamingZipItemStep because it said so
+2018-04-19 12:52:53 +0000  Skipping step: IDEDistributionStreamingZipItemStep because it said so
+2018-04-19 12:52:53 +0000  Skipping step: IDEDistributionStreamingZipItemStep because it said so
+2018-04-19 12:52:53 +0000  Skipping step: IDEDistributionStreamingZipItemStep because it said so
+2018-04-19 12:52:53 +0000  Skipping step: IDEDistributionStreamingZipItemStep because it said so
+2018-04-19 12:52:53 +0000  Processing step: IDEDistributionSkipPackagingStep
+2018-04-19 12:52:53 +0000  Processing step: IDEDistributionCreateManifestStep
+2018-04-19 12:52:53 +0000  Skipping step: IDEDistributionCreateManifestStep because it said so
