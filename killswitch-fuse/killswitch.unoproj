@@ -1,7 +1,7 @@
 {
   "RootNamespace":"",
   "Version": "1.0",
-  "VersionCode": 115,
+  "VersionCode": 1016,
   "Title": "Killswitch",
   "Mobile": {
     "RunsInBackground": false,
@@ -17,15 +17,16 @@
     "*",
     "killswitch.unoproj:Bundle",
     "ux/*.ux:UXFile",
-    "js/*.js:Bundle"
+    "js/*.js:Bundle",
+    "HomeScreen.uno"
   ],
   "Icon": "../assets/icons/appIcons/Icon@2x.png",
   "Android": {
       "Key": {
 	  		"Alias": "application",
-			"AliasPassword": "u4rddq82po",
+			"AliasPassword": "Killswitch123!",
 			"Store": "release.keystore",
-			"StorePassword": "u4rddq82po"
+			"StorePassword": "Killswitch123!"
 	   },
 	  "Icons": {
 			"LDPI": "../assets/icons/appIcons/Icon-ldpi.png",

@@ -3,20 +3,13 @@
 
 # iOS
 
-Bash command: "/Users/danielskovli/GIT repositories/killswitch/killswitch-fuse"
+Bash command: "cd ~/GIT\ repositories/killswitch/killswitch-fuse"
 Bash command: fuse build --target=iOS --configuration=Release
-
 
 In Killswitch>Target>Info:
 1) Add ITSAppUsesNonExemptEncryption=false
 2) Update Bundle version to the current build/submit version
 3) If updating app version, do so in the .unoproj file
-
-
-In killswitch/Images.xcassets>AppIcon:
-1) Delete "Unassigned" iTunesArtwork.png at the bottom
-2) Drag in iTunesArtwork@2x.png to replace the App Store icon
-
 
 To submit to app store:
 Product>Archive --> follow prompts
@@ -24,7 +17,7 @@ Product>Archive --> follow prompts
 
 # Android
 
-Bash command: "/Users/danielskovli/GIT repositories/killswitch/killswitch-fuse"
+Bash command: "cd ~/GIT\ repositories/killswitch/killswitch-fuse"
 Bash command: fuse build --target=Android --configuration=Release
 
 In .unoproj:
@@ -32,4 +25,4 @@ In .unoproj:
 2) If updating version as well as build, set 'Version' too
 
 Build is located here:
-/Users/danielskovli/GIT repositories/killswitch/killswitch-fuse/build/Android/Release/app/build/outputs/apk/app-release.apk
+~/GIT\ repositories/killswitch/killswitch-fuse/build/Android/Release/app/build/outputs/apk/app-release.apk

@@ -11,7 +11,7 @@
 				<StackPanel Padding="10">
 					<Text Value="Logged in as:" Color="White" FontSize="12" Margin="0,0,0,10" Alignment="VerticalCenter" />
 					<Text Value="{sessionName}" Color="White" FontSize="14" Alignment="VerticalCenter" />				
-					<Text Value="{sessionUsername}" Color="White" FontSize="14" Alignment="VerticalCenter" />
+					<Text Value="<{sessionUsername}>" Color="White" FontSize="14" Alignment="VerticalCenter" />
 					<TextSeparator Margin="0, 30, 0, 20" Color="#ffffff" />
 					<MenuAction Text="Log out" Callback="{logOut}" NavToggle="sidebar" />
 					<MenuLink Text="Change password" URL="{apiUrls.changePassword}" />
@@ -32,6 +32,11 @@
 					    <NavigateToggle Target="sidebar" />
 					</OnBackButton>
 				</WhileActive>
+				<WhileInactive>
+					<OnBackButton>
+					    <HomeScreen Type="CallIntent" />
+					</OnBackButton>
+				</WhileInactive>
 			</Panel>
 
 			<!-- Main view -->
@@ -94,6 +99,11 @@
 					</DockPanel>
 			</HidingPanel>
 		</EdgeNavigator>
+
+		<!-- Android menu button -->
+		<OnKeyPress Key="MenuButton">
+			<NavigateToggle Target="sidebar" />
+		</OnKeyPress>
 
 		<!-- Loading indicator (blank screen, spinnding gizmo) -->
 		<LoadingPanel ux:Name="loadingPanel" Opacity="0" ThemeColor="#fff">
