@@ -33,7 +33,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             components.removeLast()
             components.removeLast()
             components.append("MacOS")
-            components.append("Killswitch") //main app name
+            components.append("Killswitch")
             
             let newPath = NSString.path(withComponents: components)
             
@@ -44,8 +44,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
-        print("goodbye from launcher app")
+        // pass
     }
 
     @objc func terminate() {

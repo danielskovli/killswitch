@@ -8,10 +8,15 @@
 
 import Cocoa
 import ServiceManagement
-//import FirebaseCommunity
 
 extension Notification.Name {
     static let killLauncher = Notification.Name("killLauncher")
+}
+
+extension String {
+    func matches(_ regex: String) -> Bool {
+        return self.range(of: regex, options: .regularExpression, range: nil, locale: nil) != nil
+    }
 }
 
 @NSApplicationMain

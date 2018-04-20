@@ -20,7 +20,7 @@
 					<MenuLink Text="Killswitch website" URL="{apiUrls.website}" />
 				</StackPanel>
 				<Panel Alignment="Bottom">
-					<Text Value="Killswitch v{appVersion},   Daniel Skovli © {currentYear}" Color="White" FontSize="12" TextAlignment="Left" Margin="10, 20, 0, 10" Alignment="Bottom" />
+					<Text Value="Killswitch v{appVersion}  –  Daniel Skovli © {currentYear}" Color="White" FontSize="12" TextAlignment="Left" Margin="10, 20, 0, 10" Alignment="Bottom" />
 				</Panel>
 				<ActivatingAnimation>
 					<Change shadow.Color="#0004" />

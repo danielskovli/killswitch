@@ -7,7 +7,6 @@
 //
 
 import Cocoa
-//import FirebaseCommunity
 import Alamofire
 import SwiftHash
 import ServiceManagement
@@ -15,6 +14,7 @@ import ServiceManagement
 class ViewController: NSViewController {
 
     // Trackers and binds
+    @IBOutlet var copyrightBlurb: NSTextField!
     @IBOutlet var prefRunAtStartup: NSButton!
     @IBOutlet var signupSubmitButton: NSButton!
     @IBOutlet var signupPasswordRepeat: NSTextField!
@@ -52,6 +52,14 @@ class ViewController: NSViewController {
                 killActionCombo.selectItem(withTitle: killAction.rawValue)
             }
             
+            // Copyright blurb thing
+            if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+                let date = Date()
+                let calendar = Calendar.current
+                let year = calendar.component(.year, from: date)
+                self.copyrightBlurb.stringValue = "Killswitch v\(version)  –  Daniel Skovli © \(year)"
+            }
+            
             // Toggle some stuff based on login status
             updateGUI()
         }
@@ -65,7 +73,6 @@ class ViewController: NSViewController {
     
     
     @objc func hackyShit(_ notification: Notification) {
-        //print("got notification")
         updateGUI()
     }
     
@@ -149,7 +156,7 @@ class ViewController: NSViewController {
     
     @IBAction func forgotPassword(_ sender: NSButton) {
         if let url = URL(string: ad.resetPasswordURL), NSWorkspace.shared.open(url) {
-            //print("default browser was successfully opened")
+            // yeehaw! aka pass, for now. Maybe alert the user if this doesn't succeed?
         }
     }
     
@@ -192,15 +199,13 @@ class ViewController: NSViewController {
         Alamofire.request(ad.loginURL, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
             if let json = response.result.value {
                 let parsed = json as! NSDictionary
-                //print("Got JSON: " + String(parsed.count))
-                //print(parsed)
-                //let error = parsed["error"] as! Bool
-                //if (!parsed.value(forKey: "error").isKindOfClass(String)) {
+
+                // Invalid creds
                 if let _ = parsed["error"] as? String {
-                    // invalid creds
                     print("invalid creds")
-                    // ALERT USER HERE
                     _ = self.messageBox(message: "Invalid credentials, please try again. If you've forgotten your password, please click the 'forgotten password' link", title: "Login error")
+                
+                // Success
                 } else {
                     UserDefaultsManager.shared.name = (parsed["name"] as! String)
                     UserDefaultsManager.shared.token = (parsed["token"] as! String)
@@ -208,10 +213,10 @@ class ViewController: NSViewController {
                     self.ad.authenticated = true
                     print("login ok")
                 }
+            
+            // server issue -- unreachable
             } else {
-                // server issue - unreachable
                 print("server unreachable")
-                // ALERT USER HERE
                 _ = self.messageBox(message: "Could not connect to the server. Please try again, and if the problem persists, check your internet connection", title: "Network error")
             }
             
@@ -246,18 +251,12 @@ class ViewController: NSViewController {
             _ = self.messageBox(message: "You have to specify an email address. This will become your username, and it's super handy for everyone if you spell it correctly", title: "No email address")
             return
         }
-        /*
-        if (signupPassword.stringValue == "") {
-            print("Password is empty")
-            signupPassword.becomeFirstResponder()
+        if (!signupEmail.stringValue.matches("\\S+@\\S+\\.\\S+")) {
+            print("Username doesn't even remotely match an email address")
+            signupEmail.becomeFirstResponder()
+            _ = self.messageBox(message: "The email address you supplied doesn't look very legit. Please check your input and try again", title: "Invalid email address")
             return
         }
-        if (signupPasswordRepeat.stringValue == "") {
-            print("Password repeat is empty")
-            signupPasswordRepeat.becomeFirstResponder()
-            return
-        }
-        */
         if (signupPassword.stringValue == "" || signupPasswordRepeat.stringValue == "" || signupPassword.stringValue != signupPasswordRepeat.stringValue) {
             print("Passwords empty or don't match")
             signupPassword.becomeFirstResponder()
@@ -278,16 +277,14 @@ class ViewController: NSViewController {
         Alamofire.request(ad.addUserURL, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
             if let json = response.result.value {
                 let parsed = json as! NSDictionary
-                //print("Got JSON: " + String(parsed.count))
-                //print(parsed)
-                //let error = parsed["error"] as! Bool
-                //if (!parsed.value(forKey: "error").isKindOfClass(String)) {
+                
+                // Unsuccessful
                 if let error = parsed["error"] as? String {
-                    // invalid creds
                     print("server rejected new user")
                     print(error)
-                    // ALERT USER HERE
                     _ = self.messageBox(message: "Sorry, but something went wrong. The server said: " + error, title: "User registration failed")
+                
+                // Successful
                 } else {
                     UserDefaultsManager.shared.name = (parsed["name"] as! String)
                     UserDefaultsManager.shared.token = (parsed["token"] as! String)
@@ -296,10 +293,10 @@ class ViewController: NSViewController {
                     print("signup ok")
                     _ = self.messageBox(message: "Welcome aboard " + UserDefaultsManager.shared.name! + "! It's a pleasure to make your acquaintance 👌👊", title: "User registration successful")
                 }
+            
+            // Server issue -- unreachable or other weirdness
             } else {
-                // server issue - unreachable
                 print("server unreachable")
-                // ALERT USER HERE
                 _ = self.messageBox(message: "Could not connect to the server. Please try again, and if the problem persists, check your internet connection", title: "Network error")
             }
             

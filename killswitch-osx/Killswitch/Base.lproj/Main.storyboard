@@ -301,9 +301,19 @@
                                     <real value="3.4028234663852886e+38"/>
                                 </customSpacing>
                             </stackView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UjU-KA-b6J">
+                                <rect key="frame" x="138" y="8" width="333" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Killswitch v1.0.1  –  Daniel Skovli © 2018" id="W6R-HV-vlX">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="copyrightBlurb" destination="UjU-KA-b6J" id="KVY-Wx-QeD"/>
                         <outlet property="killActionCombo" destination="FhX-qP-GBE" id="sh0-p0-iUc"/>
                         <outlet property="prefAccountButtonsView" destination="Pla-1L-9u3" id="J6l-jG-NC8"/>
                         <outlet property="prefAccountLogoutView" destination="x5H-dr-9sq" id="Go2-Sl-g2m"/>
@@ -408,11 +418,11 @@ DQ
                                             </connections>
                                         </button>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1cf-LN-6R2">
-                                            <rect key="frame" x="102" y="20" width="243" height="14"/>
+                                            <rect key="frame" x="80" y="20" width="265" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="inline" title="Forgot your password? Click here to reset" bezelStyle="inline" alignment="right" inset="2" id="9y1-Sv-uee">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="smallSystem"/>
+                                                <font key="font" metaFont="controlContent"/>
                                             </buttonCell>
                                             <connections>
                                                 <action selector="forgotPassword:" target="tMH-dU-hxK" id="2hR-Lk-1Rk"/>
@@ -420,6 +430,7 @@ DQ
                                         </button>
                                     </subviews>
                                 </view>
+                                <font key="titleFont" metaFont="message" size="11"/>
                             </box>
                         </subviews>
                     </view>
