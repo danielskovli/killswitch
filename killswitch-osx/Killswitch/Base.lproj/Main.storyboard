@@ -191,7 +191,6 @@ DQ
                                         </button>
                                     </subviews>
                                 </view>
-                                <font key="titleFont" metaFont="message" size="11"/>
                             </box>
                         </subviews>
                     </view>
@@ -295,7 +294,7 @@ DQ
                             <popUpButton autoresizesSubviews="NO" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FhX-qP-GBE">
                                 <rect key="frame" x="164" y="179" width="151" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <popUpButtonCell key="cell" type="push" title="Item 1 very long" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" enabled="NO" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="qKm-Fy-HZH" id="qpa-Hb-xlt">
+                                <popUpButtonCell key="cell" type="push" title="Item 1 very long" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="qKm-Fy-HZH" id="qpa-Hb-xlt">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="menu"/>
                                     <menu key="menu" id="ZzK-Gs-P1O">
@@ -332,7 +331,7 @@ DQ
                                 <rect key="frame" x="165" y="54" width="152" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <beginningViews>
-                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mon-Ml-L8m">
+                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mon-Ml-L8m">
                                         <rect key="frame" x="0.0" y="63" width="152" height="17"/>
                                         <buttonCell key="cell" type="inline" title="• Download mobile app" bezelStyle="inline" alignment="left" inset="2" id="mYb-yn-2WG">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -342,7 +341,7 @@ DQ
                                             <action selector="hyperlinkDownload:" target="Gt3-Cm-Ogy" id="VbS-9T-d6U"/>
                                         </connections>
                                     </button>
-                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NpF-Wj-5xo">
+                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NpF-Wj-5xo">
                                         <rect key="frame" x="0.0" y="42" width="130" height="17"/>
                                         <buttonCell key="cell" type="inline" title="• Change password" bezelStyle="inline" alignment="left" inset="2" id="mZJ-mb-OiT">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -352,7 +351,7 @@ DQ
                                             <action selector="hyperlinkChangePass:" target="Gt3-Cm-Ogy" id="Ug9-Lo-sUQ"/>
                                         </connections>
                                     </button>
-                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FJM-yU-GCw">
+                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FJM-yU-GCw">
                                         <rect key="frame" x="0.0" y="21" width="114" height="17"/>
                                         <buttonCell key="cell" type="inline" title="• Delete account" bezelStyle="inline" alignment="left" inset="2" id="Zqq-Yw-PqB">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -362,7 +361,7 @@ DQ
                                             <action selector="hyperlinkDeleteAccount:" target="Gt3-Cm-Ogy" id="KyS-cw-ij6"/>
                                         </connections>
                                     </button>
-                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dG8-Fh-PFm">
+                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dG8-Fh-PFm">
                                         <rect key="frame" x="0.0" y="0.0" width="129" height="17"/>
                                         <buttonCell key="cell" type="inline" title="• Killswitch website" bezelStyle="inline" alignment="left" inset="2" id="ZPj-va-dmU">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -403,7 +402,7 @@ DQ
                                 <rect key="frame" x="166" y="223" width="239" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <beginningViews>
-                                    <button autoresizesSubviews="NO" verticalHuggingPriority="750" placeholderIntrinsicWidth="75" placeholderIntrinsicHeight="21" translatesAutoresizingMaskIntoConstraints="NO" id="HER-ch-9qt">
+                                    <button autoresizesSubviews="NO" verticalHuggingPriority="750" fixedFrame="YES" placeholderIntrinsicWidth="75" placeholderIntrinsicHeight="21" translatesAutoresizingMaskIntoConstraints="NO" id="HER-ch-9qt">
                                         <rect key="frame" x="-6" y="-7" width="87" height="32"/>
                                         <buttonCell key="cell" type="push" title="Log in" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="ecg-wW-qTS">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -413,7 +412,7 @@ DQ
                                             <segue destination="gpN-j9-ye9" kind="show" id="00g-6u-eXv"/>
                                         </connections>
                                     </button>
-                                    <button autoresizesSubviews="NO" verticalHuggingPriority="750" placeholderIntrinsicWidth="75" placeholderIntrinsicHeight="21" translatesAutoresizingMaskIntoConstraints="NO" id="Doe-nI-PlJ">
+                                    <button autoresizesSubviews="NO" verticalHuggingPriority="750" fixedFrame="YES" placeholderIntrinsicWidth="75" placeholderIntrinsicHeight="21" translatesAutoresizingMaskIntoConstraints="NO" id="Doe-nI-PlJ">
                                         <rect key="frame" x="76" y="-7" width="87" height="32"/>
                                         <buttonCell key="cell" type="push" title="Sign up" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="SC8-eo-S5j">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -423,7 +422,7 @@ DQ
                                             <segue destination="obD-K7-eUc" kind="show" id="CRz-P9-GwV"/>
                                         </connections>
                                     </button>
-                                    <button verticalHuggingPriority="750" placeholderIntrinsicWidth="75" placeholderIntrinsicHeight="21" translatesAutoresizingMaskIntoConstraints="NO" id="VPl-Jv-Tjn">
+                                    <button verticalHuggingPriority="750" fixedFrame="YES" placeholderIntrinsicWidth="75" placeholderIntrinsicHeight="21" translatesAutoresizingMaskIntoConstraints="NO" id="VPl-Jv-Tjn">
                                         <rect key="frame" x="158" y="-7" width="87" height="32"/>
                                         <buttonCell key="cell" type="push" title="Log out" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hMv-rS-3Aq">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>

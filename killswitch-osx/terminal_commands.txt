@@ -1,0 +1,11 @@
+Log out via terminal:
+> osascript -e 'tell application "loginwindow" to  «event aevtrlgo»'
+
+Sleep via terminal:
+> pmset sleepnow
+
+Lock screen via terminal:
+> pmset displaysleepnow
+
+Shut down via terminal:
+> osascript -e 'tell application "System Events" to shut down'

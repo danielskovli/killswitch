@@ -20,11 +20,12 @@ import CoreServices
  */
 enum KillAction : String {
     case lock = "Lock"
-    case logout = "Logout"
+    //case logout = "Logout"
     case sleep = "Sleep"
-    case shutdown = "Shutdown"
+    //case shutdown = "Shutdown"
     
-    static let allValues = [lock, logout, sleep, shutdown] // this is BS, but swift won't let you iterate over enums
+    //static let allValues = [lock, logout, sleep, shutdown] // this is BS, but swift won't let you iterate over enums
+    static let allValues = [lock, sleep]
 }
 
 
@@ -114,21 +115,30 @@ class Listener {
                                 print("Locking system")
                                 self.Shell("pmset displaysleepnow")
                                 break
+
+                            /*
                             case .shutdown:
                                 
+                                print("Shutting down")
+                                self.Shell("osascript -e 'tell application \"System Events\" to shut down'")
                                 //self.shutdown(command: kAEShutDown)
+                                /*
                                 do {
                                     try self.sendSystemCommand(command: kAEShutDown)
                                     print("Shutting down")
                                 } catch {
                                     print("Error sending `shut down` command to system")
                                 }
+                                */
                                 
                                 break
                             case .logout:
                                 
+                                print("Logging out")
+                                self.Shell("osascript -e 'tell application \"loginwindow\" to  «event aevtrlgo»'")
                                 //self.Shell("/System/Library/CoreServices/Menu\\ Extras/User.menu/Contents/Resources/CGSession -suspend")
                                 //self.shutdown(command: kAEReallyLogOut)
+                                /*
                                 do {
                                     try self.sendSystemCommand(command: kAEReallyLogOut)
                                     print("Logging out")
@@ -137,9 +147,14 @@ class Listener {
                                 }
                                 
                                 break
+                                */
+                            */
                             case .sleep:
                                 
+                                print("Sleeping")
+                                self.Shell("pmset sleepnow")
                                 //self.shutdown(command: kAESleep)
+                                /*
                                 do {
                                     try self.sendSystemCommand(command: kAESleep)
                                     //self.shutdown(command: kAESleep)
@@ -147,6 +162,7 @@ class Listener {
                                 } catch {
                                     print("Error sending `sleep` command to system")
                                 }
+                                */
                                 
                                 break
                         }
