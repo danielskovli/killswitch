@@ -69,9 +69,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         self.statusItem!.highlightMode = true
         
         // Default lock-method
+        /*
         if (UserDefaultsManager.shared.killAction == nil) {
             UserDefaultsManager.shared.killAction = KillAction.lock
         }
+        */
+        // TEMP: Insist on KillAction.lock (bug with core messaging system for all other events)
+        UserDefaultsManager.shared.killAction = KillAction.lock
         
         // Launch preference window if we don't have a user account signed in
         if (UserDefaultsManager.shared.token! == "") {

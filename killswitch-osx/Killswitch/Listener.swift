@@ -10,6 +10,8 @@ import Foundation
 import Cocoa
 import Alamofire
 import Quartz
+import CoreServices
+
 
 
 /*
@@ -113,17 +115,39 @@ class Listener {
                                 self.Shell("pmset displaysleepnow")
                                 break
                             case .shutdown:
-                                print("Shutting down")
-                                self.shutdown(command: kAEShutDown)
+                                
+                                //self.shutdown(command: kAEShutDown)
+                                do {
+                                    try self.sendSystemCommand(command: kAEShutDown)
+                                    print("Shutting down")
+                                } catch {
+                                    print("Error sending `shut down` command to system")
+                                }
+                                
                                 break
                             case .logout:
-                                print("Logging out")
+                                
                                 //self.Shell("/System/Library/CoreServices/Menu\\ Extras/User.menu/Contents/Resources/CGSession -suspend")
-                                self.shutdown(command: kAEReallyLogOut)
+                                //self.shutdown(command: kAEReallyLogOut)
+                                do {
+                                    try self.sendSystemCommand(command: kAEReallyLogOut)
+                                    print("Logging out")
+                                } catch {
+                                    print("Error sending `log out` command to system")
+                                }
+                                
                                 break
                             case .sleep:
-                                print("Sleeping")
-                                self.shutdown(command: kAESleep)
+                                
+                                //self.shutdown(command: kAESleep)
+                                do {
+                                    try self.sendSystemCommand(command: kAESleep)
+                                    //self.shutdown(command: kAESleep)
+                                    print("Sleeping")
+                                } catch {
+                                    print("Error sending `sleep` command to system")
+                                }
+                                
                                 break
                         }
                     }
@@ -204,5 +228,19 @@ class Listener {
             AESendMode(kAENormalPriority),
             kAEDefaultTimeout
         )
+    }
+    
+    // https://forums.developer.apple.com/thread/90702
+    private func sendSystemCommand(command: AEEventID) throws {
+        var psn = ProcessSerialNumber(highLongOfPSN: UInt32(0), lowLongOfPSN: UInt32(kSystemProcess))
+        let target = NSAppleEventDescriptor(descriptorType: typeProcessSerialNumber, bytes: &psn, length: MemoryLayout.size(ofValue: psn))
+        let event = NSAppleEventDescriptor(
+            eventClass: kCoreEventClass,
+            eventID: command,
+            targetDescriptor: target,
+            returnID: AEReturnID(kAutoGenerateReturnID),
+            transactionID: AETransactionID(kAnyTransactionID)
+        )
+        _ = try event.sendEvent(options: [.defaultOptions], timeout: TimeInterval(kAEDefaultTimeout))
     }
 }

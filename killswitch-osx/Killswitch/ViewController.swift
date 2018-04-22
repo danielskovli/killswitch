@@ -11,9 +11,17 @@ import Alamofire
 import SwiftHash
 import ServiceManagement
 
+
 class ViewController: NSViewController {
 
     // Trackers and binds
+    @IBOutlet var linkDownload: NSButton!
+    @IBOutlet var linkChangePass: NSButton!
+    @IBOutlet var linkDeleteUser: NSButton!
+    @IBOutlet var linkWebsite: NSButton!
+    @IBOutlet var logoutButton: NSButton!
+    @IBOutlet var signupButton: NSButton!
+    @IBOutlet var loginButton: NSButton!
     @IBOutlet var copyrightBlurb: NSTextField!
     @IBOutlet var prefRunAtStartup: NSButton!
     @IBOutlet var signupSubmitButton: NSButton!
@@ -21,7 +29,6 @@ class ViewController: NSViewController {
     @IBOutlet var signupPassword: NSTextField!
     @IBOutlet var signupEmail: NSTextField!
     @IBOutlet var signupName: NSTextField!
-    @IBOutlet var prefWindowRef: NSView!
     @IBOutlet var prefLoginForgotButton: NSButton!
     @IBOutlet var prefLoginLoginButton: NSButton!
     @IBOutlet var prefLoginGroupView: NSView!
@@ -30,9 +37,6 @@ class ViewController: NSViewController {
     @IBOutlet var password: NSSecureTextField!
     @IBOutlet var killActionCombo: NSPopUpButton!
     @IBOutlet var prefAccountTextView: NSTextField!
-    @IBOutlet var prefAccountButtonsView: NSStackView!
-    @IBOutlet var prefAccountLogoutView: NSStackView!
-    @IBOutlet var prefAccountText: NSTextField!
     @IBOutlet var loginWindowRef: NSView!
     let ad = NSApplication.shared.delegate as! AppDelegate
     
@@ -60,11 +64,23 @@ class ViewController: NSViewController {
                 self.copyrightBlurb.stringValue = "Killswitch v\(version)  –  Daniel Skovli © \(year)"
             }
             
+            // Links
+            linkDownload.attributedTitle = formatLinks(text: linkDownload.title, offset: 1)
+            linkChangePass.attributedTitle = formatLinks(text: linkChangePass.title, offset: 1)
+            linkDeleteUser.attributedTitle = formatLinks(text: linkDeleteUser.title, offset: 1)
+            linkWebsite.attributedTitle = formatLinks(text: linkWebsite.title, offset: 1)
+            
             // Toggle some stuff based on login status
             updateGUI()
+            
+            // Correct window size
+            self.preferredContentSize = NSMakeSize(self.view.frame.size.width, self.view.frame.size.height)
+        
+        } else if (self.identifier?.rawValue == "loginWindow") {
+            // Links
+            prefLoginForgotButton.attributedTitle = formatLinks(text: prefLoginForgotButton.title)
         }
     }
-    
     
     override func viewDidAppear() {
         super.viewDidAppear()
@@ -100,14 +116,15 @@ class ViewController: NSViewController {
     
     func updateGUI() {
         if (self.ad.authenticated) {
-            self.prefAccountTextView.isHidden = false
             self.prefAccountTextView.stringValue = UserDefaultsManager.shared.name! + " <" + UserDefaultsManager.shared.username! + ">"
-            self.prefAccountLogoutView.isHidden = false
-            self.prefAccountButtonsView.isHidden = true
+            self.loginButton.isHidden = true
+            self.signupButton.isHidden = true
+            self.logoutButton.isHidden = false
         } else {
-            self.prefAccountTextView.isHidden = true
-            self.prefAccountLogoutView.isHidden = true
-            self.prefAccountButtonsView.isHidden = false
+            self.prefAccountTextView.stringValue = "Not signed in. Please register or sign in below"
+            self.loginButton.isHidden = false;
+            self.signupButton.isHidden = false;
+            self.logoutButton.isHidden = true
         }
         
         if (UserDefaultsManager.shared.launchAtLogin!) {
@@ -171,8 +188,8 @@ class ViewController: NSViewController {
     
     
     @IBAction func loginButton(_ sender: NSButton) {
-        print("Username: " + username.stringValue)
-        print("Password: " + password.stringValue)
+        //print("Username: " + username.stringValue)
+        //print("Password: " + password.stringValue)
         //print("Pass hash: " + MD5(password.stringValue).lowercased())
         
         // Check that we got something from the user
@@ -348,6 +365,19 @@ class ViewController: NSViewController {
         if let url = URL(string: ad.downloadAppsURL), NSWorkspace.shared.open(url) {
             //print("default browser was successfully opened")
         }
+    }
+    
+    
+    func formatLinks(text: String, offset: Int = 0) -> NSMutableAttributedString {
+        let attrs = [
+                        NSAttributedStringKey.foregroundColor: NSColor.blue,
+                        NSAttributedStringKey.font: NSFont.systemFont(ofSize: NSFont.systemFontSize)
+                    ]
+        let title = NSMutableAttributedString(string: text, attributes: nil)
+        let range = NSRange(location: offset, length: text.count-offset)
+        title.setAttributes(attrs, range: range)
+        
+        return title
     }
 }
 
