@@ -70,7 +70,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         // Default lock-method
         if (UserDefaultsManager.shared.killAction == nil) {
-            UserDefaultsManager.shared.killAction = KillAction.lock
+            UserDefaultsManager.shared.killAction = KillAction.sleep
         }
 
         // TEMP: Insist on KillAction.lock (bug with core messaging system for all other events)

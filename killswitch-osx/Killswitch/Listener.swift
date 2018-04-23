@@ -25,7 +25,7 @@ enum KillAction : String {
     //case shutdown = "Shutdown"
     
     //static let allValues = [lock, logout, sleep, shutdown] // this is BS, but swift won't let you iterate over enums
-    static let allValues = [lock, sleep]
+    static let allValues = [sleep,lock]
 }
 
 
