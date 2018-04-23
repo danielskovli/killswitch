@@ -65,7 +65,8 @@ Output: {
   'token':      (string) security token used for all other api calls,
   'name':       (string) the user's real name, for your pretty gui needs,
   'username':   (string) the user's username,
-  'killswitch': (bool) the current killswitch state
+  'killswitch': (bool) the current killswitch state,
+  'timestamp':  (int) unix epoch time when the killswitch state was last set (GMT+8)
 }
 
 HTTP codes:
@@ -84,7 +85,8 @@ Payload: None
 
 Out: {
   'error':      (bool|string) false|error description,
-  'killswitch': (bool) the current killswitch state
+  'killswitch': (bool) the current killswitch state,
+  'timestamp':  (int) unix epoch time when the killswitch state was last set (GMT+8)
 }
 
 HTTP codes:
