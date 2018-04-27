@@ -31,7 +31,7 @@ Request type: POST
 Payload: {
   'username': (string) your@email.com,
   'password': (string) MD5 hash of your password,
-  'name':     (string User's real name
+  'name':     (string) User's real name
 }
 
 Output: {

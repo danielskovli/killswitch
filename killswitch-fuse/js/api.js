@@ -34,7 +34,7 @@ var Api = {
             headers: { "Content-type": "application/json"}, 
             body: JSON.stringify({username: username, name: name, password: password})
         })
-        .then(Api._handleErrors)
+        .then(Api._handleErrors.bind(null, 'addUser'))
         .then(function(response) {
             Api.lastError = response.error;
             if (!response.error) {
@@ -48,7 +48,7 @@ var Api = {
             }
             Api.busy = false;
             Api._callSubscribers('addUser');
-        }).catch(Api._handleThrows);
+        }).catch(Api._handleThrows.bind(null, 'addUser'));
     },
 
 
@@ -61,7 +61,7 @@ var Api = {
             headers: { "Content-type": "application/json"}, 
             body: JSON.stringify({username: username, password: password})
         })
-        .then(Api._handleErrors)
+        .then(Api._handleErrors.bind(null, 'login'))
         .then(function(response) {
             Api.lastError = response.error;
             if (!response.error){
@@ -75,7 +75,7 @@ var Api = {
             }
             Api.busy = false;
             Api._callSubscribers('login');
-        }).catch(Api._handleThrows);
+        }).catch(Api._handleThrows.bind(null, 'login'));
     },
 
 
@@ -83,7 +83,7 @@ var Api = {
     update: function() {
         Api.busy = true;
         fetch(Api.urls.status + Api.session.token)
-        .then(Api._handleErrors)
+        .then(Api._handleErrors.bind(null, 'update'))
         .then(function(response) {
             Api.lastError = response.error;
             if (!response.error) {
@@ -92,7 +92,7 @@ var Api = {
             }
             Api.busy = false;
             Api._callSubscribers('update');
-        }).catch(Api._handleThrows);
+        }).catch(Api._handleThrows.bind(null, 'update'));
     },
 
 
@@ -102,7 +102,7 @@ var Api = {
         fetch(Api.urls.status + Api.session.token + '/' + state, {
             method: 'PUT' 
         })
-        .then(Api._handleErrors)
+        .then(Api._handleErrors.bind(null, 'killswitch'))
         .then(function(response) {
             Api.lastError = response.error;
             if (!response.error) {
@@ -111,7 +111,7 @@ var Api = {
             }
             Api.busy = false;
             Api._callSubscribers('killswitch');
-        }).catch(Api._handleThrows);
+        }).catch(Api._handleThrows.bind(null, 'killswitch'));
     },
     get killswitch() {
         return Api._killswitch;
@@ -119,13 +119,15 @@ var Api = {
 
 
     // Handle HTTP error codes here
-    _handleErrors: function(response) {
+    _handleErrors: function(sender, response) {
         // 200: OK
         // 400: Incorrect usage. See `error` for more information
         // 401: Unauthorised (blacklisted or invalid credentials/token)
         // 404: Not found
         // 409: Conflict (User already exists)
         // 500: Server error
+
+        Console.Log("Handle errors: sender was " + sender);
 
         // Check if user has been logged out
         if (response.status == 401) {
@@ -135,7 +137,7 @@ var Api = {
         // Only check for 404 and 500 now, as they are the ones that don't return a JSON object
         if (response.status == 404 || response.status == 500) {
             Api.lastError = 'Server error';
-            Api._callSubscribers('_handleErrors');
+            Api._callSubscribers(sender);
         }
 
         // Deal with the rest once the promise resolves into a JSON object
@@ -144,12 +146,12 @@ var Api = {
 
 
     // Handle network fails here
-    _handleThrows: function(error) {
+    _handleThrows: function(sender, error) {
         //console.log(error)
         // Ignore the actual error for now, it should in general boil down to the same thing
         Api.lastError = 'Network unreachable';
         Api.busy = false;
-        Api._callSubscribers('_handleThrows');
+        Api._callSubscribers(sender);
     },
 
 

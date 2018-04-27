@@ -56,25 +56,6 @@ function updateBindings() {
     apiError.value = Api.lastError;
     apiKillswitch.value = Api.killswitch;
     apiAuthenticated.value = Api.authenticated;
-
-    // Status text
-    // .busy means we called updateBindings() manually - probably to push out something to the UX
-    if (Api.lastError && !Api.busy) { 
-
-        // This is an edge case: user is stuck on the loading screen becase the network is unreachable
-        if (Api.lastError.toString().toLowerCase().includes('network unreachable')) {
-            if (Api.session.token != "") {
-                activeState.value = 'mainState'; // let's assume the user is authenticated for now
-            } else {
-                activeState.value = 'loginButtonState';
-            }
-        }
-
-        setStatusText('Error: ' + Api.lastError);
-
-    } else if (!Api.lastError && !Api.busy) {
-        setStatusText('');
-    }
 }
 
 // Deal with (delayed) navigation based on callbacks
@@ -83,72 +64,102 @@ function navigate(sender) {
     // Callback after Api.addUser() completes
     if (sender == 'addUser') {
 
+        // Error
         if (Api.lastError) {
-            return; // Error display dealt with elsewhere
-        }
+            setStatusText(Api.lastError);
+        
+        // All good
+        } else {
 
-        // Navigate if required
-        if (activeState.value != 'mainState') {
-            activeState.value = 'mainState';
-        }
+            // Reset UX
+            signupEmail.value = '';
+            signupName.value = '';
+            signupPassword.value = '';
 
-        // Reset UX
-        signupEmail.value = '';
-        signupName.value = '';
-        signupPassword.value = '';
+            // Navigate if required
+            if (activeState.value != 'mainState') {
+                activeState.value = 'mainState';
+            }
+        }
+        
         return;
     }
 
     // Callback after Api.login() completes
     if (sender == 'login') {
 
+        // Error
         if (Api.lastError) {
-            return; // Error display dealt with elsewhere
-        }
+            setStatusText(Api.lastError);
 
-        // Navigate if required
-        if (activeState.value != 'mainState') {
-            activeState.value = 'mainState';
-        }
+        // All good
+        } else {
 
-        // Reset UX
-        loginEmail.value = '';
-        loginPassword.value = '';
+            // Reset UX
+            loginEmail.value = '';
+            loginPassword.value = '';
+
+            // Navigate if required
+            if (activeState.value != 'mainState') {
+                activeState.value = 'mainState';
+            }
+        }
+        
         return;
     }
 
     // Callback after Api.update() completes
     if (sender == 'update') {
 
+        // Error
         if (Api.lastError.toString().toLowerCase().includes('invalid token') || Api.lastError.toString().toLowerCase().includes('authentication error')) {
             activeState.value = 'loginFormState';
             setStatusText('Session expired. Please log in again');
-            return;
-
+        
         } else if (Api.lastError) {
-            return; // Error display dealt with elsewhere
+            setStatusText(Api.lastError);
+        
+        // All good
+        } else {
+
+            // Navigate if required
+            if (activeState.value != 'mainState') {
+                activeState.value = 'mainState';
+            }
         }
 
-        // Navigate if required
-        if (activeState.value != 'mainState') {
-            activeState.value = 'mainState';
-        }
         return;
     }
 
-    // Network error
-    if (!Api.busy && Api.lastError == 'Network unreachable') {
-        setStatusText(Api.lastError + '. Please try again');
+    // Handle errors that haven't been caught above
+    if (Api.lastError && !Api.busy) {
 
-    // Invalid token
-    } else if (!Api.busy && Api.lastError == 'Invalid token') {
-        activeState.value = 'loginFormState';
-        setStatusText('Session expired. Please log in again');
+        // This is an edge case: user is stuck on the loading screen becase the network is unreachable
+        if (Api.lastError.toString().toLowerCase().includes('network unreachable') && activeState.value == "loadingState") {
+            if (Api.session.token != "") {
+                activeState.value = 'mainState'; // let's assume the user is authenticated for now
+            } else {
+                activeState.value = 'loginButtonState';
+            }
+        
+        // Network error
+        } else if (Api.lastError.toString().toLowerCase().includes('network unreachable') == 'Network unreachable') {
+            setStatusText(Api.lastError + '. Please try again');
 
-    // Session has expired
-    } else if (!Api.authenticated && !Api.busy) {
-        activeState.value = 'loginFormState';
-        setStatusText('Session expired. Please log in again');
+        // Invalid token
+        } else if (Api.lastError == 'Invalid token') {
+            activeState.value = 'loginFormState';
+            setStatusText('Session expired. Please log in again');
+
+        // Session has expired
+        } else if (!Api.authenticated) {
+            activeState.value = 'loginFormState';
+            setStatusText('Session expired. Please log in again');
+        }
+
+    // Clear status if no errors
+    } else if (!Api.lastError && !Api.busy) {
+        setStatusText('');
     }
 }
 
