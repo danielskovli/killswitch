@@ -101,8 +101,8 @@ class Listener {
             if let json = response.result.value {
                 let parsed = json as! NSDictionary
                 //print("Got JSON: " + String(parsed.count))
-                let error = parsed["error"] as! Bool
-                if (!error) {
+                //let error = parsed["error"] as! String
+                if (parsed["error"] is Bool) {
                     let killswitch = parsed["killswitch"] as! Bool
                     UserDefaultsManager.shared.lastStatus = killswitch
                     self.ad.authenticated = true
@@ -171,16 +171,22 @@ class Listener {
                     self.ad.status = parsed["error"] as! NSString
                     self.ad.authenticated = false
                     self.ad.isRunning = false
-                    print(error)
+                    self.ad.startStopButton.isHidden = true
+                    print(parsed["error"] as! String)
+                    UserDefaultsManager.shared.name = ""
+                    UserDefaultsManager.shared.token = ""
+                    UserDefaultsManager.shared.username = ""
+                    return
                 }
+                
+                self.ad.firstLoad = false;
+                self.ad.updateGUI()
             } else {
                 self.ad.status = "Server unreachable..."
+                self.ad.updateTrayIconForced(enabled: false)
                 // Consider fetching UserDefaultsManager.shared.lastStatus here, for persistance
                 // Expose as option in the settings pane
             }
-            
-            self.ad.firstLoad = false;
-            self.ad.updateGUI()
             
             // Next iteration
             self.queue.async {

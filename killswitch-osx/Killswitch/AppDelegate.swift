@@ -109,7 +109,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             DispatchQueue.main.async {
                 self.statusItem?.image = NSImage(named: NSImage.Name(rawValue: "StatusIconEnabled"))
                 self.statusItem?.image?.isTemplate = true
-                
+            }
+        } else {
+            DispatchQueue.main.async {
+                self.statusItem?.image = NSImage(named: NSImage.Name(rawValue: "StatusIconDisabled"))
+                self.statusItem?.image?.isTemplate = false
+            }
+        }
+    }
+    
+    func updateTrayIconForced(enabled: Bool) {
+        if (enabled) {
+            DispatchQueue.main.async {
+                self.statusItem?.image = NSImage(named: NSImage.Name(rawValue: "StatusIconEnabled"))
+                self.statusItem?.image?.isTemplate = true
             }
         } else {
             DispatchQueue.main.async {
@@ -160,6 +173,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             startStop = "Start"
             startStopButton.isHidden = false
         }
+    }
+    
+    func updateStatus(_status: String){
+        status = _status as! NSString
     }
     
     
