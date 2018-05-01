@@ -44,8 +44,9 @@ Lifecycle.on("enteringInteractive", function() {
 });
 
 // Subscriber for the API (updating UX binds - couldn't find another way to do this)
-Api.subscribers.push(updateBindings);
-Api.subscribers.push(navigate);
+//Api.subscribers.push(updateBindings);
+//Api.subscribers.push(navigate);
+Api.subscriber = navigate;
 
 // Deal with updating UX bindings
 function updateBindings() {
@@ -61,6 +62,17 @@ function updateBindings() {
 // Deal with (delayed) navigation based on callbacks
 function navigate(sender) {
     
+    //console.log("navigate - sender was: " + sender);
+    //console.log("navigate - error was: " + Api.lastError);
+    //console.log("navigate - activeState is: " + activeState.value);
+
+    updateBindings();
+
+    // Error dressing
+    if (Api.lastError.toString().toLowerCase().includes('invalid token') || Api.lastError.toString().toLowerCase().includes('authentication error')) {
+        Api.lastError = 'Session expired. Please log in again';
+    }
+
     // Callback after Api.addUser() completes
     if (sender == 'addUser') {
 
@@ -111,12 +123,16 @@ function navigate(sender) {
     // Callback after Api.update() completes
     if (sender == 'update') {
 
-        // Error
-        if (Api.lastError.toString().toLowerCase().includes('invalid token') || Api.lastError.toString().toLowerCase().includes('authentication error')) {
-            activeState.value = 'loginFormState';
-            setStatusText('Session expired. Please log in again');
+        // Unauthorized
+        if (!Api.authenticated) {
+            activeState.value = 'loginButtonState';
+            setStatusText(Api.lastError);
         
+        // Other errors
         } else if (Api.lastError) {
+            if (activeState.value != 'mainState') {
+                activeState.value = 'loginButtonState';
+            }
             setStatusText(Api.lastError);
         
         // All good
@@ -127,6 +143,22 @@ function navigate(sender) {
                 activeState.value = 'mainState';
             }
         }
+
+        return;
+    }
+
+    // Callback after Api.killswitch (set) completes
+    if (sender == 'killswitch') {
+
+        // Error
+        if (!Api.authenticated) {
+            activeState.value = 'loginButtonState';
+            setStatusText(Api.lastError);
+        
+        // Other errors
+        } else if (Api.lastError) {
+            setStatusText(Api.lastError);        
+        } 
 
         return;
     }
@@ -142,10 +174,6 @@ function navigate(sender) {
                 activeState.value = 'loginButtonState';
             }
         
-        // Network error
-        } else if (Api.lastError.toString().toLowerCase().includes('network unreachable') == 'Network unreachable') {
-            setStatusText(Api.lastError + '. Please try again');
-
         // Invalid token
         } else if (Api.lastError == 'Invalid token') {
             activeState.value = 'loginFormState';
@@ -165,7 +193,6 @@ function navigate(sender) {
 
 // Button based navigation
 function changeState(args) {
-    ////console.log(args.sender);
     if (args.sender == 'signupButton') {
         activeState.value = 'signupFormState';
     } else if (args.sender == 'loginButton') {
@@ -273,11 +300,11 @@ function refresh() {
 
 // Check if we have a valid session
 if (Api.session.token != '') {
-    //console.log('Found token, refreshing data');
+    console.log('Found token, refreshing data');
     Api.update();
     //updateBindings();
 } else {
-    //console.log('Need to log in');
+    console.log('Need to log in');
     activeState.value = 'loginButtonState';
 }
 
