@@ -1,7 +1,7 @@
 {
   "RootNamespace":"",
   "Version": "1.0",
-  "VersionCode": 1016,
+  "VersionCode": 1017,
   "Title": "Killswitch",
   "Mobile": {
     "RunsInBackground": false,
@@ -20,7 +20,7 @@
     "js/*.js:Bundle",
     "HomeScreen.uno"
   ],
-  "Icon": "../assets/icons/appIcons/Icon@2x.png",
+  "Icon": "../assets/app icons/appIcons/Icon@2x.png",
   "Android": {
       "Key": {
 	  		"Alias": "application",
@@ -29,30 +29,30 @@
 			"StorePassword": "Killswitch123!"
 	   },
 	  "Icons": {
-			"LDPI": "../assets/icons/appIcons/Icon-ldpi.png",
-			"MDPI": "../assets/icons/appIcons/Icon-mdpi.png",
-			"HDPI": "../assets/icons/appIcons/Icon-hdpi.png",
-			"XHDPI": "../assets/icons/appIcons/Icon-xhdpi.png",
-			"XXHDPI": "../assets/icons/appIcons/Icon-xxhdpi.png",
-			"XXXHDPI": "../assets/icons/appIcons/Icon-xxxhdpi.png"
+			"LDPI": "../assets/app icons/appIcons/Icon-ldpi.png",
+			"MDPI": "../assets/app icons/appIcons/Icon-mdpi.png",
+			"HDPI": "../assets/app icons/appIcons/Icon-hdpi.png",
+			"XHDPI": "../assets/app icons/appIcons/Icon-xhdpi.png",
+			"XXHDPI": "../assets/app icons/appIcons/Icon-xxhdpi.png",
+			"XXXHDPI": "../assets/app icons/appIcons/Icon-xxxhdpi.png"
 		}
 	},
   "iOS": {
 		"BundleIdentifier": "com.danielskovli.killswitch",
 	    "Icons": {
-				"iPhone_29_2x": "../assets/icons/appIcons/Icon-Small@2x.png",
-				"iPhone_29_3x": "../assets/icons/appIcons/Icon-Small@3x.png",
-				"iPhone_40_2x": "../assets/icons/appIcons/Icon-Small-40@2x.png",
-				"iPhone_40_3x": "../assets/icons/appIcons/Icon-Small-40@3x.png",
-				"iPhone_60_2x": "../assets/icons/appIcons/Icon-Small-60@2x.png",
-				"iPhone_60_3x": "../assets/icons/appIcons/Icon-Small-60@3x.png",
-				"iPad_29_1x": "../assets/icons/appIcons/Icon-Small.png",
-				"iPad_29_2x": "../assets/icons/appIcons/Icon-Small@2x.png",
-				"iPad_40_1x": "../assets/icons/appIcons/Icon-Small-40.png",
-				"iPad_40_2x": "../assets/icons/appIcons/Icon-Small-40@2x.png",
-				"iPad_76_1x": "../assets/icons/appIcons/Icon-Small-76.png",
-				"iPad_76_2x": "../assets/icons/appIcons/Icon-Small-76@2x.png",
-				"iOS-Marketing_1024_1x": "../assets/icons/appIcons/iTunesArtwork@2x.png"
+				"iPhone_29_2x": "../assets/app icons/appIcons/Icon-Small@2x.png",
+				"iPhone_29_3x": "../assets/app icons/appIcons/Icon-Small@3x.png",
+				"iPhone_40_2x": "../assets/app icons/appIcons/Icon-Small-40@2x.png",
+				"iPhone_40_3x": "../assets/app icons/appIcons/Icon-Small-40@3x.png",
+				"iPhone_60_2x": "../assets/app icons/appIcons/Icon-Small-60@2x.png",
+				"iPhone_60_3x": "../assets/app icons/appIcons/Icon-Small-60@3x.png",
+				"iPad_29_1x": "../assets/app icons/appIcons/Icon-Small.png",
+				"iPad_29_2x": "../assets/app icons/appIcons/Icon-Small@2x.png",
+				"iPad_40_1x": "../assets/app icons/appIcons/Icon-Small-40.png",
+				"iPad_40_2x": "../assets/app icons/appIcons/Icon-Small-40@2x.png",
+				"iPad_76_1x": "../assets/app icons/appIcons/Icon-Small-76.png",
+				"iPad_76_2x": "../assets/app icons/appIcons/Icon-Small-76@2x.png",
+				"iOS-Marketing_1024_1x": "../assets/app icons/appIcons/iTunesArtwork@2x.png"
 			}
 		}
 }

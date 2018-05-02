@@ -15,6 +15,7 @@ import ServiceManagement
 class ViewController: NSViewController {
 
     // Trackers and binds
+    @IBOutlet var linkSystemPrefs: NSButton!
     @IBOutlet var linkDownload: NSButton!
     @IBOutlet var linkChangePass: NSButton!
     @IBOutlet var linkDeleteUser: NSButton!
@@ -69,13 +70,14 @@ class ViewController: NSViewController {
             linkChangePass.attributedTitle = formatLinks(text: linkChangePass.title, offset: 1)
             linkDeleteUser.attributedTitle = formatLinks(text: linkDeleteUser.title, offset: 1)
             linkWebsite.attributedTitle = formatLinks(text: linkWebsite.title, offset: 1)
+            linkSystemPrefs.attributedTitle = formatLinks(text: linkSystemPrefs.title, offset: 0)
             
             // Toggle some stuff based on login status
             updateGUI()
             
             // Correct window size
             self.preferredContentSize = NSMakeSize(self.view.frame.size.width, self.view.frame.size.height)
-        
+            
         } else if (self.identifier?.rawValue == "loginWindow") {
             // Links
             prefLoginForgotButton.attributedTitle = formatLinks(text: prefLoginForgotButton.title)
@@ -85,6 +87,7 @@ class ViewController: NSViewController {
     override func viewDidAppear() {
         super.viewDidAppear()
         view.window?.level = .floating
+        view.window?.makeKey()
     }
     
     
@@ -367,6 +370,11 @@ class ViewController: NSViewController {
         }
     }
     
+    @IBAction func hyperlinkSystemPrefs(_ sender: NSButton) {
+        if let url = URL(string: "x-apple.systempreferences:com.apple.preference.security"), NSWorkspace.shared.open(url) {
+            //print("default browser was successfully opened")
+        }
+    }
     
     func formatLinks(text: String, offset: Int = 0) -> NSMutableAttributedString {
         let attrs = [

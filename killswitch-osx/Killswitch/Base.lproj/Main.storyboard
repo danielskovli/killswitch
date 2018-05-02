@@ -263,7 +263,7 @@ DQ
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nkb-PQ-MNI">
-                                <rect key="frame" x="165" y="154" width="22" height="18"/>
+                                <rect key="frame" x="165" y="129" width="22" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="dh1-9P-XyB">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -283,7 +283,7 @@ DQ
                                 </textFieldCell>
                             </textField>
                             <textField toolTip="What should we do after receiving the killswitch signal?" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oVT-kk-01B">
-                                <rect key="frame" x="59" y="156" width="101" height="17"/>
+                                <rect key="frame" x="59" y="131" width="101" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Launch at login:" id="ukf-Kx-LhG">
                                     <font key="font" metaFont="system"/>
@@ -292,14 +292,14 @@ DQ
                                 </textFieldCell>
                             </textField>
                             <popUpButton autoresizesSubviews="NO" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FhX-qP-GBE">
-                                <rect key="frame" x="164" y="179" width="151" height="26"/>
+                                <rect key="frame" x="164" y="179" width="79" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <popUpButtonCell key="cell" type="push" title="Item 1 very long" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="qKm-Fy-HZH" id="qpa-Hb-xlt">
+                                <popUpButtonCell key="cell" type="push" title="Item 1 hello" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="qKm-Fy-HZH" id="qpa-Hb-xlt">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="menu"/>
                                     <menu key="menu" id="ZzK-Gs-P1O">
                                         <items>
-                                            <menuItem title="Item 1 very long" state="on" id="qKm-Fy-HZH"/>
+                                            <menuItem title="Item 1 hello" state="on" id="qKm-Fy-HZH"/>
                                             <menuItem title="Item 2" id="h1s-dd-Xah"/>
                                             <menuItem title="Item 3" id="5X0-12-CEO"/>
                                         </items>
@@ -328,7 +328,7 @@ DQ
                                 </textFieldCell>
                             </textField>
                             <stackView orientation="vertical" alignment="leading" spacing="4" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" fixedFrame="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gu0-Z4-xoY">
-                                <rect key="frame" x="165" y="54" width="152" height="80"/>
+                                <rect key="frame" x="165" y="34" width="152" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <beginningViews>
                                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mon-Ml-L8m">
@@ -444,6 +444,17 @@ DQ
                                     <real value="3.4028234663852886e+38"/>
                                 </customSpacing>
                             </stackView>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uuw-gH-jQc">
+                                <rect key="frame" x="165" y="161" width="276" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="inline" title="Enable password in system preferences" bezelStyle="inline" image="GearIcon" alignment="left" alternateImage="GearIcon" inset="2" id="swj-WC-CVJ">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="hyperlinkSystemPrefs:" target="Gt3-Cm-Ogy" id="CAW-5B-qWR"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <connections>
@@ -452,6 +463,7 @@ DQ
                         <outlet property="linkChangePass" destination="NpF-Wj-5xo" id="tWa-ZG-TNX"/>
                         <outlet property="linkDeleteUser" destination="FJM-yU-GCw" id="Abx-QX-grt"/>
                         <outlet property="linkDownload" destination="mon-Ml-L8m" id="YvS-aA-WiQ"/>
+                        <outlet property="linkSystemPrefs" destination="Uuw-gH-jQc" id="gUQ-ea-egF"/>
                         <outlet property="linkWebsite" destination="dG8-Fh-PFm" id="zsa-wQ-hPr"/>
                         <outlet property="loginButton" destination="HER-ch-9qt" id="Yrh-U5-TwH"/>
                         <outlet property="logoutButton" destination="VPl-Jv-Tjn" id="g1C-No-ucl"/>
@@ -571,6 +583,7 @@ DQ
         </scene>
     </scenes>
     <resources>
+        <image name="GearIcon" width="10" height="10"/>
         <image name="NSPreferencesGeneral" width="32" height="32"/>
     </resources>
 </document>
