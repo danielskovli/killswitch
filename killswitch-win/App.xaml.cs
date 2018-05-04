@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.Windows;
 using Hardcodet.Wpf.TaskbarNotification;
 using Killswitch.Properties;
@@ -39,6 +40,11 @@ namespace Killswitch {
 		// Settings have changed. Save and update GUI if needed
 		void SettingChanged(object sender, PropertyChangedEventArgs e) {
 			Settings.Default.Save();
+		}
+
+		// Testing
+		public void PrintStuff(string stuff) {
+			Console.WriteLine(stuff);
 		}
 	}
 }

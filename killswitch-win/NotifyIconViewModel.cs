@@ -55,6 +55,12 @@ namespace Killswitch {
                 return new DelegateCommand {CommandAction = () => Application.Current.Shutdown()};
             }
         }
+
+		public ICommand ToggleStartStopCommand {
+			get {
+				return new DelegateCommand { CommandAction = () => ((App)Application.Current).PrintStuff("Hola")};
+			}
+		}
     }
 
 

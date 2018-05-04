@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="name" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Test name</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="username" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
@@ -11,11 +11,11 @@
     <Setting Name="token" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="authenticated" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
     <Setting Name="upgradeUserSettings" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="authenticated" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
     </Setting>
   </Settings>
 </SettingsFile>

@@ -12,6 +12,8 @@
         <MenuItem Header="Show Window" Command="{Binding ShowWindowCommand}" />
         <MenuItem Header="Hide Window" Command="{Binding HideWindowCommand}" />
         <Separator />
+        <MenuItem Header="Testing" Command="{Binding ToggleStartStopCommand}" />
+        <Separator />
         <MenuItem Header="Exit" Command="{Binding ExitApplicationCommand}" />
     </ContextMenu>
 

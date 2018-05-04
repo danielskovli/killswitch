@@ -25,7 +25,7 @@ namespace Killswitch.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Test name")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string name {
             get {
                 return ((string)(this["name"]));
@@ -61,18 +61,6 @@ namespace Killswitch.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string authenticated {
-            get {
-                return ((string)(this["authenticated"]));
-            }
-            set {
-                this["authenticated"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool upgradeUserSettings {
             get {
@@ -80,6 +68,18 @@ namespace Killswitch.Properties {
             }
             set {
                 this["upgradeUserSettings"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool authenticated {
+            get {
+                return ((bool)(this["authenticated"]));
+            }
+            set {
+                this["authenticated"] = value;
             }
         }
     }
