@@ -82,5 +82,53 @@ namespace Killswitch.Properties {
                 this["authenticated"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Pause")]
+        public string startStopButton {
+            get {
+                return ((string)(this["startStopButton"]));
+            }
+            set {
+                this["startStopButton"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string statusText {
+            get {
+                return ((string)(this["statusText"]));
+            }
+            set {
+                this["statusText"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Lock")]
+        public string killswitchAction {
+            get {
+                return ((string)(this["killswitchAction"]));
+            }
+            set {
+                this["killswitchAction"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool launchAtLogin {
+            get {
+                return ((bool)(this["launchAtLogin"]));
+            }
+            set {
+                this["launchAtLogin"] = value;
+            }
+        }
     }
 }

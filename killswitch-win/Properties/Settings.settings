@@ -17,5 +17,17 @@
     <Setting Name="authenticated" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
+    <Setting Name="startStopButton" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Pause</Value>
+    </Setting>
+    <Setting Name="statusText" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="killswitchAction" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Lock</Value>
+    </Setting>
+    <Setting Name="launchAtLogin" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
