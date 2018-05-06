@@ -75,8 +75,11 @@ namespace Killswitch {
 					if (err.Response != null) {
 						var response = new StreamReader(err.Response.GetResponseStream()).ReadToEnd();
 						var json = JsonConvert.DeserializeObject<Dictionary<string, object>>(response);
-						var error = (string)json["error"];
-						MessageBox.Show("Unable to log in. Server said: " + error, "Authentication error", MessageBoxButton.OK, MessageBoxImage.Error);
+						if (json.ContainsKey("error")) {
+							MessageBox.Show("Unable to log in. Server said: " + (string)json["error"], "Authentication error", MessageBoxButton.OK, MessageBoxImage.Error);
+						} else {
+							MessageBox.Show("Unable to log in. Unknown server error. Please try again", "Authentication error", MessageBoxButton.OK, MessageBoxImage.Error);
+						}
 
 					// Server or network error
 					} else {
