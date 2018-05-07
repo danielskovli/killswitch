@@ -63,9 +63,9 @@ namespace Killswitch {
 					var response = webClient.UploadString(url, payload);
 					var json = JsonConvert.DeserializeObject<Dictionary<string, object>>(response);
 					Settings.Default.authenticated = true;
-					Settings.Default.name = (string)json["name"];
-					Settings.Default.username = (string)json["username"];
-					Settings.Default.token = (string)json["token"];
+					Settings.Default.name = json["name"].ToString();
+					Settings.Default.username = json["username"].ToString();
+					Settings.Default.token = json["token"].ToString();
 					ThreadHelper.Run = true;
 					this.Close();
 

@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Killswitch"
 		xmlns:classes="clr-namespace:Killswitch.Classes"
+		xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
         Title="Log in to your account" Height="197.234" Width="505"
         FocusManager.FocusedElement="{Binding ElementName=Email}" Icon="LockEnabled.ico" WindowStyle="ThreeDBorderWindow" Topmost="True" ResizeMode="NoResize" Closed="Window_Closed">
@@ -32,11 +33,11 @@
 		<StackPanel Orientation="Vertical" Margin="30,25,30,10">
 			<Grid>
 				<Label Content="Email address:" HorizontalAlignment="Left" VerticalAlignment="Top" Width="125"/>
-				<TextBox x:Name="Email" Height="23" Margin="110,2,0,0" Padding="3,0,0,2" Text="" VerticalAlignment="Top" VerticalContentAlignment="Center" />
+				<xctk:WatermarkTextBox x:Name="Email" Watermark="you@domain.com" Height="23" Margin="110,2,0,0" Padding="3,0,0,2" Text="" VerticalAlignment="Top" VerticalContentAlignment="Center" KeepWatermarkOnGotFocus="True" />
 			</Grid>
 			<Grid>
 				<Label Content="Password:" HorizontalAlignment="Left" VerticalAlignment="Top" Width="125"/>
-				<PasswordBox x:Name="Password" Height="23" Margin="110,2,0,0" Padding="3,0,0,2" VerticalAlignment="Top" VerticalContentAlignment="Center" />
+				<xctk:WatermarkPasswordBox x:Name="Password" Watermark="Password" Height="23" Margin="110,2,0,0" Padding="3,0,0,2" VerticalAlignment="Top" VerticalContentAlignment="Center" KeepWatermarkOnGotFocus="True" />
 			</Grid>
 		</StackPanel>
 		<Button x:Name="ButtonCancel" Content="Cancel" Margin="0,0,30,47" HorizontalAlignment="Right" Width="75" Height="25" VerticalAlignment="Bottom" Click="ButtonCancel_Click" IsCancel="True"/>
