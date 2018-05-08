@@ -45,6 +45,18 @@ namespace Killswitch {
 		}
 
 		private void ButtonLogin_Click(object sender, RoutedEventArgs e) {
+
+			// Check form values
+			if (string.IsNullOrWhiteSpace(this.Email.Text)) {
+				MessageBox.Show("You need to specify a username to log in. Your username is the email address you signed up with", "Username error", MessageBoxButton.OK, MessageBoxImage.Warning);
+				this.Email.Focus();
+				return;
+			} else if (string.IsNullOrWhiteSpace(this.Password.Password)) {
+				MessageBox.Show("You need to specify a password to log in", "Password error", MessageBoxButton.OK, MessageBoxImage.Warning);
+				this.Password.Focus();
+				return;
+			}
+
 			this.IsEnabled = false;
 			var cursor = Mouse.OverrideCursor;
 			Mouse.OverrideCursor = Cursors.Wait;

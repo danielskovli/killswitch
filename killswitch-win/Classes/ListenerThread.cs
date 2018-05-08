@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -10,7 +11,8 @@ using Killswitch.Properties;
 namespace Killswitch.Classes {
     public class ListenerThread {
 
-		bool debug = true;
+		bool debug = false;
+		int listenInterval = 3000;
 
 		public void Listen() {
 
@@ -34,7 +36,9 @@ namespace Killswitch.Classes {
 			// All good, lets get some JSON
 			DebugLog("Running");
 			Settings.Default.statusText = "System running";
-			Thread.Sleep(1000);
+
+
+			Thread.Sleep(listenInterval);
 			Iterate();
 
 
@@ -66,6 +70,13 @@ namespace Killswitch.Classes {
 
 		public static void Sleep() {
 			SetSuspendState(false, true, true);
+		}
+
+		public static void Shutdown() {
+			var psi = new ProcessStartInfo("shutdown", "/s /t 0");
+			psi.CreateNoWindow = true;
+			psi.UseShellExecute = false;
+			Process.Start(psi);
 		}
 	}
 }

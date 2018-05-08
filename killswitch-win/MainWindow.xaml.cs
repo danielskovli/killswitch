@@ -1,5 +1,4 @@
-﻿using Killswitch.Properties;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
@@ -15,8 +14,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Killswitch.Classes;
 using System.Reflection;
+using Microsoft.Win32;
+using Killswitch.Classes;
+using Killswitch.Properties;
 
 namespace Killswitch {
     /// <summary>
@@ -110,6 +111,10 @@ namespace Killswitch {
 			Settings.Default.name = "";
 			Settings.Default.username = "";
 			ThreadHelper.Run = false;
+		}
+
+		private void Status_StartStop_Click(object sender, RoutedEventArgs e) {
+			ThreadHelper.Run = !ThreadHelper.Run;
 		}
 	}
 }

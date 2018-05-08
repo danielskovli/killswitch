@@ -5,7 +5,7 @@
         xmlns:local="clr-namespace:Killswitch"
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
         xmlns:classes="clr-namespace:Killswitch.Classes"
-        Title="Killswitch" Height="335" Width="525" Icon="LockEnabled.ico" WindowStyle="ThreeDBorderWindow" Closing="Window_Closing" MinWidth="525" MinHeight="335">
+        Title="Killswitch" Height="350" Width="550" Icon="LockEnabled.ico" WindowStyle="ThreeDBorderWindow" Closing="Window_Closing" MinWidth="525" MinHeight="335">
 	<Window.Resources>
 		<BooleanToVisibilityConverter x:Key="BoolToVis"/>
 		<classes:InverseBooleanToVisibilityConverter x:Key="BoolToInvertedVis" />
@@ -29,16 +29,23 @@
 		<classes:URLs/>
 	</Window.DataContext>
 	<Grid Background="{DynamicResource {x:Static SystemColors.MenuBarBrushKey}}">
-		<StackPanel Margin="20,30,10,0" Orientation="Vertical">
+		<StackPanel Margin="50,20,10,0" Orientation="Vertical">
 			<StackPanel.Resources>
 				<Style TargetType="{x:Type Grid}">
 					<Setter Property="Margin" Value="0,0,0,15"/>
 				</Style>
 			</StackPanel.Resources>
+			<Grid Margin="0,0,0,10">
+				<Label Content="Status:" HorizontalAlignment="Left" Padding="0" VerticalAlignment="Top" Width="87" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Margin="0,-1,0,0" />
+				<StackPanel x:Name="Status_Actions" Margin="98,0,0,0" Orientation="Horizontal" IsEnabled="{Binding authenticated, Source={x:Static properties:Settings.Default}, UpdateSourceTrigger=PropertyChanged}" >
+					<Label x:Name="Status_Label" Content="Placeholder" Padding="0" VerticalAlignment="Top"/>
+					<TextBlock Margin="5,0,0,0" VerticalAlignment="Top" Visibility="{Binding IsEnabled, ConverterParameter=Normal, Converter={StaticResource BoolToInvertedVis}, ElementName=Status_Actions}" ><Hyperlink x:Name="Status_StartStop" NavigateUri="#" Click="Status_StartStop_Click"><Run x:Name="Status_StartStopText" Text="Start" /></Hyperlink></TextBlock>
+				</StackPanel>
+			</Grid>
 			<Grid>
 				<Label Content="Account:" HorizontalAlignment="Left" Padding="0" VerticalAlignment="Top" Width="87" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Margin="0,-1,0,0"/>
 				<Label x:Name="LabelAccount" Content="Placeholder" Padding="0" Margin="98,0,0,0" VerticalAlignment="Top"/>
-				<StackPanel Margin="98,21,0,0" Orientation="Horizontal"  Height="20" VerticalAlignment="Top">
+				<StackPanel Margin="98,21,0,0" Orientation="Horizontal" Height="20" VerticalAlignment="Top">
 					<StackPanel.Resources>
 						<Style TargetType="{x:Type Button}">
 							<Setter Property="Margin" Value="0,0,5,0"/>
@@ -47,7 +54,6 @@
 					<Button x:Name="ButtonLogin" Content="Log in" HorizontalAlignment="Left" VerticalAlignment="Top" Width="62" Visibility="{Binding authenticated, ConverterParameter=Inverted, Converter={StaticResource BoolToInvertedVis}, Source={x:Static properties:Settings.Default}, UpdateSourceTrigger=PropertyChanged}" Click="ButtonLogin_Click"/>
 					<Button x:Name="ButtonSignUp" Content="Sign up" HorizontalAlignment="Left" VerticalAlignment="Top" Width="62" Visibility="{Binding authenticated, ConverterParameter=Inverted, Converter={StaticResource BoolToInvertedVis}, Source={x:Static properties:Settings.Default}, UpdateSourceTrigger=PropertyChanged}" Click="ButtonSignUp_Click"/>
 					<Button x:Name="ButtonLogOut" Content="Log out" HorizontalAlignment="Left" VerticalAlignment="Top" Width="62" Visibility="{Binding authenticated, Converter={StaticResource BoolToVis}, Source={x:Static properties:Settings.Default}, UpdateSourceTrigger=PropertyChanged}" Click="ButtonLogOut_Click"/>
-
 				</StackPanel>
 			</Grid>
 			<Grid>
@@ -55,7 +61,7 @@
 				<ComboBox HorizontalAlignment="Left" Margin="98,0,0,0" VerticalAlignment="Top" Width="129" SelectedItem="{Binding killswitchAction, Source={x:Static properties:Settings.Default}, UpdateSourceTrigger=PropertyChanged}">
 					<sys:String>Lock</sys:String>
 					<sys:String>Sleep</sys:String>
-					<sys:String>Shut down</sys:String>
+					<sys:String>Shutdown</sys:String>
 				</ComboBox>
 				<TextBlock Margin="98,27,0,0" Height="18" VerticalAlignment="Top" ><Hyperlink NavigateUri="ms-settings:signinoptions" RequestNavigate="Hyperlink_RequestNavigate"><Run Text="Enabled your password in system settings" /></Hyperlink></TextBlock>
 			</Grid>

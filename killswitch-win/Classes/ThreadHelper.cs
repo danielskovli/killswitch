@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using System.Windows;
 using Killswitch.Properties;
 
 namespace Killswitch.Classes {
@@ -16,14 +17,22 @@ namespace Killswitch.Classes {
 			set {
 				run = value;
 				Settings.Default.startStopButton = (value) ? "Pause" : "Start";
+				((App)Application.Current).SetTaskbarIcon();
+				Application.Current.Dispatcher.Invoke(new Action(() => {
+					var mw = Application.Current.MainWindow as MainWindow;
+					if (mw != null) {
+						mw.Status_Label.Content = (value) ? "Killswitch is running" : "Killswitch is paused";
+						mw.Status_StartStopText.Text = (value) ? "Pause" : "Start";
+					}
+				}));
 			}
 
 		}
 		public static bool KillAllThreads { get; set; } = false;
 		public static bool CanRun {
 			get {
-				//return (!Settings.Default.authenticated || Settings.Default.token.Length == 0) ? false : true;
-				return (!Settings.Default.authenticated) ? false : true;
+				return (!Settings.Default.authenticated || Settings.Default.token.Length == 0) ? false : true;
+				//return (!Settings.Default.authenticated) ? false : true;
 			}
 		}
 
@@ -38,6 +47,15 @@ namespace Killswitch.Classes {
 			}
 
 			return sb.ToString().ToLower();
+		}
+
+		public static bool IsValidEmail(string email) {
+			try {
+				var addr = new System.Net.Mail.MailAddress(email);
+				return addr.Address == email;
+			} catch {
+				return false;
+			}
 		}
 	}
 }
