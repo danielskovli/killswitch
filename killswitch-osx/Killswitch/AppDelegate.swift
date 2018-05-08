@@ -81,6 +81,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             let storyboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
             let controller = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "prefWindowController")) as! NSWindowController
             controller.showWindow(self)
+            controller.window?.makeKey()
         }
         
         // Attempt to start the listener
