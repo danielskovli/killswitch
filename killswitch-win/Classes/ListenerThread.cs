@@ -1,17 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using Killswitch.Classes;
 using Killswitch.Properties;
+using Newtonsoft.Json;
 
 namespace Killswitch.Classes {
     public class ListenerThread {
 
-		bool debug = false;
+		bool debug = true;
 		int listenInterval = 3000;
 		URLs urls = new URLs();
 
