@@ -1,0 +1,33 @@
+﻿<Window x:Class="Killswitch.SignUp"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Killswitch"
+		xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        mc:Ignorable="d"
+        Title="Sign up for an account" Height="231.084" Width="505"
+        FocusManager.FocusedElement="{Binding ElementName=Name}" Icon="LockEnabled.ico" WindowStyle="ThreeDBorderWindow" Topmost="True" ResizeMode="NoResize" Closed="Window_Closed">
+    <Grid Background="{DynamicResource {x:Static SystemColors.MenuBarBrushKey}}">
+        <StackPanel Orientation="Vertical" Margin="30,25,30,10">
+            <Grid>
+                <Label Content="Name:" HorizontalAlignment="Left" VerticalAlignment="Top" Width="125"/>
+				<xctk:WatermarkTextBox x:Name="Name" Watermark="Full name" Height="23" Margin="110,2,0,0" Padding="3,0,0,2" VerticalAlignment="Top" VerticalContentAlignment="Center" KeepWatermarkOnGotFocus="True" />
+            </Grid>
+            <Grid>
+                <Label Content="Email address:" HorizontalAlignment="Left" VerticalAlignment="Top" Width="125"/>
+				<xctk:WatermarkTextBox x:Name="Email" Watermark="you@domain.com" Height="23" Margin="110,2,0,0" Padding="3,0,0,2" VerticalAlignment="Top" VerticalContentAlignment="Center" KeepWatermarkOnGotFocus="True" />
+            </Grid>
+            <Grid>
+                <Label Content="Password:" HorizontalAlignment="Left" VerticalAlignment="Top" Width="125"/>
+				<xctk:WatermarkPasswordBox x:Name="Password" Watermark="Password" Height="23" Margin="110,2,0,0" Padding="3,0,0,2" VerticalAlignment="Top" VerticalContentAlignment="Center" KeepWatermarkOnGotFocus="True" />
+            </Grid>
+            <Grid>
+                <Label Content="Repeat password:" HorizontalAlignment="Left" VerticalAlignment="Top" Width="125"/>
+				<xctk:WatermarkPasswordBox x:Name="PasswordRepeat" Watermark="Repeat password" Height="23" Margin="110,2,0,0" Padding="3,0,0,2" VerticalAlignment="Top" VerticalContentAlignment="Center" KeepWatermarkOnGotFocus="True" />
+            </Grid>
+        </StackPanel>
+        <Button x:Name="ButtonCancel" Content="Cancel" Margin="0,157,30,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="75" Height="25" Click="ButtonCancel_Click" IsCancel="True"/>
+        <Button x:Name="ButtonSignUp" Content="Sign up" Margin="0,157,110,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="75" Height="25" Click="ButtonSignUp_Click" IsDefault="True"/>
+    </Grid>
+</Window>
