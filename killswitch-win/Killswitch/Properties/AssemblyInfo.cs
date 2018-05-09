@@ -8,9 +8,9 @@ using System.Windows;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Killswitch")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Remotely lock your computer")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Daniel Skovli")]
 [assembly: AssemblyProduct("Killswitch")]
 [assembly: AssemblyCopyright("Daniel Skovli ©  2018")]
 [assembly: AssemblyTrademark("")]

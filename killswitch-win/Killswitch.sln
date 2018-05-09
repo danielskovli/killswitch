@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27428.2015
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Killswitch", "Killswitch\Killswitch.csproj", "{964EBFBE-A600-49B2-BDD8-422B46F1D544}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Installer", "Installer\Installer.vdproj", "{B76E180F-6983-409D-8F74-7609DCBDB653}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -15,6 +17,9 @@ Global
 		{964EBFBE-A600-49B2-BDD8-422B46F1D544}.Debug|x64.Build.0 = Debug|x64
 		{964EBFBE-A600-49B2-BDD8-422B46F1D544}.Release|x64.ActiveCfg = Release|x64
 		{964EBFBE-A600-49B2-BDD8-422B46F1D544}.Release|x64.Build.0 = Release|x64
+		{B76E180F-6983-409D-8F74-7609DCBDB653}.Debug|x64.ActiveCfg = Debug
+		{B76E180F-6983-409D-8F74-7609DCBDB653}.Release|x64.ActiveCfg = Release
+		{B76E180F-6983-409D-8F74-7609DCBDB653}.Release|x64.Build.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
