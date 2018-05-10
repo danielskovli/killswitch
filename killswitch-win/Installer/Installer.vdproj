@@ -21,26 +21,20 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_3BB29DCBD051FB7480383CA9876FC16D"
+        "MsmKey" = "8:_4F8B247649693A0090D23929FDC73319"
         "OwnerKey" = "8:_160F1A045E8B451A9891041D9B092576"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_71BE094520DA6DFB738CD95F0B192D43"
+        "MsmKey" = "8:_8DFC549B387B80CF2238732A428D4B83"
         "OwnerKey" = "8:_160F1A045E8B451A9891041D9B092576"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_96D65B941007715D11F4E94BB04D3B50"
+        "MsmKey" = "8:_D18D15C04595E115BEE473AC91016C9A"
         "OwnerKey" = "8:_160F1A045E8B451A9891041D9B092576"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_3BB29DCBD051FB7480383CA9876FC16D"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -52,13 +46,19 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_96D65B941007715D11F4E94BB04D3B50"
+        "OwnerKey" = "8:_4F8B247649693A0090D23929FDC73319"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_71BE094520DA6DFB738CD95F0B192D43"
+        "OwnerKey" = "8:_D18D15C04595E115BEE473AC91016C9A"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_8DFC549B387B80CF2238732A428D4B83"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -79,13 +79,21 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
         "DisplayName" = "8:Release"
         "IsDebugOnly" = "11:FALSE"
         "IsReleaseOnly" = "11:TRUE"
-        "OutputFilename" = "8:Release\\Killswitch_installer.msi"
+        "OutputFilename" = "8:Release\\killswitch_win.msi"
         "PackageFilesAs" = "3:2"
         "PackageFileSize" = "3:-2147483648"
         "CabType" = "3:1"
@@ -140,76 +148,14 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_3BB29DCBD051FB7480383CA9876FC16D"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Hardcodet.Wpf.TaskbarNotification, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_3BB29DCBD051FB7480383CA9876FC16D"
-                    {
-                    "Name" = "8:Hardcodet.Wpf.TaskbarNotification.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:Hardcodet.Wpf.TaskbarNotification.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_13703F54031F48D488626F9B17871A9E"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_71BE094520DA6DFB738CD95F0B192D43"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_71BE094520DA6DFB738CD95F0B192D43"
-                    {
-                    "Name" = "8:Newtonsoft.Json.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:Newtonsoft.Json.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_13703F54031F48D488626F9B17871A9E"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_96D65B941007715D11F4E94BB04D3B50"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_4F8B247649693A0090D23929FDC73319"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:Xceed.Wpf.Toolkit, Version=3.3.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_96D65B941007715D11F4E94BB04D3B50"
+                    "_4F8B247649693A0090D23929FDC73319"
                     {
                     "Name" = "8:Xceed.Wpf.Toolkit.dll"
                     "Attributes" = "3:512"
@@ -218,7 +164,69 @@
             "SourcePath" = "8:Xceed.Wpf.Toolkit.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
-            "Folder" = "8:_13703F54031F48D488626F9B17871A9E"
+            "Folder" = "8:_A02842F1ECA84A2B8C6FF89FB3E369F5"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_8DFC549B387B80CF2238732A428D4B83"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Hardcodet.Wpf.TaskbarNotification, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_8DFC549B387B80CF2238732A428D4B83"
+                    {
+                    "Name" = "8:Hardcodet.Wpf.TaskbarNotification.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Hardcodet.Wpf.TaskbarNotification.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_A02842F1ECA84A2B8C6FF89FB3E369F5"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_D18D15C04595E115BEE473AC91016C9A"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_D18D15C04595E115BEE473AC91016C9A"
+                    {
+                    "Name" = "8:Newtonsoft.Json.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Newtonsoft.Json.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_A02842F1ECA84A2B8C6FF89FB3E369F5"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -239,17 +247,6 @@
         }
         "Folder"
         {
-            "{1525181F-901A-416C-8A58-119130FE478E}:_13703F54031F48D488626F9B17871A9E"
-            {
-            "Name" = "8:#1935"
-            "AlwaysCreate" = "11:FALSE"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Property" = "8:ProgramFiles64Folder"
-                "Folders"
-                {
-                }
-            }
             "{1525181F-901A-416C-8A58-119130FE478E}:_3F3F955E352D41C7A5E318C31709AAE8"
             {
             "Name" = "8:#1916"
@@ -285,7 +282,7 @@
             }
             "{3C67513D-01DD-4637-8A68-80971EB9504F}:_A02842F1ECA84A2B8C6FF89FB3E369F5"
             {
-            "DefaultLocation" = "8:[ProgramFilesFolder]\\[ProductName]"
+            "DefaultLocation" = "8:[ProgramFiles64Folder]\\[ProductName]"
             "Name" = "8:#1925"
             "AlwaysCreate" = "11:FALSE"
             "Condition" = "8:"
@@ -311,31 +308,31 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Killswitch"
-        "ProductCode" = "8:{CD93BFA5-236A-40C2-9934-40FD9D277633}"
-        "PackageCode" = "8:{70C7265C-FF2C-4A65-8563-66319828053E}"
+        "ProductCode" = "8:{42B2BCE0-6F67-4D27-84C3-B907352888E0}"
+        "PackageCode" = "8:{78A37D0C-1359-472A-AC45-E2620198C1A6}"
         "UpgradeCode" = "8:{03FC4A74-A73C-4B93-9439-869AC979E48D}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.0.0"
+        "ProductVersion" = "8:1.0"
         "Manufacturer" = "8:Daniel Skovli"
         "ARPHELPTELEPHONE" = "8:"
-        "ARPHELPLINK" = "8:"
+        "ARPHELPLINK" = "8:http://apps.danielskovli.com/killswitch"
         "Title" = "8:Killswitch"
         "Subject" = "8:"
         "ARPCONTACT" = "8:Daniel Skovli"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:Installer for the Killswitch application"
-        "ARPURLINFOABOUT" = "8:"
+        "ARPURLINFOABOUT" = "8:http://danielskovli.com"
         "ARPPRODUCTICON" = "8:"
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
         "TargetPlatform" = "3:1"
         "PreBuildEvent" = "8:"
-        "PostBuildEvent" = "8:"
+        "PostBuildEvent" = "8:FOR /F \"tokens=2 delims== \" %%V IN ('FINDSTR /B /R /C:\" *\\\"ProductVersion\\\"\" \"$(ProjectDir)Installer.vdproj\"') DO FOR %%I IN (\"$(BuiltOuputPath)\") DO REN \"$(BuiltOuputPath)\" \"%%~nI_v%%~nxV%%~xI\""
         "RunPostBuildEvent" = "3:0"
         }
         "Registry"
@@ -432,20 +429,6 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_99EFF0DD8ECE4D29BA795C479D351614"
-            {
-            "Name" = "8:Killswitch"
-            "Arguments" = "8:"
-            "Description" = "8:"
-            "ShowCmd" = "3:1"
-            "IconIndex" = "3:0"
-            "Transitive" = "11:FALSE"
-            "Target" = "8:_160F1A045E8B451A9891041D9B092576"
-            "Folder" = "8:_3F3F955E352D41C7A5E318C31709AAE8"
-            "WorkingFolder" = "8:_13703F54031F48D488626F9B17871A9E"
-            "Icon" = "8:"
-            "Feature" = "8:"
-            }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_C7A75BAC83054788BE7B4741EB05EC13"
             {
             "Name" = "8:Killswitch"
@@ -456,7 +439,7 @@
             "Transitive" = "11:FALSE"
             "Target" = "8:_160F1A045E8B451A9891041D9B092576"
             "Folder" = "8:_AE79A64B29C04BD0BCA153C8056B7314"
-            "WorkingFolder" = "8:_13703F54031F48D488626F9B17871A9E"
+            "WorkingFolder" = "8:"
             "Icon" = "8:"
             "Feature" = "8:"
             }
@@ -864,7 +847,7 @@
             "SourcePath" = "8:..\\Killswitch\\obj\\x64\\Release\\Killswitch.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
-            "Folder" = "8:_13703F54031F48D488626F9B17871A9E"
+            "Folder" = "8:_A02842F1ECA84A2B8C6FF89FB3E369F5"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"

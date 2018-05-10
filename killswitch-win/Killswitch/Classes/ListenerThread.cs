@@ -14,9 +14,9 @@ using Newtonsoft.Json;
 namespace Killswitch.Classes {
     public class ListenerThread {
 
-		bool debug = true;
-		int listenInterval = 3000;
-		URLs urls = new URLs();
+		private bool debug = true;
+		private int listenInterval = 3000;
+		private URLs urls = new URLs();
 
 		public void Listen() {
 
@@ -132,9 +132,10 @@ namespace Killswitch.Classes {
 		}
 
 		public static void Shutdown() {
-			var psi = new ProcessStartInfo("shutdown", "/s /t 0");
-			psi.CreateNoWindow = true;
-			psi.UseShellExecute = false;
+			var psi = new ProcessStartInfo("shutdown", "/s /t 0") {
+				CreateNoWindow = true,
+				UseShellExecute = false
+			};
 			Process.Start(psi);
 		}
 	}
