@@ -5,7 +5,7 @@
         xmlns:local="clr-namespace:Killswitch"
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
         xmlns:classes="clr-namespace:Killswitch.Classes"
-        Title="Killswitch" Height="350" Width="550" Icon="LockEnabled.ico" WindowStyle="ThreeDBorderWindow" Closing="Window_Closing" MinWidth="525" MinHeight="335">
+        Title="Killswitch" Height="350" Width="550" Icon="KillswitchIcon.ico" WindowStyle="ThreeDBorderWindow" Closing="Window_Closing" MinWidth="525" MinHeight="335">
 	<Window.Resources>
 		<BooleanToVisibilityConverter x:Key="BoolToVis"/>
 		<classes:InverseBooleanToVisibilityConverter x:Key="BoolToInvertedVis" />

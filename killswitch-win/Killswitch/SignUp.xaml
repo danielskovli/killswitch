@@ -7,7 +7,7 @@
 		xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
         Title="Sign up for an account" Height="231.084" Width="505"
-        FocusManager.FocusedElement="{Binding ElementName=Name}" Icon="LockEnabled.ico" WindowStyle="ThreeDBorderWindow" Topmost="True" ResizeMode="NoResize" Closed="Window_Closed">
+        FocusManager.FocusedElement="{Binding ElementName=Name}" Icon="KillswitchIcon.ico" WindowStyle="ThreeDBorderWindow" Topmost="True" ResizeMode="NoResize" Closed="Window_Closed">
     <Grid Background="{DynamicResource {x:Static SystemColors.MenuBarBrushKey}}">
         <StackPanel Orientation="Vertical" Margin="30,25,30,10">
             <Grid>
