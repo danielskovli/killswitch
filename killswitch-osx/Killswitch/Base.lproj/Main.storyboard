@@ -387,17 +387,13 @@ DQ
                             </stackView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UjU-KA-b6J">
                                 <rect key="frame" x="-5" y="1" width="531" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Killswitch v1.0.1  –  Daniel Skovli © 2018" id="W6R-HV-vlX">
                                     <font key="font" metaFont="label"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="rqd-sF-t5j">
-                                <rect key="frame" x="0.0" y="22" width="533" height="5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
-                            </box>
                             <stackView autoresizesSubviews="NO" orientation="horizontal" alignment="top" spacing="7" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" horizontalClippingResistancePriority="750" verticalClippingResistancePriority="750" fixedFrame="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pla-1L-9u3">
                                 <rect key="frame" x="166" y="223" width="239" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -447,7 +443,7 @@ DQ
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uuw-gH-jQc">
                                 <rect key="frame" x="165" y="161" width="276" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="inline" title="Enable password in system preferences" bezelStyle="inline" image="GearIcon" alignment="left" alternateImage="GearIcon" inset="2" id="swj-WC-CVJ">
+                                <buttonCell key="cell" type="inline" title="Enable password in system preferences" bezelStyle="inline" alignment="left" inset="2" id="swj-WC-CVJ">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -455,6 +451,10 @@ DQ
                                     <action selector="hyperlinkSystemPrefs:" target="Gt3-Cm-Ogy" id="CAW-5B-qWR"/>
                                 </connections>
                             </button>
+                            <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="vBN-x6-Fv8">
+                                <rect key="frame" x="-1" y="22" width="535" height="5"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </box>
                         </subviews>
                     </view>
                     <connections>
@@ -583,7 +583,6 @@ DQ
         </scene>
     </scenes>
     <resources>
-        <image name="GearIcon" width="10" height="10"/>
         <image name="NSPreferencesGeneral" width="32" height="32"/>
     </resources>
 </document>
