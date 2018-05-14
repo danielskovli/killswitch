@@ -3,61 +3,61 @@
     {
       "size" : "16x16",
       "idiom" : "mac",
-      "filename" : "Icon-OSX_16pt@1x.png",
+      "filename" : "Desktop icon_16x16.png",
       "scale" : "1x"
     },
     {
       "size" : "16x16",
       "idiom" : "mac",
-      "filename" : "Icon-OSX_16pt@2x.png",
+      "filename" : "Desktop icon_32x32.png",
       "scale" : "2x"
     },
     {
       "size" : "32x32",
       "idiom" : "mac",
-      "filename" : "Icon-OSX_32pt@1x.png",
+      "filename" : "Desktop icon_32x32-1.png",
       "scale" : "1x"
     },
     {
       "size" : "32x32",
       "idiom" : "mac",
-      "filename" : "Icon-OSX_32pt@2x.png",
+      "filename" : "Desktop icon_64x64.png",
       "scale" : "2x"
     },
     {
       "size" : "128x128",
       "idiom" : "mac",
-      "filename" : "Icon-OSX_128pt@1x.png",
+      "filename" : "Desktop icon_128x128.png",
       "scale" : "1x"
     },
     {
       "size" : "128x128",
       "idiom" : "mac",
-      "filename" : "Icon-OSX_128pt@2x.png",
+      "filename" : "Desktop icon_256x256.png",
       "scale" : "2x"
     },
     {
       "size" : "256x256",
       "idiom" : "mac",
-      "filename" : "Icon-OSX_256pt@1x.png",
+      "filename" : "Desktop icon_256x256-1.png",
       "scale" : "1x"
     },
     {
       "size" : "256x256",
       "idiom" : "mac",
-      "filename" : "Icon-OSX_256pt@2x.png",
+      "filename" : "Desktop icon_512x512.png",
       "scale" : "2x"
     },
     {
       "size" : "512x512",
       "idiom" : "mac",
-      "filename" : "Icon-OSX_512pt@1x.png",
+      "filename" : "Desktop icon_512x512-1.png",
       "scale" : "1x"
     },
     {
       "size" : "512x512",
       "idiom" : "mac",
-      "filename" : "Icon-OSX_512pt@2x.png",
+      "filename" : "Desktop icon_1024x1024.png",
       "scale" : "2x"
     }
   ],
