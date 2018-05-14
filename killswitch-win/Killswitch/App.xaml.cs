@@ -117,8 +117,10 @@ namespace Killswitch {
 		public void SetTaskbarIcon() {
 			if (ThreadHelper.Run) {
 				notifyIcon.Icon = Killswitch.Properties.Resources.LockEnabled;
+				notifyIcon.ToolTipText = "Killswitch"+ Environment.NewLine +"System running";
 			} else {
 				notifyIcon.Icon = Killswitch.Properties.Resources.LockDisabled;
+				notifyIcon.ToolTipText = (ThreadHelper.CanRun) ? "Killswitch" + Environment.NewLine + "System paused" : "Killswitch" + Environment.NewLine + "Not signed in";
 			}
 		}
 	}

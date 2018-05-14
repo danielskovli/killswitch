@@ -22,8 +22,8 @@
 
     <!-- the application's NotifyIcon - started from App.xaml.cs. Declares its own view model. -->
     <tb:TaskbarIcon x:Key="NotifyIcon"
-                    IconSource="/LockEnabled.ico"
-                    ToolTipText="Double-click for preferences, right-click for menu"
+                    IconSource="/Icons/LockEnabled.ico"
+                    ToolTipText="Killswitch&#10;Not signed in"
                     DoubleClickCommand="{Binding ShowWindowCommand}"
                     ContextMenu="{StaticResource SysTrayMenu}">
 

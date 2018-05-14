@@ -36,9 +36,9 @@ namespace Killswitch {
 		private void ButtonSignUp_Click(object sender, RoutedEventArgs e) {
 
 			// Check form values
-			if (string.IsNullOrWhiteSpace(this.Name.Text)) {
+			if (string.IsNullOrWhiteSpace(this.Fullname.Text)) {
 				MessageBox.Show("You must provide a name for this account. If you're the secretive type - make up something fun...", "Name error", MessageBoxButton.OK, MessageBoxImage.Warning);
-				this.Name.Focus();
+				this.Fullname.Focus();
 				return;
 			} else if (!ThreadHelper.IsValidEmail(this.Email.Text)) {
 				MessageBox.Show("You need to specify a valid email address to sign up. This will become your username", "Email error", MessageBoxButton.OK, MessageBoxImage.Warning);
@@ -64,7 +64,7 @@ namespace Killswitch {
 				var payload = JsonConvert.SerializeObject(new {
 					username = this.Email.Text,
 					password = ThreadHelper.MD5Hash(this.Password.Password),
-					name = this.Name.Text
+					name = this.Fullname.Text
 				});
 
 				webClient.Headers[HttpRequestHeader.ContentType] = "application/json";
@@ -77,7 +77,7 @@ namespace Killswitch {
 					Settings.Default.name = json["name"].ToString();
 					Settings.Default.username = json["username"].ToString();
 					Settings.Default.token = json["token"].ToString();
-					MessageBox.Show("Thanks for signing up " + this.Name.Text.Split(' ').First() + ", welcome to the family!", "Sign up successful", MessageBoxButton.OK, MessageBoxImage.None);
+					MessageBox.Show("Thanks for signing up " + this.Fullname.Text.Split(' ').First() + ", welcome to the family!", "Sign up successful", MessageBoxButton.OK, MessageBoxImage.None);
 					ThreadHelper.Run = true;
 					this.Close();
 

@@ -21,44 +21,44 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_4F8B247649693A0090D23929FDC73319"
+        "MsmKey" = "8:_3BB29DCBD051FB7480383CA9876FC16D"
         "OwnerKey" = "8:_160F1A045E8B451A9891041D9B092576"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_8DFC549B387B80CF2238732A428D4B83"
+        "MsmKey" = "8:_606E1DC1105324E5EF92A98F7FEFF024"
         "OwnerKey" = "8:_160F1A045E8B451A9891041D9B092576"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_D18D15C04595E115BEE473AC91016C9A"
-        "OwnerKey" = "8:_160F1A045E8B451A9891041D9B092576"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
+        "MsmKey" = "8:_F28C935AA371F55C692AF6047B162A2A"
         "OwnerKey" = "8:_160F1A045E8B451A9891041D9B092576"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_4F8B247649693A0090D23929FDC73319"
+        "OwnerKey" = "8:_160F1A045E8B451A9891041D9B092576"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_D18D15C04595E115BEE473AC91016C9A"
+        "OwnerKey" = "8:_606E1DC1105324E5EF92A98F7FEFF024"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_8DFC549B387B80CF2238732A428D4B83"
+        "OwnerKey" = "8:_F28C935AA371F55C692AF6047B162A2A"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_3BB29DCBD051FB7480383CA9876FC16D"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -86,6 +86,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                }
             }
         }
         "Release"
@@ -148,45 +156,14 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_4F8B247649693A0090D23929FDC73319"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Xceed.Wpf.Toolkit, Version=3.3.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_4F8B247649693A0090D23929FDC73319"
-                    {
-                    "Name" = "8:Xceed.Wpf.Toolkit.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:Xceed.Wpf.Toolkit.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_A02842F1ECA84A2B8C6FF89FB3E369F5"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_8DFC549B387B80CF2238732A428D4B83"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_3BB29DCBD051FB7480383CA9876FC16D"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:Hardcodet.Wpf.TaskbarNotification, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_8DFC549B387B80CF2238732A428D4B83"
+                    "_3BB29DCBD051FB7480383CA9876FC16D"
                     {
                     "Name" = "8:Hardcodet.Wpf.TaskbarNotification.dll"
                     "Attributes" = "3:512"
@@ -210,14 +187,45 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_D18D15C04595E115BEE473AC91016C9A"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_606E1DC1105324E5EF92A98F7FEFF024"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Xceed.Wpf.Toolkit, Version=3.3.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_606E1DC1105324E5EF92A98F7FEFF024"
+                    {
+                    "Name" = "8:Xceed.Wpf.Toolkit.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Xceed.Wpf.Toolkit.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_A02842F1ECA84A2B8C6FF89FB3E369F5"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_F28C935AA371F55C692AF6047B162A2A"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_D18D15C04595E115BEE473AC91016C9A"
+                    "_F28C935AA371F55C692AF6047B162A2A"
                     {
                     "Name" = "8:Newtonsoft.Json.dll"
                     "Attributes" = "3:512"
@@ -309,7 +317,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Killswitch"
         "ProductCode" = "8:{42B2BCE0-6F67-4D27-84C3-B907352888E0}"
-        "PackageCode" = "8:{78A37D0C-1359-472A-AC45-E2620198C1A6}"
+        "PackageCode" = "8:{CC30B97E-B604-4109-B771-AFC97DB95FFD}"
         "UpgradeCode" = "8:{03FC4A74-A73C-4B93-9439-869AC979E48D}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
@@ -435,12 +443,12 @@
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
-            "IconIndex" = "3:0"
+            "IconIndex" = "3:32512"
             "Transitive" = "11:FALSE"
             "Target" = "8:_160F1A045E8B451A9891041D9B092576"
             "Folder" = "8:_AE79A64B29C04BD0BCA153C8056B7314"
             "WorkingFolder" = "8:"
-            "Icon" = "8:"
+            "Icon" = "8:_160F1A045E8B451A9891041D9B092576"
             "Feature" = "8:"
             }
         }

@@ -35,7 +35,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>KillswitchIcon.ico</ApplicationIcon>
+    <ApplicationIcon>Icons\KillswitchIcon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -140,7 +140,7 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="LockEnabled.ico" />
+    <Resource Include="Icons\LockEnabled.ico" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -151,7 +151,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="LockDisabled.ico" />
+    <Resource Include="Icons\LockDisabled.ico" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -160,7 +160,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="KillswitchIcon.ico" />
+    <Resource Include="Icons\KillswitchIcon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

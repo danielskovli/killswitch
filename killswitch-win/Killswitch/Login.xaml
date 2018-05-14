@@ -8,7 +8,7 @@
 		xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
         Title="Log in to your account" Height="197.234" Width="505"
-        FocusManager.FocusedElement="{Binding ElementName=Email}" Icon="KillswitchIcon.ico" WindowStyle="ThreeDBorderWindow" Topmost="True" ResizeMode="NoResize" Closed="Window_Closed">
+        FocusManager.FocusedElement="{Binding ElementName=Email}" Icon="Icons/KillswitchIcon.ico" WindowStyle="ThreeDBorderWindow" Topmost="True" ResizeMode="NoResize" Closed="Window_Closed">
 	<Window.DataContext>
 		<classes:URLs/>
 	</Window.DataContext>

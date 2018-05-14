@@ -14,8 +14,8 @@ using Newtonsoft.Json;
 namespace Killswitch.Classes {
     public class ListenerThread {
 
-		private bool debug = true;
-		private int listenInterval = 3000;
+		private readonly bool debug = false;
+		private readonly int listenInterval = 3000;
 		private URLs urls = new URLs();
 
 		public void Listen() {
@@ -116,19 +116,14 @@ namespace Killswitch.Classes {
 			Console.WriteLine(what);
 		}
 
-		// External code
-		[DllImport("user32")]
-		public static extern void LockWorkStation();
-		[DllImport("Powrprof.dll", CharSet = CharSet.Auto, ExactSpelling = true)]
-		public static extern bool SetSuspendState(bool hiberate, bool forceCritical, bool disableWakeEvent);
 
 		// Wrappers
 		public static void Lock() {
-			LockWorkStation();
+			NativeMethods.LockWorkStation();
 		}
 
 		public static void Sleep() {
-			SetSuspendState(false, true, true);
+			NativeMethods.SetSuspendState(false, true, true);
 		}
 
 		public static void Shutdown() {
@@ -138,5 +133,14 @@ namespace Killswitch.Classes {
 			};
 			Process.Start(psi);
 		}
+	}
+
+	// External code
+	internal static class NativeMethods {
+		[DllImport("user32")]
+		public static extern void LockWorkStation();
+
+		[DllImport("Powrprof.dll", CharSet = CharSet.Auto, ExactSpelling = true)]
+		public static extern bool SetSuspendState(bool hiberate, bool forceCritical, bool disableWakeEvent);
 	}
 }
