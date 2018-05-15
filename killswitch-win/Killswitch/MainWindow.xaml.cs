@@ -30,7 +30,7 @@ namespace Killswitch {
 		SignUp signupWindow;
 
 		// Build version
-		string buildVersion = Assembly.GetExecutingAssembly().GetName().Version.Major + "." + Assembly.GetExecutingAssembly().GetName().Version.Minor;
+		string buildVersion = Assembly.GetExecutingAssembly().GetName().Version.Major + "." + Assembly.GetExecutingAssembly().GetName().Version.Minor + "." + Assembly.GetExecutingAssembly().GetName().Version.Build;
 
 		// Init window
 		public MainWindow() {
