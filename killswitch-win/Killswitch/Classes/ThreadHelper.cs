@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Windows;
+using System.Windows.Media;
 using Killswitch.Properties;
 
 namespace Killswitch.Classes {
@@ -17,12 +18,11 @@ namespace Killswitch.Classes {
 			set {
 				run = value;
 				Settings.Default.startStopButton = (value) ? "Pause" : "Start";
-				((App)Application.Current).SetTaskbarIcon();
 				Application.Current.Dispatcher.Invoke(new Action(() => {
+					((App)Application.Current).SetTaskbarIcon();
 					var mw = Application.Current.MainWindow as MainWindow;
 					if (mw != null) {
-						mw.Status_Label.Content = (value) ? "Killswitch is running" : "Killswitch is paused";
-						mw.Status_StartStopText.Text = (value) ? "Pause" : "Start";
+						mw.UpdateUI();
 					}
 				}));
 			}

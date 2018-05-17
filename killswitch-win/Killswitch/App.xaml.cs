@@ -115,7 +115,10 @@ namespace Killswitch {
 
 		// Update taskbar icon
 		public void SetTaskbarIcon() {
-			if (ThreadHelper.Run) {
+			SetTaskbarIcon(ThreadHelper.Run);
+		}
+		public void SetTaskbarIcon(bool enabled) {
+			if (enabled) {
 				notifyIcon.Icon = Killswitch.Properties.Resources.LockEnabled;
 				notifyIcon.ToolTipText = "Killswitch"+ Environment.NewLine +"System running";
 			} else {

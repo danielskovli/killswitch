@@ -7,6 +7,7 @@ using System.Net;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
+using System.Windows;
 using Killswitch.Classes;
 using Killswitch.Properties;
 using Newtonsoft.Json;
@@ -17,6 +18,7 @@ namespace Killswitch.Classes {
 		private readonly bool debug = false;
 		private readonly int listenInterval = 3000;
 		private URLs urls = new URLs();
+		private bool error = false;
 
 		public void Listen() {
 
@@ -49,6 +51,14 @@ namespace Killswitch.Classes {
 					DebugLog("Running");
 					Settings.Default.statusText = "System running";
 
+					// Set the enabled icon if we previously triggered on an error
+					if (error) {
+						Application.Current.Dispatcher.Invoke(new Action(() => {
+							((App)Application.Current).SetTaskbarIcon(true);
+						}));
+						error = false;
+					}
+
 					// Take action if killswitch is set
 					if ((bool)json["killswitch"]) {
 						switch (Settings.Default.killswitchAction) {
@@ -62,7 +72,6 @@ namespace Killswitch.Classes {
 							// System shutdown
 							case "Shutdown":
 								DebugLog("Initiating system shutdown");
-								// SAVE STUFF AND WHATEVER TO PREPARE
 								Settings.Default.Save();
 								Shutdown();
 								break;
@@ -77,15 +86,25 @@ namespace Killswitch.Classes {
 
 				} catch (WebException err) {
 
+					// Set the disabled icon if this is the first time we're triggering on this error (ish)
+					if (!error) {
+						Application.Current.Dispatcher.Invoke(new Action(() => {
+							((App)Application.Current).SetTaskbarIcon(false);
+						}));
+						error = true;
+					}
+
 					// Authentication error
 					if (err.Response != null) {
 						var response = new StreamReader(err.Response.GetResponseStream()).ReadToEnd();
 						var json = JsonConvert.DeserializeObject<Dictionary<string, object>>(response);
 						if (json.ContainsKey("error")) {
-							// Application.Current.Dispatcher.Invoke(new Action(() => {
-								Settings.Default.authenticated = false;
-								ThreadHelper.Run = false;
-							// }));
+							Settings.Default.authenticated = false;
+							ThreadHelper.Run = false;
+							Application.Current.Dispatcher.Invoke(new Action(() => {
+								((App)Application.Current).notifyIcon.ShowBalloonTip("Session expired", "Your authentication was rejected by the server, please sign in again", Hardcodet.Wpf.TaskbarNotification.BalloonIcon.Error);
+							}));
+							
 						} else {
 							// Weird error, possibly server issue. Keep running
 							Settings.Default.statusText = "Server error";

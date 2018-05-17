@@ -39,7 +39,7 @@
 				<Label Content="Status:" HorizontalAlignment="Left" Padding="0" VerticalAlignment="Top" Width="87" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Margin="0,-1,0,0" />
 				<StackPanel x:Name="Status_Actions" Margin="98,0,0,0" Orientation="Horizontal" IsEnabled="{Binding authenticated, Source={x:Static properties:Settings.Default}, UpdateSourceTrigger=PropertyChanged}" >
 					<Label x:Name="Status_Label" Content="Placeholder" Padding="0" VerticalAlignment="Top"/>
-					<TextBlock Margin="5,0,0,0" VerticalAlignment="Top" Visibility="{Binding IsEnabled, ConverterParameter=Normal, Converter={StaticResource BoolToInvertedVis}, ElementName=Status_Actions}" ><Hyperlink x:Name="Status_StartStop" NavigateUri="#" Click="Status_StartStop_Click"><Run x:Name="Status_StartStopText" Text="Start" /></Hyperlink></TextBlock>
+					<!--<TextBlock Margin="5,0,0,0" VerticalAlignment="Top" Visibility="{Binding IsEnabled, ConverterParameter=Normal, Converter={StaticResource BoolToInvertedVis}, ElementName=Status_Actions}" ><Hyperlink x:Name="Status_StartStop" NavigateUri="#" Click="Status_StartStop_Click"><Run x:Name="Status_StartStopText" Text="Start" /></Hyperlink></TextBlock>-->
 				</StackPanel>
 			</Grid>
 			<Grid>

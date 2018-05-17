@@ -37,7 +37,7 @@ namespace Killswitch {
             InitializeComponent();
 
 			// Update account info text
-			UpdateIU();
+			UpdateUI();
 
 			// Listen for changes to the user settings
 			Settings.Default.PropertyChanged += SettingChanged;
@@ -47,16 +47,27 @@ namespace Killswitch {
 		}
 
 		// Update UI based on logged in status
-		void UpdateIU() {
+		public void UpdateUI() {
 			Application.Current.Dispatcher.Invoke(new Action(() => {
 				var mw = Application.Current.MainWindow as MainWindow;
 				if (mw == null) {
 					return;
 				}
+
+				// Username
 				if (Settings.Default.authenticated) {
 					mw.LabelAccount.Content = Settings.Default.name + " <" + Settings.Default.username + ">";
 				} else {
 					mw.LabelAccount.Content = "Not logged in. Please log in or sign up below";
+				}
+
+				// Status
+				if (ThreadHelper.Run) {
+					mw.Status_Label.Content = "Killswitch is running";
+					mw.Status_Label.Foreground = Brushes.ForestGreen;
+				} else {
+					mw.Status_Label.Content = (ThreadHelper.CanRun) ? "Killswitch is paused. Use the system tray icon to start it" : "Killswitch is paused. You need to sign in before the system can run";
+					mw.Status_Label.Foreground = Brushes.Red;
 				}
 
 				// Copyright blurb
@@ -68,13 +79,18 @@ namespace Killswitch {
 
 		// Settings have changed. Update acount information in UI
 		void SettingChanged(object sender, PropertyChangedEventArgs e) {
-			UpdateIU();
+			UpdateUI();
 		}
 
 		// Window closing, destroy PropertyChanged listener
 		private void Window_Closing(object sender, CancelEventArgs e) {
 			Settings.Default.PropertyChanged -= SettingChanged;
 			CloseAllWindows();
+
+			if (Settings.Default.showBalloonMinimize) {
+				((App)Application.Current).notifyIcon.ShowBalloonTip("Killswitch", "The app is still running in your system tray area", Hardcodet.Wpf.TaskbarNotification.BalloonIcon.Info);
+				Settings.Default.showBalloonMinimize = false;
+			}
 		}
 
 		// URL handler
