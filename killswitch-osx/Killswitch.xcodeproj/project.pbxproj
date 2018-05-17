@@ -199,6 +199,9 @@
 							com.apple.ApplicationGroups.Mac = {
 								enabled = 0;
 							};
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
 						};
 					};
 					356CCC201FC046A300D6BEBD = {
@@ -357,7 +360,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CODE_SIGN_ENTITLEMENTS = killswitchLauncher/killswitchLauncher.entitlements;
+				CODE_SIGN_ENTITLEMENTS = KillswitchLauncher/KillswitchLauncher.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = E467X6539H;
@@ -377,7 +380,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CODE_SIGN_ENTITLEMENTS = killswitchLauncher/killswitchLauncher.entitlements;
+				CODE_SIGN_ENTITLEMENTS = KillswitchLauncher/KillswitchLauncher.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = E467X6539H;

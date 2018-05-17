@@ -16,7 +16,8 @@ class UserDefaultsManager {
     var killAction: KillAction? {
         get {
             guard let killAction = UserDefaults.standard.value(forKey: "killAction") as? String else {
-                return nil
+                //return nil
+                return KillAction.sleep
             }
             return KillAction(rawValue: killAction)
         }
@@ -81,7 +82,7 @@ class UserDefaultsManager {
         get {
             guard let launchAtLogin = UserDefaults.standard.value(forKey: "launchAtLogin") as? Bool else {
                 //return nil
-                return true
+                return false
             }
             return launchAtLogin
         }
