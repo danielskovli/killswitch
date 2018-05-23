@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Reflection;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -68,6 +69,7 @@ namespace Killswitch {
 				});
 
 				webClient.Headers[HttpRequestHeader.ContentType] = "application/json";
+				webClient.Headers[HttpRequestHeader.UserAgent] = ThreadHelper.OSInfo + "; " + Assembly.GetExecutingAssembly().GetName().Name.ToString() + " " + Assembly.GetExecutingAssembly().GetName().Version.ToString();
 
 				try {
 					// Success
