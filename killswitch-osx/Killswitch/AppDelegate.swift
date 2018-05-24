@@ -20,7 +20,7 @@ extension String {
 }
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate {
+class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDelegate {
 
     // Menu and status bar entry
     @IBOutlet weak var menuPreferences: NSMenuItem!
@@ -32,6 +32,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @objc dynamic var status : NSString = NSString(string: "Loading...")
     @objc dynamic var startStop : NSString = NSString(string: "")
     @IBOutlet weak var startStopButton: NSMenuItem!
+    var prefViewController: ViewController?
     var firstLoad : Bool = true;
     var isRunning : Bool = false {
         didSet {
@@ -41,6 +42,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var authenticated : Bool = false {
         didSet {
             updateTrayIcon()
+            if prefViewController != nil {
+                prefViewController?.updateGUI()
+                //print("tried to update main window")
+            }
         }
     }
     
@@ -72,16 +77,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if (UserDefaultsManager.shared.killAction == nil) {
             UserDefaultsManager.shared.killAction = KillAction.sleep
         }
-
-        // TEMP: Insist on KillAction.lock (bug with core messaging system for all other events)
-        //UserDefaultsManager.shared.killAction = KillAction.lock
         
         // Launch preference window if we don't have a user account signed in
         if (UserDefaultsManager.shared.token! == "") {
             let storyboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
             let controller = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "prefWindowController")) as! NSWindowController
             controller.showWindow(self)
-            controller.window?.makeKey()
         }
         
         // Attempt to start the listener
@@ -152,9 +153,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         // Toggle run state
         if (isRunning) {
-            isRunning = !listener.Stop()
+            _ = listener.Stop()
+            isRunning = false
         } else {
-            isRunning = listener.Start()
+            _ = listener.Start()
+            isRunning = true
         }
         
         // UI
@@ -180,9 +183,24 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         status = _status as! NSString
     }
     
-    
     @IBAction func startStopButton(_ sender: NSMenuItem) {
         toggleStartStop(restart: false)
+    }
+    
+    func showNotification(title: String, subtitle: String = "", body: String) -> Void {
+        var notification = NSUserNotification()
+        
+        notification.title = title
+        notification.subtitle = subtitle
+        notification.informativeText = body
+        //notification.contentImage = contentImage
+        notification.soundName = NSUserNotificationDefaultSoundName
+        NSUserNotificationCenter.default.delegate = self
+        NSUserNotificationCenter.default.deliver(notification)
+    }
+    
+    func userNotificationCenter(_ center: NSUserNotificationCenter, shouldPresent notification: NSUserNotification) -> Bool {
+        return true
     }
 }
 

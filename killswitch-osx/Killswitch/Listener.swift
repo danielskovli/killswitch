@@ -57,19 +57,17 @@ class Listener {
     // Public: Starts the listening process at interval set by `self.interval`
     func Start() -> Bool {
         self.run = true
-        
         queue.async {
             self.Iterate()
         }
-        
-        return true // Future
+        return self.run
     }
     
     
     // Public: Stops the listening process after current iteration
     func Stop() -> Bool {
         self.run = false
-        return true // Future
+        return self.run
     }
     
     
@@ -168,14 +166,16 @@ class Listener {
                         }
                     }
                 } else {
+                    let error = parsed["error"] as! String
                     self.ad.status = parsed["error"] as! NSString
                     self.ad.authenticated = false
                     self.ad.isRunning = false
                     self.ad.startStopButton.isHidden = true
-                    print(parsed["error"] as! String)
+                    print(error)
                     UserDefaultsManager.shared.name = ""
                     UserDefaultsManager.shared.token = ""
                     UserDefaultsManager.shared.username = ""
+                    self.ad.showNotification(title: "Killswitch error", body: error + ". Please sign in again")
                     return
                 }
                 

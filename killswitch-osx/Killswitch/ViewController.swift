@@ -47,6 +47,9 @@ class ViewController: NSViewController {
         
         // Only apply the following if we're in the main preferences view
         if (self.identifier?.rawValue == "mainPrefWindow") {
+            
+            // Reference back to the app delegate
+            self.ad.prefViewController = self
           
             // Initiate the dropdown box
             killActionCombo.removeAllItems()
@@ -81,13 +84,24 @@ class ViewController: NSViewController {
         } else if (self.identifier?.rawValue == "loginWindow") {
             // Links
             prefLoginForgotButton.attributedTitle = formatLinks(text: prefLoginForgotButton.title)
+            self.ad.authenticated = false
+        } else if (self.identifier?.rawValue == "signupWindow") {
+            self.ad.authenticated = false
         }
     }
     
     override func viewDidAppear() {
         super.viewDidAppear()
-        view.window?.level = .floating
-        view.window?.makeKey()
+        switchToApp(named: "Killswitch")
+        //view.window?.level = .floating
+        //view.window?.makeKeyAndOrderFront(self)
+        if let win = view.window {
+            //print("Got window")
+            win.makeKeyAndOrderFront(self)
+            win.level = .floating
+        } else {
+            //print("No window...")
+        }
     }
     
     
@@ -117,7 +131,7 @@ class ViewController: NSViewController {
     }
     
     
-    func updateGUI() {
+    public func updateGUI() {
         if (self.ad.authenticated) {
             self.prefAccountTextView.stringValue = UserDefaultsManager.shared.name! + " <" + UserDefaultsManager.shared.username! + ">"
             self.loginButton.isHidden = true
@@ -311,7 +325,7 @@ class ViewController: NSViewController {
                     UserDefaultsManager.shared.username = (parsed["username"] as! String)
                     self.ad.authenticated = true
                     print("signup ok")
-                    _ = self.messageBox(message: "Welcome aboard " + UserDefaultsManager.shared.name! + "! It's a pleasure to make your acquaintance 👌👊", title: "User registration successful")
+                    _ = self.messageBox(message: "Thanks for signing up " + UserDefaultsManager.shared.name! + ", welcome to the family!", title: "User registration successful")
                 }
             
             // Server issue -- unreachable or other weirdness
@@ -386,6 +400,17 @@ class ViewController: NSViewController {
         title.setAttributes(attrs, range: range)
         
         return title
+    }
+    
+    func switchToApp(named windowOwnerName: String) {
+        let options = CGWindowListOption(arrayLiteral: CGWindowListOption.excludeDesktopElements, CGWindowListOption.optionOnScreenOnly)
+        let windowListInfo = CGWindowListCopyWindowInfo(options, CGWindowID(0))
+        guard let infoList = windowListInfo as NSArray? as? [[String: AnyObject]] else { return }
+        
+        if let window = infoList.first(where: { ($0["kCGWindowOwnerName"] as? String) == windowOwnerName}), let pid = window["kCGWindowOwnerPID"] as? Int32 {
+            let app = NSRunningApplication(processIdentifier: pid)
+            app?.activate(options: .activateIgnoringOtherApps)
+        }
     }
 }
 

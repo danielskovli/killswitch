@@ -81,7 +81,7 @@ class UserDefaultsManager {
     var launchAtLogin: Bool? {
         get {
             guard let launchAtLogin = UserDefaults.standard.value(forKey: "launchAtLogin") as? Bool else {
-                //return nil
+                //return true
                 return false
             }
             return launchAtLogin
