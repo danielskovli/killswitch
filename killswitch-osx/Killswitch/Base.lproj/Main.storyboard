@@ -479,7 +479,7 @@ DQ
         <!--signUp-->
         <scene sceneID="EAX-jy-3lM">
             <objects>
-                <viewController title="signUp" showSeguePresentationStyle="single" id="bCs-j7-ZzV" customClass="ViewController" customModule="Killswitch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="signUp" identifier="signupWindow" showSeguePresentationStyle="single" id="bCs-j7-ZzV" customClass="ViewController" customModule="Killswitch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="MCi-43-b08">
                         <rect key="frame" x="0.0" y="0.0" width="372" height="172"/>
                         <autoresizingMask key="autoresizingMask"/>
