@@ -42,7 +42,7 @@
     <EntryPointProjectUniqueName>..\Killswitch\Killswitch.csproj</EntryPointProjectUniqueName>
     <PackageCertificateThumbprint>2A9C4F67B0F8B52B606F8F25AFF820ABCEB496F8</PackageCertificateThumbprint>
     <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
-    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
     <AppxBundlePlatforms>x86|x64</AppxBundlePlatforms>
     <AppInstallerUpdateFrequency>1</AppInstallerUpdateFrequency>
     <AppInstallerCheckForUpdateFrequency>OnApplicationRun</AppInstallerCheckForUpdateFrequency>

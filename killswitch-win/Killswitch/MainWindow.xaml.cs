@@ -62,7 +62,10 @@ namespace Killswitch {
 				}
 
 				// Status
-				if (ThreadHelper.Run) {
+				if (((App)Application.Current).error) {
+					mw.Status_Label.Content = Settings.Default.statusText;
+					mw.Status_Label.Foreground = Brushes.Red;
+				} else if (ThreadHelper.Run) {
 					mw.Status_Label.Content = "Killswitch is running";
 					mw.Status_Label.Foreground = Brushes.ForestGreen;
 				} else {

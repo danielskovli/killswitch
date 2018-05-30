@@ -18,14 +18,22 @@ namespace Killswitch.Classes {
 		private readonly bool debug = false;
 		private readonly int listenInterval = 3000;
 		private URLs urls = new URLs();
-		private bool error = false;
+		//private bool error = false;
 
 		public void Listen() {
 
 			// Take a nap if we're locked or paused
 			if (ThreadHelper.IsLocked || !ThreadHelper.Run) {
 				DebugLog("Paused");
-				Settings.Default.statusText = "System paused";
+
+				if (!((App)Application.Current).error) {
+					if (ThreadHelper.CanRun) {
+						Settings.Default.statusText = "System paused";
+					} else {
+						Settings.Default.statusText = "Not logged in";
+					}
+				}
+
 				Thread.Sleep(1000);
 				Iterate();
 				return;
@@ -49,15 +57,8 @@ namespace Killswitch.Classes {
 					var json = JsonConvert.DeserializeObject<Dictionary<string, object>>(response);
 					
 					DebugLog("Running");
+					((App)Application.Current).error = false;
 					Settings.Default.statusText = "System running";
-
-					// Set the enabled icon if we previously triggered on an error
-					if (error) {
-						Application.Current.Dispatcher.Invoke(new Action(() => {
-							((App)Application.Current).SetTaskbarIcon(true);
-						}));
-						error = false;
-					}
 
 					// Take action if killswitch is set
 					if ((bool)json["killswitch"]) {
@@ -86,13 +87,7 @@ namespace Killswitch.Classes {
 
 				} catch (WebException err) {
 
-					// Set the disabled icon if this is the first time we're triggering on this error (ish)
-					if (!error) {
-						Application.Current.Dispatcher.Invoke(new Action(() => {
-							((App)Application.Current).SetTaskbarIcon(false);
-						}));
-						error = true;
-					}
+					((App)Application.Current).error = true;
 
 					// Authentication error
 					if (err.Response != null) {
@@ -115,6 +110,7 @@ namespace Killswitch.Classes {
 						// Keep running
 						Settings.Default.statusText = "Network error";
 					}
+
 				} finally {
 					Thread.Sleep(listenInterval);
 					Iterate();

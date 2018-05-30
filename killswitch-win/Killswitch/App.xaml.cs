@@ -17,6 +17,7 @@ namespace Killswitch {
         public TaskbarIcon notifyIcon;
 		public ListenerThread listenerThread = new ListenerThread();
 		public Thread listener;
+		public bool error = false;
 
 		// Startup
 		protected override void OnStartup(StartupEventArgs e) {
@@ -77,6 +78,12 @@ namespace Killswitch {
 			if (e.PropertyName == "launchAtLogin") {
 				SetAutoStart();
 			}
+
+			if (e.PropertyName == "statusText") {
+				Application.Current.Dispatcher.Invoke(new Action(() => {
+					((App)Application.Current).SetTaskbarIcon();
+				}));
+			}
 		}
 
 		// Add/remove auto start flag from windows registry
@@ -115,16 +122,15 @@ namespace Killswitch {
 
 		// Update taskbar icon
 		public void SetTaskbarIcon() {
-			SetTaskbarIcon(ThreadHelper.Run);
+			SetTaskbarIcon(ThreadHelper.Run && !error);
 		}
 		public void SetTaskbarIcon(bool enabled) {
 			if (enabled) {
 				notifyIcon.Icon = Killswitch.Properties.Resources.LockEnabled;
-				notifyIcon.ToolTipText = "Killswitch"+ Environment.NewLine +"System running";
 			} else {
 				notifyIcon.Icon = Killswitch.Properties.Resources.LockDisabled;
-				notifyIcon.ToolTipText = (ThreadHelper.CanRun) ? "Killswitch" + Environment.NewLine + "System paused" : "Killswitch" + Environment.NewLine + "Not signed in";
 			}
+			notifyIcon.ToolTipText = "Killswitch" + Environment.NewLine + Settings.Default.statusText;
 		}
 	}
 }
